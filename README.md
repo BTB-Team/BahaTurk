@@ -48,16 +48,6 @@ src/
 
 Global/shared data goes through Zustand stores — don't fetch the same data separately in multiple components. Use an existing store if it fits, or create a new one following the same pattern if it genuinely doesn't.
 
-## Available Scripts
-
-| Command           | What it does                     |
-| ----------------- | -------------------------------- |
-| `pnpm dev`        | Runs the app + mock API together |
-| `pnpm dev:client` | Runs only the Vite dev server    |
-| `pnpm dev:server` | Runs only json-server            |
-| `pnpm build`      | Production build to `dist/`      |
-| `pnpm lint`       | Runs ESLint                      |
-
 ## Git Workflow
 
 - **Never push directly to `main` or `develop`.**
