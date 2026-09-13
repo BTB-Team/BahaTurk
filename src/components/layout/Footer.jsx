@@ -3,6 +3,6 @@ export default function Footer() {
 
 
   return (
-    <h1>Footer</h1>
+    <h1>Check the Footer</h1>
   );
 }
