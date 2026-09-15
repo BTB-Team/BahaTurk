@@ -1,9 +1,11 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Projects from "./pages/projects/Projects";
+import Contact from "./pages/contact/Contact";
 import MainLayout from "./layouts/MainLayout";
+import NotFoundPage from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -13,6 +15,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
 

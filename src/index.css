@@ -1,11 +1,190 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@theme {
+  /* Main site background - pure white */
+  --color-background: #ffffff;
+
+  /* Card and content section background - white */
+  --color-card: #ffffff;
+
+  /* Background for tinted/banner sections (e.g. "Building Since 2001") - soft light blue */
+  --color-tint: #eaf6fc;
+
+  /* Header / top nav background - white or near-white */
+  --color-header: #ffffff;
+
+  /* Primary text color - dark navy (near-black) */
+  --color-text: #16222e;
+
+  /* Secondary text, descriptions, labels - blue-gray */
+  --color-muted: #5b6b77;
+
+  /* Main accent color for buttons, links, icons - sky blue */
+  --color-accent: #0f99cc;
+
+  /* Hover state for accent buttons and links - darker blue */
+  --color-accent-hover: #1d8fc0;
+
+  /* Background for icon circles - very light blue */
+  --color-icon-bg: #e3f3fb;
+
+  /* Dark navy used for footer and solid banners */
+  --color-navy: #0e4c6e;
+
+  /* Borders and dividers */
+  --color-border: #e1e8ed;
 }
 
-body {
-  font-family: "Inter", system-ui, sans-serif;
+/* English variable font */
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat/Montserrat[wght].ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-english {
+  font-family: "Montserrat", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+}
+
+/* White content card with soft border and shadow, used for feature/residence cards */
+@utility card {
+  @apply bg-card border border-border rounded-2xl shadow-sm
+           overflow-hidden transition-shadow duration-150
+           hover:shadow-md;
+}
+
+@layer components {
+  /* ============ BUTTONS ============ */
+
+  .btn {
+    @apply inline-flex items-center justify-center
+           rounded-lg px-4 py-2 font-semibold
+           transition-all duration-150
+           active:scale-95
+           focus:outline-none
+           focus:ring-2 focus:ring-accent/40
+           disabled:opacity-50
+           disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full
+           px-6 py-2.5 font-semibold transition-all duration-150 cursor-pointer
+           active:scale-95
+           bg-accent text-white hover:bg-accent-hover;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full
+           px-6 py-2.5 font-semibold transition-all duration-150 cursor-pointer
+           active:scale-95
+           border border-accent text-accent
+           hover:bg-accent hover:text-white;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full
+           px-6 py-2.5 font-semibold transition-all duration-150 cursor-pointer
+           active:scale-95
+           bg-icon-bg text-accent hover:bg-accent hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full
+           px-6 py-2.5 font-semibold transition-all duration-150 cursor-pointer
+           active:scale-95
+           text-text hover:bg-tint;
+  }
+
+  /* Button with trailing arrow, like "Explore Our Projects →" */
+  .btn-arrow {
+    @apply inline-flex items-center gap-2;
+  }
+  .btn-arrow::after {
+    content: "→";
+    @apply transition-transform duration-150;
+  }
+  .btn-arrow:hover::after {
+    transform: translateX(3px);
+  }
+
+  /* ============ SURFACES / SECTIONS ============ */
+
+  /* Full-width tinted banner section (e.g. "Building Since 2001", "Featured Project") */
+  .section-tint {
+    @apply bg-tint rounded-2xl;
+  }
+
+  /* Solid accent-colored banner with white text (e.g. the blue "Building Since 2001" band) */
+  .section-banner {
+    @apply bg-accent text-white rounded-2xl;
+  }
+
+  /* ============ TYPOGRAPHY HELPERS ============ */
+
+  /* Small uppercase eyebrow label above section headings, e.g. "— ENGINEERING" */
+  .eyebrow {
+    @apply flex items-center gap-2 text-xs font-semibold uppercase
+           tracking-widest text-accent;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply w-5 h-px bg-accent;
+  }
+
+  /* Section heading, pair with a <span class="text-accent"> for the emphasized word */
+  .heading {
+    @apply text-3xl md:text-4xl font-bold text-text leading-tight;
+  }
+
+  .muted {
+    @apply text-muted;
+  }
+
+  /* ============ ICON / STAT BLOCKS ============ */
+
+  /* Circular icon container used across stat rows and feature lists */
+  .icon-circle {
+    @apply flex items-center justify-center rounded-full
+           bg-icon-bg text-accent;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* Stat card: icon + big number + label, e.g. "2001 Established" */
+  .stat-card {
+    @apply card flex flex-col items-center gap-2 text-center p-6;
+  }
+  .stat-card .stat-number {
+    @apply text-2xl font-bold text-text;
+  }
+  .stat-card .stat-label {
+    @apply text-sm text-muted;
+  }
+
+  /* Small pill badge, e.g. floating "Earthquake Resistance" tag */
+  .badge {
+    @apply inline-flex items-center rounded-full bg-icon-bg
+           text-accent text-xs font-semibold px-3 py-1;
+  }
+}
+
+.footer {
+  background: linear-gradient(to bottom, #ffffff 0%, #eaf6fc 60%, #bfe4f5 100%);
+}
+
+.gradient-text {
+  background-image: linear-gradient(360deg, #0f99cc, #084d66);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
