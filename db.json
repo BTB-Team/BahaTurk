@@ -1,0 +1,126 @@
+{
+  "company": {
+    "name": "Baha Turk Construction Company",
+    "tagline": "Engineering That Lasts.",
+    "established": 2001,
+    "contact": {
+      "address": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    }
+  },
+  "keyNumbers": [
+    { "value": "2001", "label": "Established" },
+    {
+      "value": "118",
+      "label": "Residential Blocks Planned at Solh Residential Project"
+    },
+    { "value": "20", "label": "Residential Blocks in Phase One" },
+    { "value": "32 Jeribs", "label": "Phase One Project Area" },
+    { "value": "75%", "label": "Planned Green & Open Space" }
+  ],
+  "journey": [
+    {
+      "year": "2001",
+      "description": "Baha Turk begins its journey in Turkey."
+    },
+    {
+      "year": "International Experience",
+      "description": "Technical knowledge, construction expertise, and modern methods become central to our approach."
+    },
+    {
+      "year": "Afghanistan",
+      "description": "Baha Turk enters Afghanistan with a vision to contribute to modern construction and urban development."
+    },
+    {
+      "year": "Solh Residential Project",
+      "description": "Our first and largest project in Afghanistan brings our engineering approach to the heart of Kabul."
+    },
+    {
+      "year": "The Future",
+      "description": "Our ambition is to expand into larger developments and introduce advanced construction technologies."
+    }
+  ],
+  "projects": [
+    {
+      "id": "solh-residential",
+      "name": "Solh Residential Project",
+      "location": "Makroyan 5, Kabul, Afghanistan",
+      "status": "Under Development",
+      "totalBlocks": 118,
+      "phaseOneBlocks": 20,
+      "phaseOneArea": "32 Jeribs",
+      "greenSpace": "75%"
+    }
+  ],
+  "residences": [
+    {
+      "id": 1,
+      "name": "3-Room Residence",
+      "area": "Approx. 157 m²",
+      "description": "Practical living spaces designed for modern family life.",
+      "image": "images/room-1.jpg",
+      "href": "#"
+    },
+    {
+      "id": 2,
+      "name": "4-Room Residence",
+      "area": "Approx. 187 m²",
+      "description": "More space, flexibility, and comfort for growing families.",
+      "image": "images/room-2.jpg",
+      "href": "#"
+    },
+    {
+      "id": 3,
+      "name": "5-Room Residence",
+      "area": "Approx. 213 m²",
+      "description": "Generous interiors designed for spacious family living.",
+      "image": "images/room-3.jpg",
+      "href": "#"
+    },
+    {
+      "id": 4,
+      "name": "VIP Residence",
+      "area": "Approx. 308 m²",
+      "description": "Larger residences offering greater privacy, space, and comfort.",
+      "image": "images/room-4.jpg",
+      "href": "#"
+    }
+  ],
+  "amenities": [
+    {
+      "id": 1,
+      "title": "24/7 Modern Elevators",
+      "description": "Reliable vertical access for everyday convenience."
+    },
+    {
+      "id": 2,
+      "title": "Dedicated Parking",
+      "description": "Organized parking facilities for residents."
+    },
+    {
+      "id": 3,
+      "title": "Independent Water Wells",
+      "description": "Independent water infrastructure for each block."
+    },
+    {
+      "id": 4,
+      "title": "Central Heating",
+      "description": "Integrated central heating for residential comfort."
+    },
+    {
+      "id": 5,
+      "title": "Standard Infrastructure",
+      "description": "Essential infrastructure developed according to engineering requirements."
+    },
+    {
+      "id": 6,
+      "title": "Public Spaces",
+      "description": "Organized common areas designed for residents."
+    }
+  ],
+  "news": [],
+  "contactMessages": [],
+  "salesInquiries": []
+}
