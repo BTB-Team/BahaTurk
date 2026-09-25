@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently -n CLIENT,API -c blue,green --kill-others-on-fail \"pnpm dev:client\" \"pnpm dev:server\"",
     "dev:client": "vite",
-    "dev:server": "json-server --watch public/db.json --port 3001",
+    "dev:server": "json-server --watch db.json --port 3001  -s ./public",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint ."
