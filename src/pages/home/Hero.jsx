@@ -1,16 +1,21 @@
-
 import React from "react";
-
-import {
-  ArrowRight,
-  Building2,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
-      className="  relative  h-[620px]  w-full  overflow-hidden  bg-white " >
+      className="
+        relative
+        min-h-[540px]
+        w-full
+        overflow-hidden
+        bg-white
+        sm:min-h-[580px]
+        md:min-h-[600px]
+        lg:h-[620px]
+        lg:min-h-0
+      "
+    >
       {/* =====================================================
           BACKGROUND IMAGE
       ===================================================== */}
@@ -18,22 +23,49 @@ export default function Hero() {
       <img
         src="/images/Rectangle115.png"
         alt="Baha Turk construction project"
-        className=" absolute inset-0 h-full w-full object-cover object-center " />
+        className="
+          absolute
+          inset-0
+          h-full
+          w-full
+          object-cover
+          object-center
+          sm:object-center
+          lg:object-center
+        "
+      />
 
       {/* =====================================================
           UNIFORM WHITE DUST / FOG
-          Same soft haze across the entire image
       ===================================================== */}
 
       <div
-        className=" pointer-events-none absolute inset-0 z-[1] bg-white/[0.58] "/>
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          z-[1]
+          bg-white/[0.58]
+        "
+      />
 
       {/* =====================================================
           SOFT WHITE FOG
       ===================================================== */}
 
       <div
-        className=" pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-white/[0.62] via-white/[0.55] to-white/[0.62] blur-[18px] " />
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          z-[2]
+          bg-gradient-to-r
+          from-white/[0.68]
+          via-white/[0.55]
+          to-white/[0.68]
+          blur-[18px]
+        "
+      />
 
       {/* =====================================================
           SUBTLE CENTER FOG
@@ -45,7 +77,7 @@ export default function Hero() {
           absolute
           inset-0
           z-[3]
-          bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.20)_0%,rgba(255,255,255,0.13)_40%,rgba(255,255,255,0.06)_70%,transparent_100%)]
+          bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.14)_40%,rgba(255,255,255,0.06)_70%,transparent_100%)]
         "
       />
 
@@ -54,29 +86,92 @@ export default function Hero() {
       ===================================================== */}
 
       <div
-        className=" pointer-events-none absolute -right-32 -top-32 z-[4] h-[450px] w-[450px] rounded-full border-[70px] border-white/20 " />
+        className="
+          pointer-events-none
+          absolute
+          -right-24
+          -top-24
+          z-[4]
+          h-[280px]
+          w-[280px]
+          rounded-full
+          border-[40px]
+          border-white/20
+          sm:-right-28
+          sm:-top-28
+          sm:h-[360px]
+          sm:w-[360px]
+          sm:border-[55px]
+          md:-right-32
+          md:-top-32
+          md:h-[420px]
+          md:w-[420px]
+          md:border-[65px]
+          lg:h-[450px]
+          lg:w-[450px]
+          lg:border-[70px]
+        "
+      />
 
       {/* =====================================================
           CENTER CONTENT
       ===================================================== */}
 
       <div
-        className=" relative z-[10] mx-auto flex h-full w-full max-w-[1200px] items-center justify-center px-6 text-center lg:px-10 " >
+        className="
+          relative
+          z-[10]
+          mx-auto
+          flex
+          min-h-[540px]
+          w-full
+          max-w-[1200px]
+          items-center
+          justify-center
+          px-4
+          py-16
+          text-center
+          sm:min-h-[580px]
+          sm:px-6
+          sm:py-20
+          md:min-h-[600px]
+          md:px-8
+          lg:h-full
+          lg:min-h-0
+          lg:px-10
+        "
+      >
         <div
-          className=" flex max-w-[850px] flex-col items-center" >
+          className="
+            flex
+            w-full
+            max-w-[850px]
+            flex-col
+            items-center
+          "
+        >
           {/* =================================================
               SECTION LABEL
           ================================================= */}
 
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-[2px] w-10 bg-[#079bc5]" />
+          <div className="mb-3 flex items-center justify-center gap-2 sm:mb-4 sm:gap-3">
+            <span className="h-[2px] w-7 bg-[#079bc5] sm:w-10" />
 
             <span
-              className=" text-[10px] font-bold uppercase tracking-[0.22em] text-[#079bc5] " >
+              className="
+                text-[9px]
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-[#079bc5]
+                sm:text-[10px]
+                sm:tracking-[0.22em]
+              "
+            >
               BAHA TURK
             </span>
 
-            <span className="h-[2px] w-10 bg-[#079bc5]" />
+            <span className="h-[2px] w-7 bg-[#079bc5] sm:w-10" />
           </div>
 
           {/* =================================================
@@ -84,7 +179,18 @@ export default function Hero() {
           ================================================= */}
 
           <p
-            className="  mb-3  text-xs  font-bold  uppercase  tracking-[0.18em]  text-[#079bc5]/80 ">
+            className="
+              mb-3
+              max-w-[90%]
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[0.12em]
+              text-[#079bc5]/80
+              sm:text-xs
+              sm:tracking-[0.18em]
+            "
+          >
             AFGHANISTAN BUILDING THE FUTURE
           </p>
 
@@ -93,7 +199,23 @@ export default function Hero() {
           ================================================= */}
 
           <h1
-            className=" text-3xl font-black leading-[1.03] text-[#079bc5] sm:text-4xl md:text-5xl lg:text-6xl ">
+            className="
+              max-w-[900px]
+              text-[32px]
+              font-black
+              leading-[1.06]
+              tracking-[-0.8px]
+              text-[#079bc5]
+              sm:text-[40px]
+              sm:tracking-[-1px]
+              md:text-[50px]
+              lg:text-[60px]
+              xl:text-[64px]
+            "
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+            }}
+          >
             Building Afghanistan&apos;s
             <br />
 
@@ -111,7 +233,25 @@ export default function Hero() {
           ================================================= */}
 
           <p
-            className=" mt-5 max-w-[650px] text-sm leading-6 text-black md:text-[15px]  ">
+            className="
+              mt-5
+              max-w-[580px]
+              px-2
+              text-[12px]
+              font-medium
+              leading-[1.7]
+              text-black
+              sm:mt-6
+              sm:px-0
+              sm:text-[14px]
+              sm:leading-6
+              md:max-w-[650px]
+              md:text-[15px]
+            "
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+            }}
+          >
             We build residential, commercial, and infrastructure
             projects with modern engineering, advanced technology,
             and a commitment to quality that lasts.
@@ -122,15 +262,55 @@ export default function Hero() {
           ================================================= */}
 
           <div
-            className="  mt-6  flex  flex-wrap  items-center  justify-center  gap-3 ">
+            className="
+              mt-6
+              flex
+              w-full
+              items-center
+              justify-center
+              sm:mt-7
+            "
+          >
             <a
               href="#projects"
-              className=" group inline-flex items-center gap-2 rounded-full bg-[#079bc5] px-6 py-3 text-xs font-bold text-white shadow-lg shadow-[#079bc5]/20 transition duration-300 hover:-translate-y-1 hover:bg-[#067f9f] " >
+              className="
+                group
+                inline-flex
+                w-full
+                max-w-[230px]
+                items-center
+                justify-center
+                gap-2
+                rounded-full
+                bg-[#079bc5]
+                px-5
+                py-3
+                text-[11px]
+                font-bold
+                text-white
+                shadow-lg
+                shadow-[#079bc5]/20
+                transition
+                duration-300
+                hover:-translate-y-1
+                hover:bg-[#067f9f]
+                sm:w-auto
+                sm:max-w-none
+                sm:px-6
+                sm:py-3
+                sm:text-xs
+              "
+            >
               Explore Our Projects
 
               <ArrowRight
                 size={16}
-                className=" transition-transform duration-300 group-hover:translate-x-1 "/>
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
             </a>
           </div>
         </div>
@@ -138,4 +318,3 @@ export default function Hero() {
     </section>
   );
 }
-

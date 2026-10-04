@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import AboutValues from "./AboutValues";
@@ -7,14 +6,23 @@ import AboutJourney from "./AboutJourney";
 
 function About() {
   return (
-    <main className="about-page min-h-screen overflow-hidden bg-white text-[#071b35]">
+    <main
+      className="
+        about-page
+        min-h-screen
+        w-full
+        overflow-x-hidden
+        bg-white
+        text-[#071b35]
+      "
+    >
       <AboutEngin />
+
       <AboutValues />
+
       <AboutJourney />
     </main>
   );
 }
 
 export default About;
-
-

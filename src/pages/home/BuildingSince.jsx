@@ -1,3 +1,4 @@
+import React from "react";
 
 /* =========================================================
    BAHA TURK — HOME
@@ -17,7 +18,7 @@ const BLUE_DARK = "#0E78A8";
 const BLUE_SOFT = "#E5F5FC";
 
 /* =========================================================
-   SPARKLE — BLUE
+   SPARKLE
    ========================================================= */
 
 const Sparkle = ({ className = "" }) => (
@@ -61,7 +62,7 @@ const iconProps = {
   strokeWidth: 2,
   strokeLinecap: "round",
   strokeLinejoin: "round",
-  className: "h-11 w-11",
+  className: "h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11",
   "aria-hidden": true,
 };
 
@@ -73,6 +74,7 @@ const CalendarIcon = () => (
   <svg {...iconProps}>
     <rect x="6" y="9" width="36" height="32" rx="6" />
     <path d="M15 5v8M33 5v8M6 19h36" />
+
     <circle cx="16" cy="27" r="1.4" fill="currentColor" />
     <circle cx="24" cy="27" r="1.4" fill="currentColor" />
     <circle cx="32" cy="27" r="1.4" fill="currentColor" />
@@ -171,33 +173,87 @@ const STATS = [
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white px-5 pb-20 pt-6 sm:px-8 lg:pb-28">
-      <div className="mx-auto max-w-[1440px]">
-
-        {/* Top Sparkle */}
+    <section className="relative overflow-hidden bg-white px-4 pb-12 pt-6 sm:px-6 sm:pb-16 md:px-8 lg:px-10 lg:pb-24 xl:px-12">
+      <div className="mx-auto w-full max-w-[1440px]">
+        {/* TOP SPARKLE */}
         <div className="flex justify-center">
-          <Sparkle className="h-9 w-9 sm:h-11 sm:w-11" />
+          <Sparkle className="h-7 w-7 sm:h-9 sm:w-9 lg:h-11 lg:w-11" />
         </div>
 
-        <div className="relative mt-8 min-h-[560px] lg:mt-10">
-
-          {/* LEFT IMAGE */}
+        <div className="relative mt-6 sm:mt-8 lg:mt-10 lg:min-h-[560px] xl:min-h-[590px]">
+          {/* LEFT IMAGE - DESKTOP */}
           <img
             src={IMG.left}
             alt="Baha Turk residential towers"
-            className=" absolute left-[-30px] -top-[20px] hidden h-[390px] w-[410px] rounded-r-[45px] object-cover shadow-sm lg:block xl:left-[-70px] " />
+            className="
+              absolute
+              left-[-20px]
+              top-[-10px]
+              hidden
+              h-[320px]
+              w-[340px]
+              rounded-r-[38px]
+              object-cover
+              shadow-sm
+              lg:block
+              xl:left-[-70px]
+              xl:h-[390px]
+              xl:w-[410px]
+              xl:rounded-r-[45px]
+              xl:top-[-20px]
+            "
+          />
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT IMAGE - DESKTOP */}
           <img
             src={IMG.right}
             alt="Baha Turk residential building"
-            className=" absolute right-[-30px] top-[175px] hidden h-[390px] w-[410px] rounded-l-[45px] object-cover shadow-sm lg:block xl:right-[-70px] "/>
+            className="
+              absolute
+              right-[-20px]
+              top-[170px]
+              hidden
+              h-[320px]
+              w-[340px]
+              rounded-l-[38px]
+              object-cover
+              shadow-sm
+              lg:block
+              xl:right-[-70px]
+              xl:h-[390px]
+              xl:w-[410px]
+              xl:rounded-l-[45px]
+              xl:top-[175px]
+            "
+          />
 
           {/* CENTER CONTENT */}
-          <div className="mx-auto flex max-w-[690px] flex-col items-center text-center">
-
+          <div
+            className="
+              mx-auto
+              flex
+              w-full
+              max-w-[690px]
+              flex-col
+              items-center
+              px-1
+              text-center
+              sm:px-3
+              lg:px-0
+            "
+          >
             <h1
-              className=" text-[42px] font-extrabold leading-[1.12] tracking-[-1.5px] text-black sm:text-[52px] lg:text-[58px] "
+              className="
+                text-[34px]
+                font-extrabold
+                leading-[1.14]
+                tracking-[-1px]
+                text-black
+                sm:text-[42px]
+                md:text-[50px]
+                lg:text-[58px]
+                xl:text-[60px]
+              "
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               If you can{" "}
@@ -208,7 +264,19 @@ function Hero() {
             </h1>
 
             <p
-              className=" mt-7 max-w-[610px] text-[15px] font-medium leading-[2rem] text-neutral-800 sm:text-[16px]"
+              className="
+                mt-5
+                max-w-[610px]
+                text-[13px]
+                font-medium
+                leading-[1.8rem]
+                text-neutral-800
+                sm:mt-6
+                sm:text-[15px]
+                sm:leading-[1.9rem]
+                md:text-[16px]
+                lg:mt-7
+              "
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               We bring a modern and engineering-driven approach to every
@@ -221,7 +289,32 @@ function Hero() {
             {/* BUTTON */}
             <a
               href="#contact"
-              className=" mt-9 inline-flex items-center justify-center rounded-[8px] px-9 py-3.5 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none"
+              className="
+                mt-7
+                inline-flex
+                w-full
+                max-w-[190px]
+                items-center
+                justify-center
+                rounded-[8px]
+                px-7
+                py-3
+                text-[14px]
+                font-semibold
+                text-white
+                transition-all
+                duration-300
+                hover:-translate-y-0.5
+                hover:shadow-lg
+                focus:outline-none
+                sm:mt-8
+                sm:w-auto
+                sm:max-w-none
+                sm:px-9
+                sm:py-3.5
+                sm:text-[15px]
+                lg:mt-9
+              "
               style={{
                 backgroundColor: BLUE,
                 fontFamily: "Montserrat, sans-serif",
@@ -238,18 +331,43 @@ function Hero() {
           </div>
         </div>
 
-        {/* MOBILE IMAGES */}
-        <div className="mt-[-20px] grid grid-cols-2 gap-4 lg:hidden">
+        {/* MOBILE / TABLET IMAGES */}
+        <div
+          className="
+            mt-8
+            grid
+            grid-cols-1
+            gap-4
+            sm:grid-cols-2
+            lg:hidden
+          "
+        >
           <img
             src={IMG.left}
             alt="Baha Turk building"
-            className="h-48 w-full rounded-[28px] object-cover"
+            className="
+              h-[220px]
+              w-full
+              rounded-[24px]
+              object-cover
+              sm:h-[250px]
+              sm:rounded-[28px]
+              md:h-[280px]
+            "
           />
 
           <img
             src={IMG.right}
             alt="Baha Turk building"
-            className="h-48 w-full rounded-[28px] object-cover"
+            className="
+              h-[220px]
+              w-full
+              rounded-[24px]
+              object-cover
+              sm:h-[250px]
+              sm:rounded-[28px]
+              md:h-[280px]
+            "
           />
         </div>
       </div>
@@ -263,49 +381,130 @@ function Hero() {
 
 function About() {
   return (
-    <section className="px-5 py-6 sm:px-8 lg:py-10">
+    <section className="px-4 py-6 sm:px-6 sm:py-8 md:px-8 lg:px-10 lg:py-10 xl:px-12">
       <div
-        className=" relative mx-auto max-w-[1200px] overflow-hidden rounded-[34px] lg:rounded-[40px]"
-        style={{ backgroundColor: BLUE }} >
+        className="
+          relative
+          mx-auto
+          min-h-[500px]
+          w-full
+          max-w-[1200px]
+          overflow-hidden
+          rounded-[26px]
+          sm:min-h-[520px]
+          sm:rounded-[30px]
+          md:min-h-[540px]
+          lg:min-h-[560px]
+          lg:rounded-[40px]
+        "
+        style={{ backgroundColor: BLUE }}
+      >
+        {/* BUILDING IMAGE */}
 
-        {/* =====================================================
-            BUILDING SINCE IMAGE
-            z-index: 1
-           ===================================================== */}
         <img
           src={IMG.about}
-          alt=""
-          className=" absolute inset-0 z-[0] h-full w-full object-cover object-right opacity-100"/>
+          alt="Baha Turk construction project"
+          className="
+            absolute
+            inset-0
+            z-0
+            h-full
+            w-full
+            object-cover
+            object-[72%_center]
+            opacity-100
+            sm:object-[75%_center]
+            lg:object-right
+          "
+        />
 
-        {/* =====================================================
-            BLUE OVERLAY
-            z-index: 2
-           ===================================================== */}
-        <div
-          className=" absolute inset-0 z-[2] bg-gradient-to-r from-[#1296D0] from-0% via-[#1296D0]/80 via-35% to-transparent to-70% " />
+        {/* BLUE OVERLAY */}
 
-        {/* =====================================================
-            VERY LIGHT BLUE DUST
-            z-index: 2
-           ===================================================== */}
         <div
-          className=" pointer-events-none absolute inset-y-0 right-0 z-[2] w-[38%] bg-gradient-to-l from-[#1296D0]/[0.14] via-[#1296D0]/[0.07] to-transparent blur-[12px]"/>
+          className="
+            absolute
+            inset-0
+            z-[2]
+            bg-gradient-to-r
+            from-[#1296D0]
+            from-0%
+            via-[#1296D0]/90
+            via-35%
+            to-transparent
+            to-[75%]
+            sm:via-[#1296D0]/80
+            sm:to-[72%]
+          "
+        />
 
-        {/* =====================================================
-            CONTENT
-            z-index: 3
-           ===================================================== */}
+        {/* VERY LIGHT BLUE DUST */}
+
         <div
-          className=" relative z-[3] px-7 py-14 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+          className="
+            pointer-events-none
+            absolute
+            inset-y-0
+            right-0
+            z-[2]
+            hidden
+            w-[38%]
+            bg-gradient-to-l
+            from-[#1296D0]/[0.10]
+            via-[#1296D0]/[0.04]
+            to-transparent
+            blur-[12px]
+            md:block
+          "
+        />
+
+        {/* CONTENT */}
+
+        <div
+          className="
+            relative
+            z-[3]
+            px-6
+            py-12
+            sm:px-10
+            sm:py-14
+            md:px-12
+            md:py-16
+            lg:px-16
+            lg:py-20
+          "
+        >
           <h2
-            className=" text-[38px] font-extrabold leading-tight tracking-[-1px] text-white sm:text-[46px]"
+            className="
+              max-w-[600px]
+              text-[30px]
+              font-extrabold
+              leading-tight
+              tracking-[-0.8px]
+              text-white
+              sm:text-[38px]
+              md:text-[44px]
+              lg:text-[46px]
+            "
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             Building Since 2001
           </h2>
 
           <div
-            className=" mt-6 max-w-[570px] space-y-6 text-[15px] font-medium leading-[1.9rem] text-white sm:text-[16px]"
+            className="
+              mt-5
+              max-w-[570px]
+              space-y-5
+              text-[13px]
+              font-medium
+              leading-[1.8rem]
+              text-white
+              sm:mt-6
+              sm:space-y-6
+              sm:text-[15px]
+              sm:leading-[1.9rem]
+              md:text-[16px]
+            "
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             <p>
@@ -323,9 +522,34 @@ function About() {
           </div>
 
           {/* ABOUT BUTTON */}
+
           <a
             href="#about"
-            className=" mt-9 inline-flex items-center gap-3 rounded-[8px] bg-white px-6 py-3.5 text-[14px] font-bold transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-100"
+            className="
+              mt-7
+              inline-flex
+              w-full
+              max-w-[210px]
+              items-center
+              justify-center
+              gap-3
+              rounded-[8px]
+              bg-white
+              px-5
+              py-3
+              text-[13px]
+              font-bold
+              transition-all
+              duration-300
+              hover:-translate-y-0.5
+              hover:bg-neutral-100
+              sm:mt-9
+              sm:w-auto
+              sm:max-w-none
+              sm:px-6
+              sm:py-3.5
+              sm:text-[14px]
+            "
             style={{
               color: BLUE,
               fontFamily: "Montserrat, sans-serif",
@@ -346,38 +570,121 @@ function About() {
 
 function Stats() {
   return (
-    <section className="px-5 py-20 sm:px-8 lg:py-24">
-      <div className="mx-auto max-w-[1200px]">
-
+    <section
+      className="
+        px-4
+        py-14
+        sm:px-6
+        sm:py-16
+        md:px-8
+        md:py-20
+        lg:px-10
+        lg:py-24
+        xl:px-12
+      "
+    >
+      <div className="mx-auto w-full max-w-[1200px]">
         {/* TITLE */}
-        <div className="flex items-center justify-center gap-3 text-center">
-          <Sparkle className="h-8 w-8 shrink-0 sm:h-10 sm:w-10" />
+
+        <div
+          className="
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-2
+            text-center
+            sm:flex-row
+            sm:gap-3
+          "
+        >
+          <Sparkle className="h-7 w-7 shrink-0 sm:h-9 sm:w-9 lg:h-10 lg:w-10" />
 
           <h2
-            className=" text-[29px] font-extrabold leading-tight tracking-[-0.7px] text-black sm:text-[37px] "
+            className="
+              text-[25px]
+              font-extrabold
+              leading-tight
+              tracking-[-0.5px]
+              text-black
+              sm:text-[30px]
+              md:text-[34px]
+              lg:text-[37px]
+            "
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             Experience.{" "}
-            <span style={{ color: BLUE }}>Scale.</span>{" "}
-            Engineering.
+            <span style={{ color: BLUE }}>Scale.</span> Engineering.
           </h2>
         </div>
 
         {/* CARDS */}
+
         <ul
-          className=" mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          className="
+            mt-10
+            grid
+            grid-cols-1
+            gap-4
+            sm:mt-12
+            sm:grid-cols-2
+            sm:gap-5
+            lg:mt-14
+            lg:grid-cols-5
+          "
+        >
           {STATS.map((stat) => (
             <li
               key={stat.value}
-              className=" group flex min-h-[315px] flex-col items-center rounded-[30px] border bg-white px-5 pb-8 pt-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="
+                group
+                flex
+                min-h-[275px]
+                flex-col
+                items-center
+                rounded-[24px]
+                border
+                bg-white
+                px-5
+                pb-7
+                pt-7
+                text-center
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-xl
+                sm:min-h-[290px]
+                sm:rounded-[28px]
+                lg:min-h-[315px]
+                lg:rounded-[30px]
+                lg:px-5
+                lg:pb-8
+                lg:pt-8
+              "
               style={{
                 borderColor: `${BLUE}70`,
                 fontFamily: "Montserrat, sans-serif",
               }}
             >
               {/* ICON CIRCLE */}
+
               <div
-                className=" flex h-[118px] w-[118px] shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-105"
+                className="
+                  flex
+                  h-[95px]
+                  w-[95px]
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  transition-transform
+                  duration-300
+                  group-hover:scale-105
+                  sm:h-[105px]
+                  sm:w-[105px]
+                  lg:h-[118px]
+                  lg:w-[118px]
+                "
                 style={{
                   backgroundColor: BLUE_SOFT,
                   color: BLUE,
@@ -387,16 +694,37 @@ function Stats() {
               </div>
 
               {/* NUMBER */}
+
               <p
-                className=" mt-5 text-[30px] font-extrabold leading-tight"
+                className="
+                  mt-4
+                  text-[26px]
+                  font-extrabold
+                  leading-tight
+                  sm:mt-5
+                  sm:text-[28px]
+                  lg:text-[30px]
+                "
                 style={{ color: BLUE_DARK }}
               >
                 {stat.value}
               </p>
 
               {/* LABEL */}
+
               <p
-                className=" mt-3 max-w-[205px] text-[14px] font-medium leading-[1.55rem] text-neutral-800">
+                className="
+                  mt-2
+                  max-w-[205px]
+                  text-[13px]
+                  font-medium
+                  leading-[1.45rem]
+                  text-neutral-800
+                  sm:mt-3
+                  sm:text-[14px]
+                  sm:leading-[1.55rem]
+                "
+              >
                 {stat.label}
               </p>
             </li>
@@ -414,7 +742,7 @@ function Stats() {
 export default function BuildingSince() {
   return (
     <main
-      className="min-h-screen bg-white text-neutral-900 antialiased"
+      className="min-h-screen w-full overflow-x-hidden bg-white text-neutral-900 antialiased"
       style={{
         fontFamily: "Montserrat, sans-serif",
       }}
@@ -425,4 +753,3 @@ export default function BuildingSince() {
     </main>
   );
 }
-
