@@ -1,8 +1,6 @@
 import React from "react";
 
-import AboutValues from "./AboutValues";
-import AboutEngin from "./AboutEngin";
-import AboutJourney from "./AboutJourney";
+
 
 function About() {
   return (
@@ -16,11 +14,7 @@ function About() {
         text-[#071b35]
       "
     >
-      <AboutEngin />
-
-      <AboutValues />
-
-      <AboutJourney />
+      
     </main>
   );
 }
