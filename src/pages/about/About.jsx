@@ -16,11 +16,7 @@ function About() {
         text-[#071b35]
       "
     >
-      <AboutEngin />
-
-      <AboutValues />
-
-      <AboutJourney />
+  
     </main>
   );
 }
