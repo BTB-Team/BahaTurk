@@ -1,146 +1,164 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Contact() {
-   const [form, setForm] = useState({
-      fullName: "",
-      phoneNumber: "",
-      emailAddress: "",
-      subject: "",
-      message: "",
-    });
-    const handleChange = (e) => {
-      setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
-    const handleSubmit = (e) => {
-      e.preventDefault();
-    };
-    const inputClass ="w-full bg-white border border-white/30 rounded px-3 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/60 transition-all";
   return (
-    <>
-      <section
-        className="w-full py-16 md:py-24 flex flex-col items-center justify-center text-center relative overflow-hidden">
-        <img
-          src="/images/room-4.jpg"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center"/>
-        <div
-          className="absolute inset-0"
-          style={{background:"linear-gradient(90deg, rgba(15, 153, 204, 0.88) 0%, rgba(7, 102, 139, 0.9) 52%, rgba(14, 76, 110, 0.93) 100%)",}}/>
-        <div className="relative z-10 max-w-lg px-6">
-          <p className="text-white/90 text-sm font-semibold tracking-widest uppercase mb-3">
+    <main
+      className="min-h-screen bg-white"
+      style={{ fontFamily: "Montserrat, sans-serif" }}
+    >
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden bg-[#079bc5] px-6 py-14 md:py-16">
+        {/* Background shapes */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-white blur-3xl"></div>
+
+          <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-blue-300 blur-3xl"></div>
+        </div>
+
+        <div className="relative mx-auto max-w-3xl text-center text-white">
+          <p className="mb-4 text-sm font-semibold tracking-wide">
             Contact Baha Turk
           </p>
-          <h1 className="text-white text-3xl md:text-4xl font-extrabold mb-5">
+
+          <h1 className="text-3xl font-extrabold md:text-5xl">
             Let's Build the Future.
           </h1>
-          <p className="text-white/85 text-sm md:text-base leading-relaxed">
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-white/90 md:text-base">
             Whether you are looking for more information about Baha Turk,
-            interested in Solh Residential Project, or would like to discuss an
-            opportunity with our team, we would be pleased to hear from you.
+            interested in Solh Residential Project, or would like to discuss
+            an opportunity with our team, we would be pleased to hear from
+            you.
           </p>
         </div>
       </section>
 
-      <section className="py-14 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div
-            className="rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-10 md:gap-14"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--color-navy) 0%, var(--color-accent) 100%)",
-            }}>
+      {/* ================= CONTACT FORM ================= */}
+      <section className="bg-white px-5 py-14 md:px-10 md:py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-2xl bg-gradient-to-br from-[#099ec9] to-[#058db5] p-6 shadow-xl md:p-10">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.8fr_1.5fr]">
+              
+              {/* ================= LEFT ================= */}
+              <div className="text-white">
+                <h2 className="max-w-xs text-2xl font-extrabold leading-tight md:text-3xl">
+                  Get in touch
+                  <br />
+                  with our team.
+                </h2>
 
-            <div className="md:w-60 flex-shrink-0">
-              <h2 className="text-white text-2xl font-extrabold leading-snug mb-3">
-                Get in touch
-                <br/>
-                with our team.
-              </h2>
-              <div className="w-10 h-[2px] bg-white/70 mb-4" />
-              <p className="text-white/75 text-sm leading-relaxed">
-                We're here to answer your questions and help you take the next
-                step with confidence.
-              </p>
-            </div>
+                <div className="mt-4 h-[2px] w-24 bg-white/60"></div>
 
-            <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-4">
+                <p className="mt-5 max-w-xs text-sm leading-5 text-white/90">
+                  We&apos;re here to answer your questions and help you take
+                  the next step with confidence.
+                </p>
+              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* ================= FORM ================= */}
+              <form
+                className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                {/* Full Name */}
                 <div>
-                  <label className="block text-white/90 text-xs font-medium mb-1.5">
+                  <label
+                    htmlFor="fullName"
+                    className="mb-2 block text-xs font-medium text-white"
+                  >
                     Full Name
                   </label>
+
                   <input
+                    id="fullName"
                     type="text"
-                    name="fullName"
-                    value={form.fullName}
-                    onChange={handleChange}
-                    className={inputClass}/>
+                    placeholder="Enter your full name"
+                    className="h-10 w-full rounded-md border border-white/30 bg-white px-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70"
+                  />
                 </div>
 
+                {/* Phone Number */}
                 <div>
-                  <label className="block text-white/90 text-xs font-medium mb-1.5">
+                  <label
+                    htmlFor="phone"
+                    className="mb-2 block text-xs font-medium text-white"
+                  >
                     Phone Number
                   </label>
+
                   <input
+                    id="phone"
                     type="tel"
-                    name="phoneNumber"
-                    value={form.phoneNumber}
-                    onChange={handleChange}
-                    className={inputClass}/>
+                    placeholder="Enter your phone number"
+                    className="h-10 w-full rounded-md border border-white/30 bg-white px-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70"
+                  />
                 </div>
 
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Email */}
                 <div>
-                  <label className="block text-white/90 text-xs font-medium mb-1.5">
+                  <label
+                    htmlFor="email"
+                    className="mb-2 block text-xs font-medium text-white"
+                  >
                     Email Address
                   </label>
+
                   <input
+                    id="email"
                     type="email"
-                    name="emailAddress"
-                    value={form.emailAddress}
-                    onChange={handleChange}
-                    className={inputClass} />
+                    placeholder="Enter your email"
+                    className="h-10 w-full rounded-md border border-white/30 bg-white px-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70"
+                  />
                 </div>
 
+                {/* Subject */}
                 <div>
-                  <label className="block text-white/90 text-xs font-medium mb-1.5">
+                  <label
+                    htmlFor="subject"
+                    className="mb-2 block text-xs font-medium text-white"
+                  >
                     Subject
                   </label>
+
                   <input
+                    id="subject"
                     type="text"
-                    name="subject"
-                    value={form.subject}
-                    onChange={handleChange}
-                    className={inputClass}/>
+                    placeholder="Enter subject"
+                    className="h-10 w-full rounded-md border border-white/30 bg-white px-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70"
+                  />
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-white/90 text-xs font-medium mb-1.5">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className={`${inputClass} resize-none`}/>
-              </div>
+                {/* Message */}
+                <div className="sm:col-span-2">
+                  <label
+                    htmlFor="message"
+                    className="mb-2 block text-xs font-medium text-white"
+                  >
+                    Message
+                  </label>
 
-              <div>
-                <button
-                  type="submit"
-                  className="bg-accent hover:bg-accent-hover active:scale-95 text-white text-sm font-semibold px-8 py-3 rounded transition-all border border-white/25">
-                  Send Message
-                </button>
-              </div>
-            </form>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Write your message..."
+                    className="w-full resize-none rounded-md border border-white/30 bg-white px-3 py-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70"
+                  ></textarea>
+                </div>
+
+                {/* Button */}
+                <div className="sm:col-span-2">
+                  <button
+                    type="submit"
+                    className="rounded-md bg-[#18afd3] px-7 py-3 text-xs font-bold text-white shadow-sm transition duration-300 hover:bg-[#0c91b5] hover:shadow-lg"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

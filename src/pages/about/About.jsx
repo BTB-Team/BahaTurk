@@ -1,7 +1,28 @@
-import React from "react"
+import React from "react";
 
-export default function About() {
+import AboutValues from "./AboutValues";
+import AboutEngin from "./AboutEngin";
+import AboutJourney from "./AboutJourney";
+
+function About() {
   return (
-    <h1>About Us</h1>
-  )
+    <main
+      className="
+        about-page
+        min-h-screen
+        w-full
+        overflow-x-hidden
+        bg-white
+        text-[#071b35]
+      "
+    >
+      <AboutEngin />
+
+      <AboutValues />
+
+      <AboutJourney />
+    </main>
+  );
 }
+
+export default About;
