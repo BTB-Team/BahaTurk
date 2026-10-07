@@ -1,0 +1,31 @@
+{
+  "name": "baha-turk-website",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n CLIENT,API -c blue,green --kill-others-on-fail \"pnpm dev:client\" \"pnpm dev:server\"",
+    "dev:client": "vite",
+    "dev:server": "json-server --watch db.json --port 3001  -s ./public",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "lucide-react": "^1.48.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.3",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.0",
+    "concurrently": "^10.0.5",
+    "json-server": "^1.0.0-beta.15",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  }
+}

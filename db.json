@@ -1,0 +1,157 @@
+{
+  "company": {
+    "name": "Baha Turk Construction Company",
+    "tagline": "Engineering That Lasts.",
+    "established": 2001,
+    "contact": {
+      "address": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    }
+  },
+  "keyNumbers": [
+    { "value": "2001", "label": "Established" },
+    {
+      "value": "118",
+      "label": "Residential Blocks Planned at Solh Residential Project"
+    },
+    { "value": "20", "label": "Residential Blocks in Phase One" },
+    { "value": "32 Jeribs", "label": "Phase One Project Area" },
+    { "value": "75%", "label": "Planned Green & Open Space" }
+  ],
+  "journey": [
+    {
+      "year": "2001",
+      "description": "Baha Turk begins its journey in Turkey."
+    },
+    {
+      "year": "International Experience",
+      "description": "Technical knowledge, construction expertise, and modern methods become central to our approach."
+    },
+    {
+      "year": "Afghanistan",
+      "description": "Baha Turk enters Afghanistan with a vision to contribute to modern construction and urban development."
+    },
+    {
+      "year": "Solh Residential Project",
+      "description": "Our first and largest project in Afghanistan brings our engineering approach to the heart of Kabul."
+    },
+    {
+      "year": "The Future",
+      "description": "Our ambition is to expand into larger developments and introduce advanced construction technologies."
+    }
+  ],
+  "projects": [
+    {
+      "id": "solh-residential-project",
+      "is_featured": true,
+      "title": "Solh Residential Project",
+      "subtitle": "Modern Engineering. Lasting Quality. A Better Future.",
+      "summary": "Located in Makroyan 5, Kabul, Solh Residential Project is Baha Turk's first and largest project in Afghanistan. Developed in cooperation with the Ministry of Urban Development and Housing, the project aims to create a modern, safe, and well-planned residential community...",
+      "cover_image": "/images/projects/solh-main.jpg",
+      "status": "Under Development",
+      "specs": {
+        "location": "Makroyan 5, Kabul",
+        "area": "32 Jeribs",
+        "blocks": "20 Blocks",
+        "total_planned_blocks": 118
+      },
+      "engineering": {
+        "title": "Strength Begins Below the Surface.",
+        "description": "The strength of Solh Residential Project begins with its foundation. Each building is constructed on 96 piles extending approximately 20 meters into the ground...",
+        "image": "/images/projects/solh-engineering.jpg",
+        "piles_per_building": "96",
+        "pile_depth": "~20 m",
+        "foundation_thickness": "1.5 m",
+        "technology_title": "Tunnel Form System",
+        "technology_description": "One of the defining features of Solh Residential Project is the use of the Tunnel Form System, introduced by Baha Turk in Afghanistan for the first time...",
+        "technology_features": [
+          "Greater Structural Integrity",
+          "Consistent Construction Quality",
+          "Faster Construction Execution",
+          "Reduced Execution Errors"
+        ]
+      },
+      "safety": {
+        "earthquake_resistance_richter": 10,
+        "description": "Safety is a fundamental priority in the design and construction of Solh Residential Project. Through its integrated structural system and engineering approach, the structural system is designed for resistance of up to 10 on the Richter scale."
+      },
+      "location_mapping": {
+        "title": "A Prime Location in Makroyan 5",
+        "description": "Solh Residential Project is located in Makroyan 5, Kabul, with convenient access to the city's important destinations.",
+        "map_image_url": "/images/projects/solh-map.png",
+        "nearby_places": [
+          "Kabul International Airport",
+          "Wazir Akbar Khan",
+          "Shahr-e-Naw",
+          "Business & Admin Areas"
+        ]
+      },
+      "legal_assurance": {
+        "title": "Ownership Built on Confidence.",
+        "description": "Official Sharia Deeds for residential units are issued through the Ministry of Urban Development and Housing. The Ministry is responsible for land acquisition, urban planning, technical supervision, plan processing, and approval, while the full implementation of the project is carried out by Baha Turk Construction Company."
+      }
+    }
+  ],
+
+  "residence_types": [
+    {
+      "id": 1,
+      "project_id": "solh-residential-project",
+      "name": "3-Room Residence",
+      "size": "Approx. 137 m²",
+      "description": "Practical living spaces designed for modern family life.",
+      "image_url": "/images/residences/3-room.jpg",
+      "units_per_floor": 4
+    },
+    {
+      "id": 2,
+      "project_id": "solh-residential-project",
+      "name": "4-Room Residence",
+      "size": "Approx. 167 m²",
+      "description": "More space, flexibility, and comfort for growing families.",
+      "image_url": "/images/residences/4-room.jpg",
+      "units_per_floor": 4
+    },
+    {
+      "id": 3,
+      "project_id": "solh-residential-project",
+      "name": "5-Room Residence",
+      "size": "Approx. 211 m²",
+      "description": "Generous interiors designed for spacious family living.",
+      "image_url": "/images/residences/5-room.jpg",
+      "units_per_floor": 4
+    },
+    {
+      "id": 4,
+      "project_id": "solh-residential-project",
+      "name": "VIP Residence",
+      "size": "Approx. 300 m²",
+      "description": "Larger residences offering greater privacy, space, and comfort.",
+      "image_url": "/images/residences/vip.jpg",
+      "units_per_floor": 2
+    }
+  ],
+
+  "project_amenities": [
+    { "id": 1, "project_id": "solh-residential-project", "title": "24/7 Modern Elevators", "description": "Reliable vertical access for everyday convenience." },
+    { "id": 2, "project_id": "solh-residential-project", "title": "Dedicated Parking", "description": "Organized parking facilities for residents." },
+    { "id": 3, "project_id": "solh-residential-project", "title": "Independent Water Wells", "description": "Independent water infrastructure for each block." },
+    { "id": 4, "project_id": "solh-residential-project", "title": "Central Heating", "description": "Integrated central heating for residential comfort." },
+    { "id": 5, "project_id": "solh-residential-project", "title": "Standard Infrastructure", "description": "Essential infrastructure developed according to engineering requirements." },
+    { "id": 6, "project_id": "solh-residential-project", "title": "Public Spaces", "description": "Organized common areas designed for residents." }
+  ],
+
+  "project_gallery": [
+    { "id": 1, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic1.jpg", "alt_text": "Exterior View 1" },
+    { "id": 2, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic2.jpg", "alt_text": "Exterior View 2" },
+    { "id": 3, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic3.jpg", "alt_text": "Interior Living Room" },
+    { "id": 4, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic4.jpg", "alt_text": "Interior Bedroom" },
+    { "id": 5, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic5.jpg", "alt_text": "Interior Corridor" }
+  ],
+
+  "news": [],
+  "contactMessages": [],
+  "salesInquiries": []
+}
