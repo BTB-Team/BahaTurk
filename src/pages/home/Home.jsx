@@ -1,7 +1,15 @@
-import React from "react"
+import React from "react";
 
-export default function Home() {
+import Hero from "./Hero";
+import BuildingSince from "./BuildingSince";
+
+function Home() {
   return (
-    <h1>Welcome to Our Website</h1>
-  )
+    <main className="w-full overflow-x-hidden bg-white">
+      <Hero />
+      <BuildingSince />
+    </main>
+  );
 }
+
+export default Home;

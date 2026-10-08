@@ -1,7 +1,19 @@
-import React from "react"
+import React from "react";
 
-export default function About() {
+function About() {
   return (
-    <h1>About Us</h1>
-  )
+    <main
+      className="
+        about-page
+        min-h-screen
+        w-full
+        overflow-x-hidden
+        bg-white
+        text-[#071b35]
+      "
+    >
+    </main>
+  );
 }
+
+export default About;
