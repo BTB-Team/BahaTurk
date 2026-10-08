@@ -49,7 +49,7 @@
       "title": "Solh Residential Project",
       "subtitle": "Modern Engineering. Lasting Quality. A Better Future.",
       "summary": "Located in Makroyan 5, Kabul, Solh Residential Project is Baha Turk's first and largest project in Afghanistan. Developed in cooperation with the Ministry of Urban Development and Housing, the project aims to create a modern, safe, and well-planned residential community...",
-      "cover_image": "/images/projects/solh-main.jpg",
+      "cover_image": "/images/projects/solh-main.webp",
       "status": "Under Development",
       "specs": {
         "location": "Makroyan 5, Kabul",
@@ -60,7 +60,9 @@
       "engineering": {
         "title": "Strength Begins Below the Surface.",
         "description": "The strength of Solh Residential Project begins with its foundation. Each building is constructed on 96 piles extending approximately 20 meters into the ground...",
-        "image": "/images/projects/solh-engineering.jpg",
+        "image": "/images/engineering1.webp",
+        "technology_image": "/images/Rectangle39.webp",
+        "technology_image_secondary": "/images/Rectangle40.webp",
         "piles_per_building": "96",
         "pile_depth": "~20 m",
         "foundation_thickness": "1.5 m",
@@ -102,7 +104,7 @@
       "name": "3-Room Residence",
       "size": "Approx. 137 m²",
       "description": "Practical living spaces designed for modern family life.",
-      "image_url": "/images/residences/3-room.jpg",
+      "image_url": "/images/room-1.webp",
       "units_per_floor": 4
     },
     {
@@ -111,7 +113,7 @@
       "name": "4-Room Residence",
       "size": "Approx. 167 m²",
       "description": "More space, flexibility, and comfort for growing families.",
-      "image_url": "/images/residences/4-room.jpg",
+      "image_url": "/images/room-2.webp",
       "units_per_floor": 4
     },
     {
@@ -120,7 +122,7 @@
       "name": "5-Room Residence",
       "size": "Approx. 211 m²",
       "description": "Generous interiors designed for spacious family living.",
-      "image_url": "/images/residences/5-room.jpg",
+      "image_url": "/images/room-3.webp",
       "units_per_floor": 4
     },
     {
@@ -129,7 +131,7 @@
       "name": "VIP Residence",
       "size": "Approx. 300 m²",
       "description": "Larger residences offering greater privacy, space, and comfort.",
-      "image_url": "/images/residences/vip.jpg",
+      "image_url": "/images/room-4.webp",
       "units_per_floor": 2
     }
   ],
