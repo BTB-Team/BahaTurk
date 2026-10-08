@@ -159,7 +159,7 @@ export default function Engineering() {
         {/* RIGHT IMAGE */}
         <div className="w-full lg:flex-1 lg:max-w-[566px] h-[240px] md:h-[350px] lg:h-auto overflow-hidden rounded-[20px] order-1 lg:order-2">
           <img
-            src={engineeringData?.image || "/images/Rectangle31.png"}
+            src={engineeringData?.image || "/images/engineering1.webp"}
             alt={engineeringData?.title || "Engineering construction workers"}
             className="h-full w-full object-cover"
           />
