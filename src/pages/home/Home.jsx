@@ -9,6 +9,7 @@ import Technology from "./Technology";
 import Safety from "./Safety";
 import Amenities from "./Amenities";
 import Location from "./Location";
+import ProjectCTA from "./ProjectCTA";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <Safety />
       <Amenities />
       <Location />
+      <ProjectCTA />
     </main>
   );
 }

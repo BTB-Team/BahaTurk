@@ -1,98 +1,93 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
-export default function Amenities() {
-  const amenities = [
-    {
-      title: "24/7 Modern Elevators",
-      description: "Reliable vertical access for everyday convenience.",
-    },
-    {
-      title: "Dedicated Parking",
-      description: "Organized parking facilities for residents.",
-    },
-    {
-      title: "Independent Water Wells",
-      description: "Independent water infrastructure for each block.",
-    },
-    {
-      title: "Central Heating",
-      description: "Integrated central heating for residential comfort.",
-    },
-    {
-      title: "Standard Infrastructure",
-      description: "Essential infrastructure developed according to engineering requirements.",
-    },
-    {
-      title: "Public Spaces",
-      description: "Organized common areas designed for residents.",
-    },
-  ];
+const Amenities = () => {
+  const [amenitiesData, setAmenitiesData] = useState([]);
+
+  useEffect(() => {
+    const getAmenitiesData = async () => {
+      try {
+        const response = await fetch("/db.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch amenities data");
+        }
+        const data = await response.json();
+        setAmenitiesData(data.project_amenities);
+      } catch (error) {
+        console.error("Error fetching amenities data:", error);
+      }
+    };
+    getAmenitiesData();
+  }, []);
 
   return (
-    <section className="w-full overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-16">
-      <div className="mx-auto w-full max-w-[1280px]">
-        {/* TOP CONTENT */}
-        <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14">
-          {/* LEFT CONTENT */}
-          <div className="w-full">
-            {/* SECTION LABEL */}
-            <div className="mb-4 flex items-center gap-2 sm:mb-5">
-              <span className="h-[3px] w-8 shrink-0 bg-[#159FD3] sm:w-11" />
-              <span className="text-[14px] font-semibold tracking-[-0.2px] text-[#159FD3] sm:text-[17px]">
-                AMENITIES
+    <section className="w-full bg-white py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* top */}
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1fr] lg:gap-14">
+          {/* content */}
+          <div>
+            <div className="mb-3 flex items-center gap-2">
+              <span className="h-[2px] w-8 bg-accent" />
+
+              <span className="text-lg font-semibold uppercase tracking-wide text-accent">
+                Amenities
               </span>
             </div>
 
-            {/* SMALL TITLE */}
-            <p className="mb-3 text-[14px] font-medium text-[#111827] sm:mb-4 sm:text-[17px]">
-              EVERYDAY COMFORT
+            <p className="mb-2 text-base font-medium uppercase text-black">
+              Everyday Comfort
             </p>
 
-            {/* MAIN TITLE */}
-            <h2 className="max-w-[620px] text-[30px] font-extrabold leading-[1.15] tracking-[-1px] text-[#050505] sm:text-[38px] md:text-[42px] lg:text-[44px] xl:text-[46px]">
-              Designed Around the Way
-              <br className="hidden sm:block" />
-              You{" "}
-              <span className="text-[#159FD3]">
-                Live.
-              </span>
+            <h2 className="text-4xl font-extrabold leading-14 tracking-tight">
+              <span className="text-black">Designed Around the Way</span>
+              <br />
+              <span className="text-black">You </span>
+              <span className="text-accent">Live.</span>
             </h2>
 
-            {/* DESCRIPTION */}
-            <p className="mt-5 max-w-[650px] text-[14px] font-medium leading-[1.8] text-[#171b24] sm:mt-7 sm:text-[16px] sm:leading-[1.9]">
-              Solh Residential Project is planned as more than a
-              collection of residential buildings. It is designed as
-              a complete living environment where essential services,
-              comfort, and community come together.
+            <p className="mt-5 max-w-full lg:max-w-[580px] text-base leading-8 text-black font-semibold">
+              Solh Residential Project is planned as more than a collection of
+              residential buildings. It is designed as a complete living
+              environment where essential services, comfort, and community come
+              together.
             </p>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="w-full">
-            <div className="relative h-[220px] w-full overflow-hidden rounded-[18px] sm:h-[280px] sm:rounded-[20px] md:h-[320px] lg:h-[310px] xl:h-[330px]">
-              <img
-                src="/images/amenities-room.png"
-                alt="Amenities Interior"
-                className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
+          {/* image */}
+          <div className="overflow-hidden rounded-xl">
+            <img
+              src="/images/amenities.png"
+              alt="Solh residential interior"
+              className="h-[220px] w-full object-cover sm:h-[280px]"
+            />
           </div>
         </div>
 
-        {/* AMENITIES CARDS */}
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:mt-12 lg:grid-cols-3">
-          {amenities.map((item, index) => (
+        {/* amenities grid */}
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {amenitiesData.map((item) => (
             <div
-              key={index}
-              className="flex min-h-[145px] flex-col rounded-[18px] border-2 border-[#8fd5e8] bg-white px-5 py-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(21,159,211,0.12)] sm:min-h-[155px] sm:rounded-[20px] sm:px-7 sm:py-7"
+              key={item.title}
+              className="
+                min-h-[108px]
+                rounded-xl
+                border
+                border-accent
+                bg-white
+                px-8
+                py-5
+                transition
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-[0_8px_25px_rgba(21,159,204,0.10)]
+                hover:border-2
+              "
             >
-              {/* CARD TITLE */}
-              <h3 className="text-[18px] font-extrabold leading-[1.25] tracking-[-0.4px] text-[#159FD3] sm:text-[20px] md:text-[21px]">
+              <h3 className="text-base font-bold text-accent sm:text-xl">
                 {item.title}
               </h3>
 
-              {/* CARD DESCRIPTION */}
-              <p className="mt-2 max-w-[360px] text-[14px] font-medium leading-[1.7] text-[#111111] sm:text-[15px]">
+              <p className="mt-1.5 text-sm leading-5 text-black font-medium sm:text-base">
                 {item.description}
               </p>
             </div>
@@ -101,4 +96,6 @@ export default function Amenities() {
       </div>
     </section>
   );
-}
+};
+
+export default Amenities;
