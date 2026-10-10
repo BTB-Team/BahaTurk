@@ -6,9 +6,9 @@ import FeaturedProject from "../../components/ui/FeaturedProject";
 import Residences from "../../components/ui/Residences";
 import Engineering from "./Engineering";
 import Technology from "./Technology";
-import Safety from "./Safety";
-import Amenities from "./Amenities";
-import Location from "./Location";
+import SafetySection from "./SafetySection";
+import AmenitiesSection from "./AmenitiesSection";
+import LocationSection from "./LocationSection";
 import ProjectCTA from "./ProjectCTA";
 
 function Home() {
@@ -20,9 +20,9 @@ function Home() {
       <Residences />
       <Engineering />
       <Technology />
-      <Safety />
-      <Amenities />
-      <Location />
+      <SafetySection />
+      <AmenitiesSection />
+      <LocationSection />
       <ProjectCTA />
     </main>
   );

@@ -2,7 +2,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const ProjectCTA = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+    <section className="bahaturk-inter relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
       {/* background glow */}
       <div
         className="
@@ -23,11 +23,11 @@ const ProjectCTA = () => {
 
       {/* content */}
       <div className="relative z-10 mx-auto max-w-[800px] px-5 text-center">
-        <p className="text-sm font-medium uppercase text-black sm:text-base">
+        <p className="mb-2 text-base uppercase text-text">
           Your Future Starts Here
         </p>
 
-        <h2 className="mt-4 text-3xl font-bold leading-10 sm:leading-14 lg:leading-20 text-black sm:text-4xl lg:text-5xl">
+        <h2 className="mt-4 text-3xl font-extrabold leading-10 sm:leading-14 lg:leading-20 text-text sm:text-4xl lg:text-5xl">
           More Than a Home.
           <br />
           An Investment in <span className="text-accent">Your Future.</span>
@@ -50,10 +50,10 @@ const ProjectCTA = () => {
               rounded-xl
               bg-accent
               px-5
-              py-3
+              py-4
               text-xs
               sm:text-xl
-              font-semibold
+              font-medium
               text-white
               transition
               hover:bg-accent-hover
@@ -76,10 +76,10 @@ const ProjectCTA = () => {
               border-accent
               bg-white
               px-5
-              py-3
+              py-4
               text-sm
               sm:text-xl
-              font-semibold
+              font-medium
               text-accent
               transition
               hover:bg-tint
