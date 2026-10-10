@@ -95,7 +95,7 @@ const Safety = () => {
                   Up To
                 </p>
 
-                <p className="mt-0 text-6xl sm:text-[150px] font-bold leading-none text-accent">
+                <p className="mt-0 text-6xl sm:text-[150px] font-bold leading-none bg-linear-to-t from-text to-accent bg-clip-text text-transparent">
                   {safetyData?.earthquake_resistance_richter || 10}
                 </p>
 
@@ -105,9 +105,9 @@ const Safety = () => {
 
                 {/* wave */}
                 <div className="mt-6 flex items-center gap-3 text-accent">
-                  <span className="h-[2px] w-8 bg-linear-to-r from-white to-accent" />
-                  <IoMdPulse className="text-3xl leading-none" />
-                  <span className="h-[2px] w-8 bg-linear-to-l from-white to-accent" />
+                  <span className="h-[3px] w-12 bg-linear-to-r from-white to-accent" />
+                  <IoMdPulse className="text-6xl leading-none" />
+                  <span className="h-[3px] w-12 bg-linear-to-l from-white to-accent" />
                 </div>
               </div>
             </div>

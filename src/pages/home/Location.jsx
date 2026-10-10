@@ -1,4 +1,3 @@
-import { icons } from "lucide-react";
 import { useEffect, useState } from "react";
 import { FaLocationPinLock } from "react-icons/fa6";
 import { MdMapsHomeWork } from "react-icons/md";
@@ -43,7 +42,7 @@ const Location = () => {
   return (
     <section className="w-full bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-4">
+        <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-6">
           {/* left */}
           <div className="w-full lg:w-3/5">
             <div className="mb-3 flex items-center gap-2">
@@ -121,11 +120,11 @@ const Location = () => {
           {/* map */}
           <div className="w-full lg:w-2/5 overflow-hidden rounded-2xl flex-3 ">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6572.83772265208!2d69.19518499726588!3d34.542948691758426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16d0033e53685%3A0x7ae2e4ad2470459b!2z2YXaqdix2YjYsduM2KfZhiDZvtmG2KzZhQ!5e0!3m2!1sen!2s!4v1791531088908!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.3982141732367!2d69.2050572!3d34.5434716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16d0033e53685%3A0x7ae2e4ad2470459b!2z2YXaqdix2YjYsduM2KfZhiDZvtmG2KzZhQ!5e0!3m2!1sen!2s!4v1791634693545!5m2!1sen!2s"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"
-              className="border-0 w-full h-full "
+              className="border-0 w-full h-full"
             ></iframe>
           </div>
         </div>
