@@ -7,19 +7,20 @@ const AboutEngineering = () => {
           ENGINEERING SECTION
       ====================================================== */}
 
-      <section className=" w-full overflow-hidden bg-white px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14  ">
-        <div className="mx-auto w-full max-w-[1200px]  ">
-          {/*======================== MAIN CARD=================== */}
+      <section className="w-full overflow-hidden bg-white px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14">
+        <div className="mx-auto w-full max-w-[1200px]">
+          {/* ==================== MAIN CARD ==================== */}
 
-          <div className="h-full relative overflow-hidden rounded-[18px] border-2 border-[#8bd0e8] bg-white sm:rounded-[20px] md:rounded-[24px] ">
-            {/* =================================================
-                CONTENT
-            ================================================= */}
-            {/* Mohammadi Code: relative z-10 w-full px-5 py-7 sm:px-7  md:w-[68%] md:px-10  lg:w-[70%] lg:px-[52px]  xl:w-[72%] */}
-            <div className="relative flex  ">
-              {/* HEADING */}
-              <div className="p-12">
-                <h2 className="bahaturk-inter max-w-[686px] text-[28px] font-[700] leading-[1.3] text-black sm:text-[34px] md:text-[44px] lg:text-[64px] lg:leading-[79px] ">
+          <div className="relative h-full overflow-hidden rounded-[18px] border-2 border-[#8bd0e8] bg-white sm:rounded-[20px] md:rounded-[24px]">
+            {/* ==================== CONTENT ==================== */}
+
+            <div className="relative z-[20] flex">
+              {/* HEADING AND PARAGRAPH */}
+
+              <div className="w-full p-5 sm:p-7 md:p-10 lg:p-12 min-[1211px]:w-[72%] min-[1211px]:p-12">
+                {/* HEADING */}
+
+                <h2 className="relative z-[20] bahaturk-inter max-w-[686px] text-[28px] font-[700] leading-[1.3] text-black sm:text-[34px] md:text-[44px] xl:text-[64px] xl:leading-[79px]">
                   Engineering
                   <br />
                   Beyond
@@ -28,7 +29,7 @@ const AboutEngineering = () => {
 
                 {/* PARAGRAPH */}
 
-                <p className="bahaturk-inter text-justify w-[763px] text-[20px] font-[500] leading-[41px] lg:tracking-[0.8px] text-[#171717] mt-2">
+                <p className="relative z-[20] bahaturk-inter mt-2 w-full text-justify text-[14px] font-[500] leading-[1.9] text-[#171717] sm:text-[16px] md:text-[18px] min-[1211px]:w-[1080px] xl:w-[763px] xl:text-[20px] xl:leading-[41px] xl:tracking-[0.2px]">
                   Baha Turk Construction Company is a construction company with
                   Turkish roots, established in Turkey in 2001. Since its
                   establishment, the company has focused on developing
@@ -44,11 +45,10 @@ const AboutEngineering = () => {
                   cities we serve.
                 </p>
               </div>
-              {/* =================================================
-                CRANE IMAGE — DESKTOP
-            ================================================= */}
 
-              <div className="absolute right-0 ">
+              {/* ==================== CRANE IMAGE ==================== */}
+
+              <div className="absolute right-0 top-0 z-[10] hidden xl:block">
                 <img src="/images/tower-crane.png" alt="Construction Crane" />
               </div>
             </div>

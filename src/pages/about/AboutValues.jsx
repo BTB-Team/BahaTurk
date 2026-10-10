@@ -111,7 +111,7 @@ function ValueCard({ image, title }) {
       </div>
 
       {/* TITLE */}
-      <h3 className="leading-[33px] text-[14px] font-[700]  text-black sm:text-[16px] md:text-[20px] lg:text-[24px]">
+      <h3 className="md:leading-[33px] text-[14px] font-[700]  text-black sm:text-[16px] md:text-[20px] lg:text-[24px]">
         {title}
       </h3>
     </div>

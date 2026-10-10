@@ -39,10 +39,10 @@ const AboutJourney = () => {
       <section className="w-full overflow-hidden bg-white px-4 py-10 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-12 lg:py-20 xl:px-16">
         <div className="mx-auto w-full max-w-[1200px]">
           {/* SMALL HEADING */}
-          <div className="mb-4 flex items-end ">
-            <div className="relative bottom-2 h-[2px] w-8 bg-[#159dcc] sm:w-[60px]" />
+          <div className="mb-3 flex items-end ">
+            <div className="relative bottom-1  md:bottom-2 h-[2px] w-8 bg-[#159dcc] sm:w-[55px]" />
 
-            <div className="text-[10px] font-[700] tracking-[0.5px] text-[#159dcc] sm:text-[12px] md:text-[15px] lg:text-[20px]">
+            <div className="text-[12px] font-[700] tracking-[0.5px] text-[#159dcc] sm:text-[12px] md:text-[15px] lg:text-[20px]">
               <p>MANAGEMENT MESSAGE</p>
             </div>
           </div>
@@ -83,7 +83,7 @@ const AboutJourney = () => {
               <img
                 src="/images/management.png"
                 alt="Baha Turk Management Team"
-                className="h-[220px] w-full object-cover object-top transition-transform duration-500 hover:scale-[1.02] sm:h-[280px] md:h-[320px] lg:h-[350px]"
+                className="h-[220px] w-full  object-top transition-transform duration-500 hover:scale-[1.02] sm:h-[280px] md:h-[320px] lg:h-[350px]"
               />
             </div>
           </div>

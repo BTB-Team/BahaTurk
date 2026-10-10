@@ -21,7 +21,7 @@ const AboutHeroSection = () => {
 
         {/*============================ TITLE =================================*/}
 
-        <h1 className="bahaturk-inter max-w-[799px] text-[26px] font-[700]   sm:text-[28px] md:text-[38px] lg:text-[48px] xl:leading-[79px]   ">
+        <h1 className="bahaturk-inter max-w-[799px] text-[22px] min-[480px]:text-[26px] font-[700]   sm:text-[28px] md:text-[38px] lg:text-[48px] xl:leading-[79px]   ">
           Building with Purpose Since 2001.
         </h1>
 

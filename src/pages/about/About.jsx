@@ -11,6 +11,8 @@ import OurJourney from "./OurJourney";
 function About() {
   return (
     <main>
+      {/* AboutHeroSection, VisoinAndMission, AboutValues, BeyoundStructures, OurJourney, AboputEngin made Responsive */}
+
       <AboutHeroSection />
       <AboutEngin />
       <VisionAndMission />
