@@ -1,7 +1,8 @@
-import React from "react"
+import React from "react";
 
 export default function Projects() {
   return (
-    <h1>Our Projects</h1>
-  )
+    <main className="min-h-screen w-full bg-white">
+    </main>
+  );
 }

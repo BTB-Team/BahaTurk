@@ -1,7 +1,27 @@
-import React from "react"
+import React from "react";
 
-export default function About() {
+import AboutHeroSection from "./AboutHeroSection";
+import AboutEngin from "./AboutEngin";
+import VisionAndMission from "./VisionAndMission";
+import AboutValues from "./AboutValues";
+import AboutJourney from "./AboutJourney";
+import BeyondStructures from "./BeyondStructures";
+import OurJourney from "./OurJourney";
+
+function About() {
   return (
-    <h1>About Us</h1>
-  )
+    <main>
+      {/* AboutHeroSection, VisoinAndMission, AboutValues, BeyoundStructures, OurJourney, AboputEngin made Responsive */}
+
+      <AboutHeroSection />
+      <AboutEngin />
+      <VisionAndMission />
+      <AboutValues />
+      <BeyondStructures />
+      <OurJourney />
+      <AboutJourney />
+    </main>
+  );
 }
+
+export default About;

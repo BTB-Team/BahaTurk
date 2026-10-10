@@ -1,5 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
 @import "tailwindcss";
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.bahaturk-inter {
+  font-family: "Inter", sans-serif;
+} */
+
 
 @theme {
   /* Main site background - pure white */
@@ -38,15 +45,15 @@
 
 /* English variable font */
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat/Montserrat[wght].ttf") format("truetype");
+  font-family: "bahaturk-inter";
+  src: url("./assets/fonts/InterVariable.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
-.font-english {
-  font-family: "Montserrat", sans-serif;
+.bahaturk-inter {
+  font-family: "bahaturk-inter", sans-serif;
 }
 
 @layer base {
@@ -54,7 +61,7 @@
     background-color: var(--color-background);
     color: var(--color-text);
   }
-}
+} 
 
 /* White content card with soft border and shadow, used for feature/residence cards */
 @utility card {
@@ -189,3 +196,7 @@
   background-clip: text;
   color: transparent;
 }
+
+
+/* =================== */
+
