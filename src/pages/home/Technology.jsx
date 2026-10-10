@@ -118,7 +118,7 @@ const technologyFeatures = [
 export default function Technology() {
   return (
     <section className="w-full bg-white px-3 py-[30px] md:px-6 md:py-[60px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px] border border-[#E5EEF2] p-3 md:flex-row md:items-center md:justify-between md:gap-8 md:rounded-[29px] md:p-6 lg:p-[32px]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px]  p-3 md:flex-row md:items-center md:justify-between md:gap-8 md:rounded-[29px] md:p-6 lg:p-[32px]">
         <div className="order-2 w-full md:order-1 md:w-[55%] lg:max-w-[561px]">
           {/* Technology label */}
           <div className="mb-[6px] md:mb-[10px] flex items-center gap-[6px] md:gap-[14px]">
@@ -192,11 +192,13 @@ export default function Technology() {
         </div>
 
         <div className="order-1 relative w-full max-w-[580px] pb-[30px] sm:pb-[100px] md:order-2 md:w-[42%] md:items-end lg:pb-[120px]">
-          <div className="relative w-full overflow-hidden rounded-[12px] md:w-[85%] md:rounded-[24px]">
+          <div className="relative ml-auto w-full rounded-[12px] md:w-[85%] md:rounded-[24px]">
             <img
-              src={technologyData?.image || "/images/Rectangle39.png"}
+              src={
+                technologyData?.technology_image || "/images/Rectangle39.webp"
+              }
               alt="Tunnel Form Building Construction"
-              className="h-auto w-full object-cover"
+              className="block h-auto w-full rounded-[12px] object-cover md:rounded-[24px]"
             />
 
             <div className="absolute top-1 right-1 sm:top-4 sm:right-4 bg-white/95 backdrop-blur-sm rounded-[6px] sm:rounded-[16px] p-1 sm:p-3 shadow-md flex flex-col items-center max-w-[55px] sm:max-w-[120px] text-center border border-gray-100">
@@ -211,6 +213,14 @@ export default function Technology() {
               </span>
             </div>
           </div>
+          <img
+            src={
+              technologyData?.technology_image_secondary ||
+              "/images/Rectangle40.webp"
+            }
+            alt="Construction interior showing the tunnel form structure"
+            className="absolute bottom-0 left-0 z-10 w-[54%] rounded-[12px] border-2 border-white object-cover shadow-md sm:rounded-[16px] md:rounded-[20px] md:border-4"
+          />
         </div>
       </div>
     </section>
