@@ -60,7 +60,10 @@ const AboutJourney = () => {
                 const Icon = message.icon;
 
                 return (
-                  <div key={index} className="flex items-start gap-3 sm:gap-4">
+                  <div
+                    key={index}
+                    className="flex items-center sm:items-start gap-3 sm:gap-4"
+                  >
                     {/* ICON */}
                     <div className="flex h-[42px] w-[46px] shrink-0 items-center justify-center rounded-[10px] bg-[#def3fa] sm:h-[58px] sm:w-[70px] sm:rounded-[14px]">
                       <img src={Icon} />
@@ -70,7 +73,7 @@ const AboutJourney = () => {
                     <div className="hidden h-[60px] w-[2px] shrink-0 bg-[#d9eef4] sm:block" />
 
                     {/* TEXT */}
-                    <p className="min-w-0 pt-1 text-[11px] font-medium leading-[1.7] text-[#161616] sm:text-[13px] md:text-[15px] lg:text-[20px] lg:leading-[35px]">
+                    <p className="min-w-0 pt-1 text-[14px] font-medium leading-[1.7] text-[#161616]  md:text-[16px] lg:text-[20px] lg:leading-[35px]">
                       {message.text}
                     </p>
                   </div>
