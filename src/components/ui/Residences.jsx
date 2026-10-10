@@ -6,7 +6,7 @@ const residenceList = (projectData?.residence_types || []).map((item) => ({
   name: item.name || item.title,
   area: item.area || item.size,
   description: item.description,
-  image: item.image || item.image_url || `/images/room-${item.id}.jpg`,
+  image: item.image || item.image_url || `/images/room-${item.id}.webp`,
   href: item.href || "#",
 }));
 
@@ -15,11 +15,11 @@ export default function ResidencesSection() {
   const [status] = useState(residenceList.length ? "ready" : "error");
 
   return (
-    <section className="mx-auto max-w-[1200px] rounded-[30px] border border-border bg-white px-4 py-6 sm:px-6">
+    <section className="mx-auto mt-10 max-w-[1200px] rounded-[30px] border border-border bg-white px-4 py-6 sm:px-6">
       <div className="mb-10 w-full">
         <p className="eyebrow mb-3 text-[18px] leading-[24px]">RESIDENCES</p>
 
-        <div className="flex w-full flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex w-full flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="w-full md:w-fit">
             <p className="w-[305px] max-w-full text-[16px] font-normal leading-[100%] tracking-[0] text-text">
               DESIGNED FOR DIFFERENT LIFESTYLES
@@ -41,7 +41,7 @@ export default function ResidencesSection() {
 
           <a
             href="#"
-            className="btn btn-primary w-fit shrink-0 gap-2 px-5 py-3 text-sm font-medium"
+            className="btn btn-primary mt-0 w-fit shrink-0 gap-2 px-5 py-3 text-sm font-medium md:mt-[62px]"
           >
             Explore Residences
             <svg
