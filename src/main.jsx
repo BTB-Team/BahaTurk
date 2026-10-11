@@ -6,7 +6,8 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* اضافه کردن ویژگی basename با نام دقیق ریپازیتوری شما */}
+    <BrowserRouter basename="/BahaTurk">
       <App />
     </BrowserRouter>
   </React.StrictMode>
