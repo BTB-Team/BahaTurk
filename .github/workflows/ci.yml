@@ -41,11 +41,10 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # 👈 این خط اضافه شد تا فایل db.json بدون جابه‌جا شدن در سیستم ، روی سرور به پوشه dist کپی شود
       - name: Copy db.json to build folder
         run: cp db.json ./dist/
 
-       Tar, - name: Setup Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload Artifact
