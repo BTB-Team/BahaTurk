@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowRight, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
+import { Link } from "react-router-dom";
 import projectData from "../../../db.json";
 
 function GreaterIcon({ className = "" }) {
@@ -93,6 +94,18 @@ function ReducedIcon({ className = "" }) {
 }
 
 const technologyData = projectData.projects?.[0]?.engineering;
+const technologyDescription = technologyData?.technology_description || "";
+const technologyDetailsStart = technologyDescription.indexOf(
+  "Through this method,",
+);
+const technologyIntro =
+  technologyDetailsStart === -1
+    ? technologyDescription
+    : technologyDescription.slice(0, technologyDetailsStart).trim();
+const technologyDetails =
+  technologyDetailsStart === -1
+    ? ""
+    : technologyDescription.slice(technologyDetailsStart).trim();
 const technologyFeatures = [
   { title: "Greater", subtitle: "Structural Integrity", icon: GreaterIcon },
   {
@@ -117,60 +130,70 @@ const technologyFeatures = [
 
 export default function Technology() {
   return (
-    <section className="w-full bg-white px-3 py-[30px] md:px-6 md:py-[60px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px]  p-3 md:flex-row md:items-center md:justify-between md:gap-8 md:rounded-[29px] md:p-6 lg:p-[32px]">
+    <section className="bahaturk-inter w-full bg-white px-3 py-[30px] md:px-6 md:py-[60px]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px] p-3 md:flex-row md:items-center md:justify-between md:gap-8 md:rounded-[29px] md:p-6 lg:h-[676px] lg:p-[32px]">
         <div className="order-2 w-full md:order-1 md:w-[55%] lg:max-w-[561px]">
           {/* Technology label */}
-          <div className="mb-[6px] md:mb-[10px] flex items-center gap-[6px] md:gap-[14px]">
-            <div className="h-[2px] md:h-[3px] w-[20px] md:w-[41px] bg-[#299BC1]" />
-            <h2 className="font-inter font-semibold text-[11px] md:text-[18px] text-[#299BC1] tracking-wide">
+          <div className="mb-[6px] flex items-center gap-[6px] md:mb-[10px] md:gap-[14px] lg:-ml-[32px] lg:gap-[5px]">
+            <div className="h-[3px] w-[41px] bg-[#0F99CC]" />
+            <h2 className="text-[11px] font-semibold text-[#299BC1] tracking-wide md:text-[18px] lg:h-[24px] lg:w-[127px] lg:text-[18px] lg:font-semibold lg:leading-[24px] lg:tracking-[0] lg:text-[#0F99CC]">
               TECHNOLOGY
             </h2>
           </div>
 
           {/* Small heading */}
-          <p className="mb-[4px] md:mb-[8px] font-inter font-normal text-[10px] md:text-[16px] text-gray-500 whitespace-nowrap">
+          <p className="mb-[4px] whitespace-nowrap text-[10px] font-normal text-gray-500 md:mb-[8px] md:text-[16px] lg:-ml-[32px] lg:mt-[7px] lg:h-[19px] lg:w-[336px] lg:text-left lg:text-[16px] lg:font-normal lg:leading-[100%] lg:tracking-[0] lg:text-[#000000]">
             ADVANCED CONSTRUCTION TECHNOLOGY
           </p>
 
           {/* Main title */}
-          <h1 className="mb-[10px] text-[20px] font-extrabold leading-tight text-[#299BC1] md:mb-[16px] md:text-[34px] lg:text-[40px]">
+          <h1 className="mb-[10px] text-[20px] font-extrabold leading-tight text-[#299BC1] md:mb-[16px] md:text-[34px] lg:-ml-[32px] lg:mt-[14px] lg:mb-[11px] lg:h-[48px] lg:w-[560px] lg:text-left lg:text-[40px] lg:font-extrabold lg:leading-[100%] lg:tracking-[0] lg:text-[#0F99CC]">
             {technologyData?.technology_title || "Tunnel Form System"}
             <span className="text-[#299BC1]">.</span>
           </h1>
 
           {/* Paragraphs */}
-          <div className="mb-[14px] md:mb-[24px] font-inter font-medium text-[11px] md:text-[16px] leading-[16px] md:leading-[27px] text-black space-y-2">
-            <p className="line-clamp-3 md:line-clamp-none">
-              {technologyData?.technology_description ||
-                "One of the defining features of Solh Residential Project is the use of the Tunnel Form System, introduced by Baha Turk in Afghanistan."}
+          <div className="mb-[14px] space-y-2 font-medium text-[11px] leading-[16px] text-black md:mb-[24px] md:text-[16px] md:leading-[27px] lg:space-y-[10px]">
+            <p className="line-clamp-3 md:line-clamp-none lg:-ml-[32px] lg:h-[81px] lg:w-[561px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]">
+              {technologyIntro}
             </p>
+            {technologyDetails && (
+              <p className="lg:-ml-[32px] lg:h-[54px] lg:w-[561px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]">
+                {technologyDetails}
+              </p>
+            )}
           </div>
 
           {/* Supports heading */}
-          <h3 className="mb-[10px] md:mb-[18px] font-inter font-bold text-[12px] md:text-[20px] text-black">
+          <h3 className="mb-[10px] font-bold text-[12px] text-black md:mb-[18px] md:text-[20px] lg:-ml-[32px] lg:h-[27px] lg:w-[561px] lg:text-left lg:text-[20px] lg:leading-[27px]">
             The system supports:
           </h3>
-          <div className="mb-[16px] grid grid-cols-1 gap-2 sm:grid-cols-2 md:mb-[28px] md:gap-2.5">
+          <div className="mb-[16px] grid grid-cols-1 gap-2 sm:grid-cols-2 md:mb-[28px] md:gap-2.5 lg:-ml-[32px] lg:w-[510px] lg:grid-cols-[249px_249px] lg:gap-2">
             {technologyFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
                 <div
                   key={`${feature.title}-${index}`}
-                  className="flex min-w-0 items-center gap-2 rounded-[8px] border border-[#E5EEF2] bg-white px-2 py-2 md:gap-2.5 md:rounded-[12px] md:px-3"
+                  className="flex min-w-0 items-center gap-2 rounded-[8px] border border-[#E5EEF2] bg-white px-2 py-2 md:gap-2.5 md:rounded-[12px] md:px-3 lg:h-[68px] lg:w-[249px] lg:gap-2 lg:border-[#0F99CC2B] lg:px-[10px] lg:py-2"
                 >
-                  <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#EBF8FD] text-[#299BC1] md:h-[51px] md:w-[51px]">
+                  <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#0F99CC2B] text-[#299BC1] md:h-[51px] md:w-[51px]">
                     <IconComponent
                       className="h-[24px] w-[24px] md:h-[32px] md:w-[32px]"
                       strokeWidth={2.5}
                     />
                   </div>
 
-                  <p className="min-w-0 flex-1 font-inter text-[9px] leading-tight text-gray-500 md:text-[13px]">
-                    <span className="block text-[8px] font-bold tracking-wide text-gray-500 md:text-[11px]">
+                  <p
+                    className={`min-w-0 flex-1 text-[9px] leading-tight text-gray-500 md:text-[13px] ${index === 0 ? "lg:h-[40px] lg:w-[135px] lg:flex-none lg:text-[15px] lg:font-medium lg:leading-[20px] lg:text-black" : index === 1 ? "lg:h-[40px] lg:w-[148px] lg:flex-none lg:text-[15px] lg:font-medium lg:leading-[20px] lg:text-black" : index === 2 ? "lg:h-[40px] lg:w-[168px] lg:flex-none lg:text-[15px] lg:font-medium lg:leading-[20px] lg:text-black" : ""}`}
+                  >
+                    <span
+                      className={`block text-[8px] font-bold tracking-wide text-gray-500 md:text-[11px] ${index < 3 ? "lg:text-[15px] lg:font-medium lg:leading-[20px] lg:tracking-normal lg:text-black" : ""}`}
+                    >
                       {feature.title}
                     </span>
-                    <span className="font-bold text-gray-600">
+                    <span
+                      className={`font-bold text-gray-600 ${index < 3 ? "lg:font-medium lg:text-black" : ""}`}
+                    >
                       {feature.subtitle}
                     </span>
                   </p>
@@ -180,36 +203,49 @@ export default function Technology() {
           </div>
 
           {/* BUTTON */}
-          <button className="flex h-[32px] md:h-[46px] w-fit items-center justify-center gap-2 rounded-full bg-[#299BC1] px-3 md:px-6 font-inter font-medium text-[10px] md:text-[15px] text-white transition hover:bg-[#2189aa]">
-            <span className="whitespace-nowrap">
+          <Link
+            to="/projects"
+            className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-full bg-[#299BC1] px-3 text-[10px] font-medium text-white transition hover:bg-[#2189aa] md:h-[46px] md:px-6 md:text-[15px] lg:ml-[-32px] lg:mt-0 lg:h-[52px] lg:w-[327px] lg:flex-none lg:gap-[2px] lg:pl-[19px] lg:pr-[18px]"
+          >
+            <span className="whitespace-nowrap lg:h-[27px] lg:w-[249px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px]">
               Explore Tunnel Form Technology
             </span>
-            <ArrowRight
-              className="w-[12px] h-[12px] md:w-[18px] md:h-[18px]"
-              strokeWidth={2}
-            />
-          </button>
+            <span className="flex h-[39px] w-[39px] shrink-0 items-center justify-center">
+              <svg
+                viewBox="0 0 21.124 15.438"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-[12px] w-[12px] md:h-[18px] md:w-[18px] lg:h-[15.44px] lg:w-[21.12px]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.56 7.719H18.564M13.5 2.17L18.564 7.719L13.5 13.268"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+          </Link>
         </div>
 
-        <div className="order-1 relative w-full max-w-[580px] pb-[30px] sm:pb-[100px] md:order-2 md:w-[42%] md:items-end lg:pb-[120px]">
-          <div className="relative ml-auto w-full rounded-[12px] md:w-[85%] md:rounded-[24px]">
+        <div className="order-1 relative w-full max-w-[580px] pb-[30px] sm:pb-[100px] md:order-2 md:w-[42%] md:items-end lg:w-[590px] lg:max-w-none lg:flex-none lg:pb-0">
+          <div className="relative ml-auto w-full rounded-[12px] md:w-[85%] md:rounded-[24px] lg:w-[590px] lg:rounded-[60px]">
             <img
               src={
                 technologyData?.technology_image || "/images/Rectangle39.webp"
               }
               alt="Tunnel Form Building Construction"
-              className="block h-auto w-full rounded-[12px] object-cover md:rounded-[24px]"
+              className="block h-auto w-full rounded-[12px] object-cover md:rounded-[24px] lg:h-[612.5px] lg:rounded-[60px]"
             />
 
-            <div className="absolute top-1 right-1 sm:top-4 sm:right-4 bg-white/95 backdrop-blur-sm rounded-[6px] sm:rounded-[16px] p-1 sm:p-3 shadow-md flex flex-col items-center max-w-[55px] sm:max-w-[120px] text-center border border-gray-100">
-              <div className="text-[#299BC1] mb-0">
-                <Layers
-                  className="w-[10px] h-[10px] sm:w-[22px] sm:h-[22px]"
-                  strokeWidth={2}
-                />
+            <div className="absolute right-0 top-0 z-20 h-[110px] w-[132px] rounded-[12px] border border-[#0F99CC2B] bg-white/95 shadow-md backdrop-blur-sm md:h-[124px] md:w-[150px] md:rounded-[14px] lg:h-[145px] lg:w-[176px] lg:rounded-[16px]">
+              <div className="absolute left-[5px] top-[7px] flex h-[56px] w-[56px] items-center justify-center text-[#0F99CC] md:left-[6px] md:top-[8px] md:h-[64px] md:w-[64px] lg:left-[7px] lg:top-[9px] lg:h-[74px] lg:w-[74px]">
+                <Layers className="h-[40px] w-[40px] md:h-[46px] md:w-[46px] lg:h-[51.88px] lg:w-[51.88px]" strokeWidth={2} />
               </div>
-              <span className="font-inter text-[6px] sm:text-[11px] font-bold text-gray-800 leading-none sm:leading-tight">
-                Integrated structure
+              <span className="absolute left-[14px] top-[60px] h-[32px] w-[100px] text-left text-[11px] font-medium leading-[15px] text-black md:left-[15px] md:top-[70px] md:h-[36px] md:w-[116px] md:text-[13px] md:leading-[18px] lg:left-[18px] lg:top-[80px] lg:h-[40px] lg:w-[134px] lg:text-[15px] lg:leading-[20px]">
+                Integrated concrete structure
               </span>
             </div>
           </div>
@@ -219,7 +255,7 @@ export default function Technology() {
               "/images/Rectangle40.webp"
             }
             alt="Construction interior showing the tunnel form structure"
-            className="absolute bottom-0 left-0 z-10 w-[54%] rounded-[12px] border-2 border-white object-cover shadow-md sm:rounded-[16px] md:rounded-[20px] md:border-4"
+            className="absolute bottom-0 left-0 z-10 h-auto w-[54%] rounded-[12px] border border-white object-cover shadow-md sm:rounded-[16px] md:rounded-[20px] md:border-2 lg:bottom-auto lg:-left-[76px] lg:top-[439px] lg:h-[237px] lg:w-[381px] lg:rounded-[30px] lg:border-2 lg:border-white lg:shadow-none"
           />
         </div>
       </div>

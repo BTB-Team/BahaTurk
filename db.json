@@ -59,7 +59,7 @@
       },
       "engineering": {
         "title": "Strength Begins Below the Surface.",
-        "description": "The strength of Solh Residential Project begins with its foundation. Each building is constructed on 96 piles extending approximately 20 meters into the ground...",
+        "description": "The strength of Solh Residential Project begins with its foundation.Each building is constructed on 96 piles extending approximately 20 meters into the ground, followed by a reinforced foundation approximately 1.5 meters thick.This engineered foundation system is designed to provide effective load transfer, structural stability, and long-term durability.",
         "image": "/images/engineering1.webp",
         "technology_image": "/images/Rectangle39.webp",
         "technology_image_secondary": "/images/Rectangle40.webp",
@@ -67,7 +67,7 @@
         "pile_depth": "~20 m",
         "foundation_thickness": "1.5 m",
         "technology_title": "Tunnel Form System",
-        "technology_description": "One of the defining features of Solh Residential Project is the use of the Tunnel Form System, introduced by Baha Turk in Afghanistan for the first time...",
+        "technology_description": "One of the defining features of Solh Residential Project is the use of the Tunnel Form System, introduced by Baha Turk in Afghanistan for the first time in its construction projects.Through this method, structural walls and slabs are cast together, creating an integrated concrete structure.",
         "technology_features": [
           "Greater Structural Integrity",
           "Consistent Construction Quality",
@@ -147,11 +147,11 @@
   ],
 
   "project_gallery": [
-    { "id": 1, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic1.jpg", "alt_text": "Exterior View 1" },
-    { "id": 2, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic2.jpg", "alt_text": "Exterior View 2" },
-    { "id": 3, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic3.jpg", "alt_text": "Interior Living Room" },
-    { "id": 4, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic4.jpg", "alt_text": "Interior Bedroom" },
-    { "id": 5, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic5.jpg", "alt_text": "Interior Corridor" }
+    { "id": 1, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic1.webp", "alt_text": "Exterior View 1" },
+    { "id": 2, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic2.webp", "alt_text": "Exterior View 2" },
+    { "id": 3, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic3.webp", "alt_text": "Interior Living Room" },
+    { "id": 4, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic4.webp", "alt_text": "Interior Bedroom" },
+    { "id": 5, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic5.webp", "alt_text": "Interior Corridor" }
   ],
 
   "news": [],
