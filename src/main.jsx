@@ -4,13 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-// بازنویسی هوشمند میتود fetch مرورگر برای اصلاح خودکار تمام آدرس‌ها
+// مبدل هوشمند درخواست‌های شبکه برای هماهنگی لوکال و سرور گیت‌هاب
 const originalFetch = window.fetch;
 window.fetch = async function (url, options) {
   if (typeof url === 'string') {
-    // اگر آدرس به صورت مطلق بود، اسلش اول را حذف می‌کند تا نسبی شود
-    if (url.startsWith('/db.json')) {
-      url = 'db.json';
+    const isGitHubPages = window.location.hostname.includes('github.io');
+
+    if (isGitHubPages) {
+      // اگر روی گیت‌هاب بود، هر درخواستی به پورت لوکال یا مسیر دیتابیس را به فایل آنلاین روت هدایت می‌کند
+      if (url.includes('localhost:3001') || url.startsWith('/db.json') || url === 'db.json') {
+        url = '/BahaTurk/db.json'; 
+      }
     }
   }
   return originalFetch(url, options);
