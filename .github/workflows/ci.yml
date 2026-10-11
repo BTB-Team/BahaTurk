@@ -2,11 +2,10 @@ name: Frontend CI/CD
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, main]
   push:
-    branches: [develop]
+    branches: [develop, main]
 
-# دسترسی‌های لازم برای دیپلوی در GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -18,6 +17,9 @@ concurrency:
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps:deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -33,25 +35,22 @@ jobs:
         with:
           version: 9
 
-       Sir, # رفع مشکل احتمالی قفل بودن dependencyها
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm build
 
-      # تنظیم محیط گیت‌هاب پیجز
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # آپلود پوشه خروجی Vite (که نام آن dist است)
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
-      # دیپلوی نهایی روی گیت‌هاب پیجز (فقط زمان Push روی develop انجام می‌شود)
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+        # دیپلوی فقط زمانی انجام می‌شود که روی یکی از شاخه‌های اصلی (main یا develop) به صورت مستقیم پوش یا مرج شود
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
         uses: actions/deploy-pages@v4
