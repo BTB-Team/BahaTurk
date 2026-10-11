@@ -4,12 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/BahaTurk/", // 👈 مطمئن شوید اسلش ابتدا و انتها دقیقاً به همین صورت باشد
+  base: "/BahaTurk/", 
   server: {
     port: 5173,
   },
   build: {
-    // این تنظیم به Vite می‌گوید ساختار فایل‌های خروجی را کاملاً استاندارد و بدون تداخل با پوشه src بسازد
     outDir: 'dist',
     assetsDir: 'assets',
   }
