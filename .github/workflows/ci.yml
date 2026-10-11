@@ -19,7 +19,7 @@ jobs:
   build-and-deploy:
     environment:
       name: github-pages
-      url: ${{ steps:deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }} # 👈 دو نقطه به نقطه تبدیل شد
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -51,6 +51,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        # دیپلوی فقط زمانی انجام می‌شود که روی یکی از شاخه‌های اصلی (main یا develop) به صورت مستقیم پوش یا مرج شود
         if: github.event_name == 'push' && (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
         uses: actions/deploy-pages@v4
