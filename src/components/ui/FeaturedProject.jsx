@@ -33,13 +33,13 @@ export default function FeaturedProject() {
             {/* Button - Placed inside the relative wrapper, OUTSIDE the overflow-hidden box */}
             <Link
               to="/projects"
-              className="absolute bottom-[-10px] left-0 z-20 inline-flex items-center gap-2 border-0 bg-white px-5 py-2.5 text-[16px] font-medium leading-6 tracking-[0] text-[#0F99CC] shadow-none outline-none transition-all duration-200 hover:gap-3 focus:outline-none focus-visible:outline-none lg:left-[-7px] lg:top-[462px] lg:h-[50px] lg:w-[290px] lg:items-center lg:gap-2 lg:rounded-bl-none lg:rounded-br-none lg:rounded-tl-none lg:rounded-tr-[22px] lg:pb-0 lg:pl-[13px] lg:pr-0 lg:pt-0"
+              className="absolute bottom-[-10px] left-0 z-20 inline-flex h-[50px] w-full max-w-[290px] items-center gap-2 rounded-tr-[22px] border-0 bg-white px-[13px] text-[clamp(9px,3.4vw,12px)] font-medium leading-6 tracking-[0] text-[#0F99CC] shadow-none outline-none transition-all duration-200 hover:gap-3 focus:outline-none focus-visible:outline-none md:gap-1 md:text-[13px] md:hover:gap-1 lg:left-[-7px] lg:top-[462px] lg:w-[290px] lg:items-center lg:gap-2 lg:rounded-bl-none lg:rounded-br-none lg:rounded-tl-none lg:rounded-tr-[22px] lg:pb-0 lg:pl-[13px] lg:pr-0 lg:pt-0 lg:text-[16px]"
             >
-              <span className="h-6 whitespace-nowrap lg:w-[242px] lg:shrink-0 lg:-translate-y-[4px]">
+              <span className="h-6 min-w-0 whitespace-nowrap lg:w-[242px] lg:shrink-0 lg:-translate-y-[4px]">
                 Explore Solh Residential Project
               </span>
               <svg
-                className="lg:absolute lg:right-[2px] lg:top-[4px] lg:h-[37px] lg:w-[37px]"
+                className="h-[37px] w-[37px] shrink-0 lg:absolute lg:right-[2px] lg:top-[4px]"
                 width="37"
                 height="37"
                 viewBox="0 0 37 37"
@@ -58,7 +58,7 @@ export default function FeaturedProject() {
           <div className="flex w-full flex-1 flex-col space-y-6 lg:mt-[18px] lg:h-[467px] lg:w-[631px] lg:flex-none lg:justify-start lg:space-y-0">
             <div>
               {/* Title */}
-              <h3 className="mb-2 text-[28px] font-extrabold leading-[65px] tracking-[-0.01em] text-black sm:text-[34px] md:text-[48px] lg:mb-[-15px] lg:ml-px lg:h-[65px] lg:w-[552px] lg:whitespace-nowrap">
+              <h3 className="mb-2 text-[28px] font-extrabold leading-tight tracking-[-0.01em] text-black sm:text-[34px] md:text-[48px] lg:mb-[-15px] lg:ml-px lg:h-[65px] lg:w-[552px] lg:whitespace-nowrap lg:leading-[65px]">
                 <span className="text-[#00A3E0]">Solh </span>
                 Residential Project
               </h3>
