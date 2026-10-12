@@ -46,39 +46,39 @@ function ArrowIcon({ className = "" }) {
 
 /* ======================= IMAGES All images must exist inside public/images/======= */
 
-const LEFT_IMAGE = "/images/building-left.webp";
-const RIGHT_IMAGE = "/images/building-right.webp";
-const BUILDING_IMAGE = "/images/building-since.webp";
+const LEFT_IMAGE = "./images/building-left.webp";
+const RIGHT_IMAGE = "./images/building-right.webp";
+const BUILDING_IMAGE = "./images/building-since.webp";
 
 /* ====================STATISTICS DATA=============================== */
 
 const STATS = [
   {
-    image: "/images/established.png",
+    image: "./images/established.svg",
     value: "2001",
     label: "Established",
     imageAlt: "Company establishment",
   },
   {
-    image: "/images/residential-blocks.png",
+    image: "./images/residential-blocks.svg",
     value: "118",
     label: "Residential Blocks Planned at Solh Residential Project",
     imageAlt: "Residential apartment blocks",
   },
   {
-    image: "/images/phase-one.png",
+    image: "./images/phase-one.svg",
     value: "20",
     label: "Residential Blocks in Phase One",
     imageAlt: "Residential construction project",
   },
   {
-    image: "/images/project-area.png",
+    image: "./images/project-area.svg",
     value: "32 Jeribs",
     label: "Phase One Project Area",
     imageAlt: "Residential project area",
   },
   {
-    image: "/images/green-space.png",
+    image: "./images/green-space.svg",
     value: "75%",
     label: "Planned Green & Open Space",
     imageAlt: "Green residential community",
