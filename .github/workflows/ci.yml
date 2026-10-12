@@ -1,34 +1,67 @@
-name: Frontend CI
+name: Frontend CI & Deploy
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [ develop, main ]
   push:
-    branches: [develop]
+    branches: [ develop, main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 1. Setup Node.js FIRST (Ensures the environment is solid)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      # 2. Install pnpm SECOND (Registers correctly on top of Node 22)
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Try Building Project
+        run: pnpm build
+
+  deploy:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
+          run_install: false
 
-      # 3. Clean dependency installation (Bypasses local lockfile strictness mismatches)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
-      # 4. Compile the React Project
       - name: Build
         run: pnpm build
+
+      # ساخت فایل ضد جکیل برای آزاد شدن دسترسی فایل‌های فشرده دارایی‌ها در گیت‌هاب پیجز
+      - name: Create .nojekyll bypass file
+        run: touch ./dist/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist

@@ -12,12 +12,12 @@ export default function App() {
     <Routes>
       <Route path="/" element={<MainLayout />} >
         <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        {/* اسلش (/) از ابتدای آدرس‌ها حذف شد تا به درستی ذیل مسیر پایه لود شوند */}
+        <Route path="about" element={<About />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-
   );
 }

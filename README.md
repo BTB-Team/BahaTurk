@@ -14,6 +14,13 @@ pnpm dev
 - App: http://localhost:5173
 - API: http://localhost:3001
 
+On Windows, if `pnpm` is not recognized in PowerShell, use Node's Corepack shim:
+
+```powershell
+corepack.cmd pnpm install
+corepack.cmd pnpm dev
+```
+
 > First time only: run `pnpm approve-builds`, select `esbuild`, and commit the resulting `package.json` change — otherwise the build script may be skipped.
 
 ## Environment Variables
