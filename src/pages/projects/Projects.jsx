@@ -36,15 +36,13 @@ export default function Projects() {
               <h1 className="text-4xl font-extrabold leading-[1.08] text-[#12345a] sm:text-5xl lg:text-[56px]">
                 Engineering Ideas
                 <br />
-                <span className="text-[#079bc5]">
-                  Into Lasting Places.
-                </span>
+                <span className="text-[#079bc5]">Into Lasting Places.</span>
               </h1>
 
               <p className="mt-5 max-w-[500px] text-base leading-7 text-slate-600">
                 Solin Residential Project represents a new standard in modern
-                living, combining innovative design, quality construction, and
-                a sustainable future.
+                living, combining innovative design, quality construction, and a
+                sustainable future.
               </p>
             </div>
           </div>
@@ -73,9 +71,7 @@ export default function Projects() {
                 <p className="text-xs font-bold text-[#12345a]">
                   Strategic Location
                 </p>
-                <p className="text-xs text-slate-500">
-                  Kabul, Afghanistan
-                </p>
+                <p className="text-xs text-slate-500">Kabul, Afghanistan</p>
               </div>
             </div>
           </div>
@@ -87,10 +83,7 @@ export default function Projects() {
             </p>
 
             <h2 className="text-3xl font-extrabold leading-tight text-[#12345a] sm:text-4xl">
-              Solin{" "}
-              <span className="text-[#079bc5]">
-                Residential Project
-              </span>
+              Solin <span className="text-[#079bc5]">Residential Project</span>
             </h2>
 
             <p className="mt-5 text-base leading-7 text-slate-600">
@@ -150,9 +143,7 @@ export default function Projects() {
             <h2 className="text-2xl font-extrabold leading-tight text-[#12345a] sm:text-3xl">
               Designed for Life.
               <br />
-              <span className="text-[#079bc5]">
-                Engineered for the Future.
-              </span>
+              <span className="text-[#079bc5]">Engineered for the Future.</span>
             </h2>
           </div>
         </div>
@@ -166,9 +157,9 @@ export default function Projects() {
           <div>
             <p className="text-[15px] leading-7 text-slate-600">
               Solin Residential Project is a high-quality, modern community
-              designed for families, professionals, and investors. With a
-              focus on comfort, safety, and sustainability, we create living
-              spaces that inspire a better tomorrow.
+              designed for families, professionals, and investors. With a focus
+              on comfort, safety, and sustainability, we create living spaces
+              that inspire a better tomorrow.
             </p>
 
             <p className="mt-5 text-[15px] leading-7 text-slate-600">
@@ -267,7 +258,6 @@ export default function Projects() {
                   className="h-[115px] w-full object-cover sm:h-[180px]"
                 />
               </div>
-
             </div>
 
             {/* Bottom */}
@@ -306,8 +296,8 @@ export default function Projects() {
               <p className="mt-5 text-[15px] leading-7 text-slate-600">
                 The property is owned and managed by Solin, a trusted name in
                 real estate development. With a commitment to quality,
-                transparency, and long-term value, Solin ensures that every
-                home is a smart investment in a better future.
+                transparency, and long-term value, Solin ensures that every home
+                is a smart investment in a better future.
               </p>
             </div>
 
@@ -341,9 +331,7 @@ export default function Projects() {
 
           <h2 className="mt-3 text-3xl font-extrabold text-[#12345a] sm:text-4xl">
             Live Better.{" "}
-            <span className="text-[#079bc5]">
-              Invest with Confidence.
-            </span>
+            <span className="text-[#079bc5]">Invest with Confidence.</span>
           </h2>
 
           <p className="mt-3 max-w-[650px] text-sm leading-6 text-slate-600">
@@ -374,13 +362,9 @@ function FeatureCard({ icon, title, text }) {
       </div>
 
       <div>
-        <h3 className="text-sm font-bold text-[#12345a]">
-          {title}
-        </h3>
+        <h3 className="text-sm font-bold text-[#12345a]">{title}</h3>
 
-        <p className="mt-0.5 text-xs text-slate-500">
-          {text}
-        </p>
+        <p className="mt-0.5 text-xs text-slate-500">{text}</p>
       </div>
     </div>
   );
@@ -406,12 +390,7 @@ function SectionTitle({ title }) {
    STAT CARD
 ========================================================= */
 
-function StatCard({
-  smallTitle,
-  number,
-  title,
-  description,
-}) {
+function StatCard({ smallTitle, number, title, description }) {
   return (
     <div className="rounded-xl bg-[#dff5fa] p-6 sm:p-7">
       <p className="text-xs font-bold uppercase tracking-wide text-[#079bc5]">

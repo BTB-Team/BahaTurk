@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { IoMdPulse } from "react-icons/io";
+import { Link } from "react-router-dom";
+import Loader from "../../components/Loader";
 
 const SafetySection = () => {
   const [safetyData, setSafetyData] = useState(null);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getSafetyData = async () => {
       try {
-        const response = await fetch("/db.json");
+        const response = await fetch("db.json");
         if (!response.ok) {
           throw new Error("Failed to fetch safety data");
         }
@@ -15,10 +18,20 @@ const SafetySection = () => {
         setSafetyData(data.projects[0].safety);
       } catch (error) {
         console.error("Error fetching safety data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     getSafetyData();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+  if (!safetyData) {
+    return <div className="py-16 text-center">Section data not found.</div>;
+  }
+
   return (
     <section className="bahaturk-inter w-full bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -52,13 +65,13 @@ const SafetySection = () => {
             </div>
 
             {/* button */}
-            <button
-              type="button"
+            <Link
+              to="projects"
               className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-accent px-5 py-3 text-xs sm:text-base font-medium text-white transition hover:bg-accent-hover cursor-pointer"
             >
               Quality & Safety
               <AiOutlineArrowRight className="font-black text-2xl" />{" "}
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT SAFETY CARD */}

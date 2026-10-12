@@ -8,6 +8,7 @@ export default {
           blue: "#0F99CC",
         },
       },
+      
     },
   },
   plugins: [],
