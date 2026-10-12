@@ -55,9 +55,13 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # ساخت فایل ضد جکیل برای آزاد شدن دسترسی فایل‌های فشرده دارایی‌ها در گیت‌هاب پیجز
+      # ساخت فایل حیاتی برای آزاد شدن دسترسی فایل‌های بیلد در شاخه gh-pages
       - name: Create .nojekyll bypass file
         run: touch ./dist/.nojekyll
+
+      # انتقال دیتابیس کپی شده به پوشه خروجی
+      - name: Copy db.json to Dist
+        run: cp db.json ./dist/ || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
