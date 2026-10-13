@@ -1,11 +1,6 @@
 
 import React from "react";
 
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/800.css";
-
 /* ==================== COLORS ==================== */
 
 const BLUE = "#1496D3";
@@ -32,7 +27,16 @@ function Sparkle({ className = "" }) {
 
 function ArrowIcon({ className = "" }) {
   return (
-    <svg  viewBox="0 0 24 24"  aria-hidden="true"  className={className}  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M3 12h18M14 5l7 7-7 7" />
     </svg>
   );
@@ -86,11 +90,21 @@ const STATS = [
 function CtaBlock() {
   return (
     <div className="relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-x-clip">
-      <div  id="contact"  className="relative isolate min-h-[549px] w-full overflow-hidden bg-white lg:h-[549px] lg:rounded-none">
-        {/* Left image: left = 0, top = 80px */}
-        <img  src={LEFT_IMAGE}  alt="Baha Turk residential towers"  loading="lazy"  className="absolute left-0 top-[80px] z-0 hidden h-[330px] w-[24.43%] rounded-r-[40px] bg-slate-200 object-cover lg:block" />
+      <div
+        id="contact"
+        className="relative isolate min-h-[549px] w-full overflow-hidden bg-white lg:h-[549px] lg:rounded-none"
+      >
+        {/* Left image */}
 
-        {/* Right image: right = 0, bottom = 0 */}
+        <img
+          src={LEFT_IMAGE}
+          alt="Baha Turk residential towers"
+          loading="lazy"
+          className="absolute left-0 top-[80px] z-0 hidden h-[330px] w-[24.43%] rounded-r-[40px] bg-slate-200 object-cover lg:block"
+        />
+
+        {/* Right image */}
+
         <img
           src={RIGHT_IMAGE}
           alt="Baha Turk residential tower"
@@ -99,22 +113,17 @@ function CtaBlock() {
         />
 
         {/* CTA content */}
+
         <div className="relative z-10 mx-auto flex flex-col items-center px-5 pb-10 pt-10 text-center sm:px-8 lg:h-full lg:justify-center lg:px-0 lg:py-0">
           <Sparkle className="h-14 w-14 lg:h-[72px] lg:w-[72px]" />
 
-          <h2
-            className="mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:w-[590px] lg:text-[48px] lg:leading-[65px]"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
+          <h2 className="mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:w-[590px] lg:text-[48px] lg:leading-[65px]">
             If you can <span style={{ color: BLUE }}>dream</span> it,
             <br />
             We can <span style={{ color: BLUE }}>build</span> it.
           </h2>
 
-          <p
-            className="mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:text-[20px] lg:leading-[40px]"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
+          <p className="mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:text-[20px] lg:leading-[40px]">
             We bring a modern and engineering-driven approach to every project,
             creating durable spaces built for long-term value. With decades of
             experience, advanced construction technology, and a strong
@@ -124,10 +133,7 @@ function CtaBlock() {
 
           <a
             href="#contact-form"
-            style={{
-              backgroundColor: BLUE,
-              fontFamily: "Inter, sans-serif",
-            }}
+            style={{ backgroundColor: BLUE }}
             className="mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 lg:mt-[22px]"
           >
             Get in touch
@@ -135,6 +141,7 @@ function CtaBlock() {
         </div>
 
         {/* Images: mobile and tablet */}
+
         <div className="relative z-10 grid grid-cols-2 gap-3 px-5 pb-10 sm:px-8 lg:hidden">
           <img
             src={LEFT_IMAGE}
@@ -166,6 +173,7 @@ function AboutBlock() {
         className="relative isolate mx-auto w-full max-w-[1200px] overflow-hidden rounded-[36px] lg:h-[539px]"
       >
         {/* Background image */}
+
         <img
           src={BUILDING_IMAGE}
           alt=""
@@ -179,30 +187,27 @@ function AboutBlock() {
         />
 
         {/* Soft overlay */}
+
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-[1] bg-[#1496D3]/15"
         />
 
         {/* Blue gradient */}
+
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-[#1296D0] via-[#1496D3]/45 to-transparent"
         />
 
         {/* About content */}
+
         <div className="relative z-10 flex h-full flex-col justify-center px-6 py-12 sm:px-10 lg:px-[57px] lg:py-0">
-          <h2
-            className="text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-white sm:text-[40px] lg:w-[464px] lg:text-[48px] lg:leading-[65px]"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
+          <h2 className="text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-white sm:text-[40px] lg:w-[464px] lg:text-[48px] lg:leading-[65px]">
             Building Since 2001
           </h2>
 
-          <div
-            className="mt-2 max-w-[547px] text-base font-normal leading-7 text-white lg:mt-0 lg:h-[270px] lg:text-[20px] lg:leading-[30px]"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
+          <div className="mt-2 max-w-[547px] text-base font-normal leading-7 text-white lg:mt-0 lg:h-[270px] lg:text-[20px] lg:leading-[30px]">
             <p>
               Founded in Turkey in 2001, Baha Turk Construction Company brings
               together international experience, technical expertise, advanced
@@ -219,10 +224,7 @@ function AboutBlock() {
 
           <a
             href="#about-baha-turk"
-            style={{
-              color: BLUE,
-              fontFamily: "Inter, sans-serif",
-            }}
+            style={{ color: BLUE }}
             className="mt-6 inline-flex h-12 w-fit items-center gap-2.5 rounded-xl bg-white px-4 text-base font-semibold transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1496D3] lg:mt-[25px] lg:w-[228px] lg:text-[18px]"
           >
             <ArrowIcon className="h-6 w-6" />
@@ -238,20 +240,12 @@ function AboutBlock() {
 
 function Stats() {
   return (
-    <section
-      className="px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24 xl:px-12"
-      style={{ fontFamily: "Inter, sans-serif" }}
-    >
+    <section className="px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24 xl:px-12">
       <div className="mx-auto w-full max-w-[1200px]">
         {/* Section heading */}
+
         <div className="flex flex-col items-center justify-center gap-2 text-center">
-          <h2
-            className="flex min-h-[65px] w-full max-w-[671px] items-center justify-center gap-2 px-2 text-center text-[28px] font-extrabold leading-[40px] tracking-[-0.4px] sm:text-[34px] lg:h-[65px] lg:text-[40px] lg:leading-[65px]"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 800,
-            }}
-          >
+          <h2 className="flex min-h-[65px] w-full max-w-[671px] items-center justify-center gap-2 px-2 text-center text-[28px] font-extrabold leading-[40px] tracking-[-0.4px] sm:text-[34px] lg:h-[65px] lg:text-[40px] lg:leading-[65px]">
             <Sparkle className="h-6 w-6 shrink-0 sm:h-8 sm:w-8 lg:h-9 lg:w-9" />
 
             <span className="text-black">Experience.</span>
@@ -261,6 +255,7 @@ function Stats() {
         </div>
 
         {/* Statistics cards */}
+
         <ul className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-5">
           {STATS.map((stat, index) => (
             <li
@@ -269,6 +264,7 @@ function Stats() {
               style={{ borderColor: `${BLUE}70` }}
             >
               {/* Statistic image */}
+
               <div className="flex h-[95px] w-[95px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#E5F5FC] transition-transform duration-300 group-hover:scale-105 sm:h-[105px] sm:w-[105px] lg:h-[118px] lg:w-[118px]">
                 <img
                   src={stat.image}
@@ -279,11 +275,11 @@ function Stats() {
               </div>
 
               {/* Gradient statistic value */}
+
               <p
                 className="mt-4 bg-clip-text text-center text-[28px] font-extrabold leading-[1] tracking-normal text-transparent sm:mt-5 sm:text-[32px] lg:text-[36px]"
                 style={{
                   backgroundImage: STAT_GRADIENT,
-                  fontFamily: "Inter, sans-serif",
                   lineHeight: "100%",
                 }}
               >
@@ -291,10 +287,8 @@ function Stats() {
               </p>
 
               {/* Statistic description */}
-              <p
-                className="mt-3 max-w-[205px] text-center text-[13px] font-medium leading-[1.45rem] text-neutral-800 sm:text-[14px] sm:leading-[1.55rem]"
-                style={{ fontFamily: "Inter, sans-serif" }}
-              >
+
+              <p className="mt-3 max-w-[205px] text-center text-[13px] font-medium leading-[1.45rem] text-neutral-800 sm:text-[14px] sm:leading-[1.55rem]">
                 {stat.label}
               </p>
             </li>
