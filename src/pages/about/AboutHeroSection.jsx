@@ -3,7 +3,7 @@ const AboutHeroSection = () => {
     <section
       className="m-auto max-w-[1440px] relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#1499c5] bg-cover bg-center px-4 py-12 sm:min-h-[320px] sm:px-6 sm:py-14 md:min-h-[360px] md:px-8 md:py-16 lg:min-h-[390px] lg:py-20 "
       style={{
-        backgroundImage: "url('/images/aboutPageHeroImage.webp')",
+        backgroundImage: `url("${import.meta.env.BASE_URL}images/aboutPageHeroImage.webp")`,
       }}
     >
       {/* BLUE OVERLAY */}

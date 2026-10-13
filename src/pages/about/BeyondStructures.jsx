@@ -3,7 +3,7 @@ const BeyondStructures = () => {
     <section
       className="relative z-[20] mx-auto mt-15 flex min-h-[290px] w-full max-w-[1440px] items-center justify-center overflow-hidden bg-white bg-cover bg-center px-4 py-10 bahaturk-inter sm:min-h-[320px] sm:px-6 sm:py-12 md:min-h-[360px] md:px-8 md:py-14 min-[769px]:max-[1200px]:min-h-[390px] min-[769px]:max-[1200px]:px-10 min-[769px]:max-[1200px]:py-16 lg:min-h-[429px] lg:py-20"
       style={{
-        backgroundImage: "url('/images/blueprint-bg.png')",
+        backgroundImage: `url('${import.meta.env.BASE_URL}images/blueprint-bg.webp')`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

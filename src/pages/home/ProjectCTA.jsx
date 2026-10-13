@@ -1,4 +1,4 @@
-import { AiOutlineArrowRight } from "react-icons/ai";
+// import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const ProjectCTA = () => {
@@ -63,7 +63,7 @@ const ProjectCTA = () => {
             "
           >
             Explore Solh Project
-            <AiOutlineArrowRight className="font-black text-2xl" />
+            {/* <AiOutlineArrowRight className="font-black text-2xl" /> */}
           </Link>
 
           <Link
@@ -89,7 +89,7 @@ const ProjectCTA = () => {
             "
           >
             Contact Our Team
-            <AiOutlineArrowRight className="font-black text-2xl" />
+            {/* <AiOutlineArrowRight className="font-black text-2xl" /> */}
           </Link>
         </div>
       </div>

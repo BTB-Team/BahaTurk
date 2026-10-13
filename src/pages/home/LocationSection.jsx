@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { FaLocationPinLock } from "react-icons/fa6";
-import { MdMapsHomeWork } from "react-icons/md";
-import { BiSolidBuildingHouse } from "react-icons/bi";
-import { IoAirplane } from "react-icons/io5";
+// import { FaLocationPinLock } from "react-icons/fa6";
+// import { MdMapsHomeWork } from "react-icons/md";
+// import { BiSolidBuildingHouse } from "react-icons/bi";
+// import { IoAirplane } from "react-icons/io5";
 import Loader from "../../components/Loader";
 
 const LocationSection = () => {
   const icons = [
-    <IoAirplane />,
-    <MdMapsHomeWork />,
-    <FaLocationPinLock />,
-    <BiSolidBuildingHouse />,
+    // <IoAirplane />,
+    // <MdMapsHomeWork />,
+    // <FaLocationPinLock />,
+    // <BiSolidBuildingHouse />,
   ];
   const [locationData, setLocationData] = useState(null);
   const [loading, setLoading] = useState(true);
