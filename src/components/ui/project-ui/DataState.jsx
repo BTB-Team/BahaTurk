@@ -1,6 +1,5 @@
 import Container from "./Container";
 
-/** Shared loading / error / empty handling so sections don't repeat it. */
 export default function DataState({ loading, error, isEmpty, children }) {
   const message = loading
     ? "Loading…"

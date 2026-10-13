@@ -1,4 +1,4 @@
-/** "FLOOR CONFIGURATION ————" label with a trailing rule (per Figma). */
+
 export default function SectionLabel({ children }) {
   return (
     <div className="flex items-center gap-3">

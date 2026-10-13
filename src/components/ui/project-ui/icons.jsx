@@ -1,8 +1,4 @@
-/**
- * Inline icons (no icon library needed). Stand-ins matching the Figma shapes;
- * swap for the exported Figma SVGs at any time without touching the sections.
- * All use currentColor, so colour comes from the parent (text-accent).
- */
+
 function Icon({ className, children, ...rest }) {
   return (
     <svg

@@ -31,7 +31,6 @@ export default function FeaturedProject() {
                             )}
                         </div>
 
-                        {/* Button - Placed inside the relative wrapper, OUTSIDE the overflow-hidden box */}
                         <a
                             href="#explore"
                             className="absolute bottom-[-10px] left-0 z-20 inline-flex items-center gap-2 bg-white text-[#0F99CC] font-semibold text-[13px] sm:text-[16px] px-5 py-2.5 rounded-full shadow-md transition-all duration-200 hover:gap-3"
