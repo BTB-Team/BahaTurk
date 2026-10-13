@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/images/logo.png";
+// import logo from "../../assets/images/logo.png";
 import FooterLinks from "../ui/FooterLinks";
 import { NAV_LINKS } from "../constant";
 import Logo from "../ui/Logo";
