@@ -6,31 +6,25 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/800.css";
 
-/* ====================COLORS============================= */
+/* ==================== COLORS ==================== */
 
 const BLUE = "#1496D3";
-const BLUE_DARK = "#0E78A8";
-const BLUE_SOFT = "#E5F5FC";
 
 const STAT_GRADIENT =
   "linear-gradient(180deg, #0F99CC 0%, #084D66 100%)";
 
-const fadeLeft =
-  "linear-gradient(to right, transparent 0%, #000 45%)";
+const fadeLeft = "linear-gradient(to right, transparent 0%, #000 45%)";
 
-/* =====================ICONS=================== */
-
-function Icon({ children, className = "" }) {
-  return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={className}>
-      {children}
-    </svg>
-  );
-}
+/* ==================== ICONS ==================== */
 
 function Sparkle({ className = "" }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill={BLUE}>
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill={BLUE}
+    >
       <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z" />
     </svg>
   );
@@ -44,74 +38,81 @@ function ArrowIcon({ className = "" }) {
   );
 }
 
-/* ======================= IMAGES All images must exist inside public/images/======= */
+/* ==================== IMAGES ==================== */
 
-const LEFT_IMAGE = "/images/building-left.webp";
-const RIGHT_IMAGE = "/images/building-right.webp";
-const BUILDING_IMAGE = "/images/building-since.webp";
+const IMAGE_BASE = `${import.meta.env.BASE_URL}images/`;
 
-/* ====================STATISTICS DATA=============================== */
+const LEFT_IMAGE = `${IMAGE_BASE}building-left.webp`;
+const RIGHT_IMAGE = `${IMAGE_BASE}building-right.webp`;
+const BUILDING_IMAGE = `${IMAGE_BASE}building-since.webp`;
+
+/* ==================== STATISTICS DATA ==================== */
 
 const STATS = [
   {
-    image: "/images/established.png",
+    image: `${IMAGE_BASE}established.svg`,
     value: "2001",
     label: "Established",
     imageAlt: "Company establishment",
   },
   {
-    image: "/images/residential-blocks.png",
+    image: `${IMAGE_BASE}residential-blocks.svg`,
     value: "118",
     label: "Residential Blocks Planned at Solh Residential Project",
     imageAlt: "Residential apartment blocks",
   },
   {
-    image: "/images/phase-one.png",
+    image: `${IMAGE_BASE}phase-one.svg`,
     value: "20",
     label: "Residential Blocks in Phase One",
     imageAlt: "Residential construction project",
   },
   {
-    image: "/images/project-area.png",
+    image: `${IMAGE_BASE}project-area.svg`,
     value: "32 Jeribs",
     label: "Phase One Project Area",
     imageAlt: "Residential project area",
   },
   {
-    image: "/images/green-space.png",
+    image: `${IMAGE_BASE}green-space.svg`,
     value: "75%",
     label: "Planned Green & Open Space",
     imageAlt: "Green residential community",
   },
 ];
 
-/* =====================CTA BLOCK====================== */
+/* ==================== CTA BLOCK ==================== */
 
 function CtaBlock() {
   return (
-    <div className="overflow-x-clip">
-      <div
-        id="contact"
-        className="relative isolate mx-auto overflow-hidden bg-white lg:left-1/2 lg:h-[549px] lg:w-[1658px] lg:-translate-x-1/2 lg:rounded-[36px]"
-      >
-        {/* Left image: desktop */}
-        <img  src={LEFT_IMAGE}  alt="Baha Turk residential towers"  loading="lazy"  className="absolute left-[109px] top-[80px] z-0 hidden h-[330px] w-[405px] rounded-r-[40px] bg-slate-200 object-cover lg:block"/>
+    <div className="relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-x-clip">
+      <div  id="contact"  className="relative isolate min-h-[549px] w-full overflow-hidden bg-white lg:h-[549px] lg:rounded-none">
+        {/* Left image: left = 0, top = 80px */}
+        <img  src={LEFT_IMAGE}  alt="Baha Turk residential towers"  loading="lazy"  className="absolute left-0 top-[80px] z-0 hidden h-[330px] w-[24.43%] rounded-r-[40px] bg-slate-200 object-cover lg:block" />
 
-        {/* Right image: desktop */}
-        <img  src={RIGHT_IMAGE}  alt="Baha Turk residential tower"  loading="lazy"  className="absolute bottom-0 right-[109px] z-0 hidden h-[334px] w-[404px] rounded-l-[40px] bg-slate-200 object-cover lg:block"/>
+        {/* Right image: right = 0, bottom = 0 */}
+        <img
+          src={RIGHT_IMAGE}
+          alt="Baha Turk residential tower"
+          loading="lazy"
+          className="absolute right-0 bottom-0 z-0 hidden h-[334px] w-[24.37%] rounded-l-[40px] bg-slate-200 object-cover lg:block"
+        />
 
         {/* CTA content */}
         <div className="relative z-10 mx-auto flex flex-col items-center px-5 pb-10 pt-10 text-center sm:px-8 lg:h-full lg:justify-center lg:px-0 lg:py-0">
           <Sparkle className="h-14 w-14 lg:h-[72px] lg:w-[72px]" />
 
-          <h2  className="mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:w-[590px] lg:text-[48px] lg:leading-[65px] lg:tracking-[-0.48px]"  style={{ fontFamily: "Inter, sans-serif" }}>
+          <h2
+            className="mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:w-[590px] lg:text-[48px] lg:leading-[65px]"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
             If you can <span style={{ color: BLUE }}>dream</span> it,
             <br />
             We can <span style={{ color: BLUE }}>build</span> it.
           </h2>
 
           <p
-            className="mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:h-[239px] lg:text-[20px] lg:leading-[40px]"
+            className="mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:text-[20px] lg:leading-[40px]"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             We bring a modern and engineering-driven approach to every project,
@@ -154,7 +155,7 @@ function CtaBlock() {
   );
 }
 
-/* =====================ABOUT BLOCK============================ */
+/* ==================== ABOUT BLOCK ==================== */
 
 function AboutBlock() {
   return (
@@ -192,7 +193,7 @@ function AboutBlock() {
         {/* About content */}
         <div className="relative z-10 flex h-full flex-col justify-center px-6 py-12 sm:px-10 lg:px-[57px] lg:py-0">
           <h2
-            className="text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-white sm:text-[40px] lg:w-[464px] lg:text-[48px] lg:leading-[65px] lg:tracking-[-0.48px]"
+            className="text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-white sm:text-[40px] lg:w-[464px] lg:text-[48px] lg:leading-[65px]"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             Building Since 2001
@@ -233,7 +234,7 @@ function AboutBlock() {
   );
 }
 
-/* =========================STATISTICS BLOCK======================== */
+/* ==================== STATISTICS BLOCK ==================== */
 
 function Stats() {
   return (
@@ -251,7 +252,7 @@ function Stats() {
               fontWeight: 800,
             }}
           >
-            <Sparkle className="h-6 w-6 shrink-0 text-[#0F99CC] sm:h-8 sm:w-8 lg:h-9 lg:w-9" />
+            <Sparkle className="h-6 w-6 shrink-0 sm:h-8 sm:w-8 lg:h-9 lg:w-9" />
 
             <span className="text-black">Experience.</span>
             <span className="text-[#0F99CC]">Scale.</span>
@@ -284,7 +285,6 @@ function Stats() {
                   backgroundImage: STAT_GRADIENT,
                   fontFamily: "Inter, sans-serif",
                   lineHeight: "100%",
-                  letterSpacing: "0%",
                 }}
               >
                 {stat.value}
@@ -305,7 +305,7 @@ function Stats() {
   );
 }
 
-/* ==================== MAIN COMPONENT========================= */
+/* ==================== MAIN COMPONENT ==================== */
 
 export default function BuildingSince() {
   return (
