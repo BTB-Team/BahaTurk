@@ -173,12 +173,28 @@ export default function Engineering() {
                     />
                   </div>
                   <span
-                    className={`text-[22px] font-extrabold leading-[27px] md:text-[24px] ${index === 0 ? "h-[27px] w-[33px] whitespace-nowrap bg-gradient-to-r from-[#0F99CC] to-[#084D66] bg-clip-text text-transparent lg:text-[24px]" : index === 1 ? "h-[27px] w-[76px] whitespace-nowrap bg-gradient-to-r from-[#0F99CC] to-[#084D66] bg-clip-text text-transparent lg:text-[24px]" : index === 2 ? "whitespace-nowrap bg-gradient-to-r from-[#0F99CC] to-[#084D66] bg-clip-text text-transparent" : "text-[#299BC1]"}`}
+                    className={`text-[22px] font-extrabold leading-[27px] md:text-[24px] ${
+                      index === 2
+                        ? "h-[27px] w-[62px] whitespace-nowrap bg-gradient-to-r from-[#0F99CC] to-[#084D66] bg-clip-text text-[24px] font-extrabold leading-[27px] text-transparent"
+                        : index === 1
+                          ? "h-[27px] w-[76px] whitespace-nowrap bg-gradient-to-r from-[#0F99CC] to-[#084D66] bg-clip-text text-transparent lg:text-[24px]"
+                          : index === 0
+                            ? "h-[27px] w-[33px] whitespace-nowrap bg-gradient-to-r from-[#0F99CC] to-[#084D66] bg-clip-text text-transparent lg:text-[24px]"
+                            : "text-[#299BC1]"
+                    }`}
                   >
                     {value}
                   </span>
                   <span
-                    className={`text-[11px] font-medium leading-[14px] text-[#111111] md:text-[12px] md:leading-[16px] ${index === 0 ? "lg:h-[27px] lg:w-[124px] lg:text-[15px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]" : ""}`}
+                    className={`text-[11px] font-medium leading-[14px] text-[#111111] md:text-[12px] md:leading-[16px] ${
+                      index === 2
+                        ? "lg:h-[27px] lg:w-[158px] lg:text-[15px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]"
+                        : index === 1
+                          ? "lg:h-[27px] lg:w-[74px] lg:text-[15px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]"
+                          : index === 0
+                            ? "lg:h-[27px] lg:w-[124px] lg:text-[15px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]"
+                            : ""
+                    }`}
                   >
                     {label}
                   </span>
