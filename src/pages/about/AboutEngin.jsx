@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutEngineering = () => {
   return (
     <main className="w-full overflow-x-hidden bg-white">
@@ -49,7 +47,10 @@ const AboutEngineering = () => {
               {/* ==================== CRANE IMAGE ==================== */}
 
               <div className="absolute right-0 top-0 z-[10] hidden xl:block">
-                <img src="/images/tower-crane.png" alt="Construction Crane" />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/tower-crane.webp `}
+                  alt="Construction Crane"
+                />
               </div>
             </div>
           </div>

@@ -117,7 +117,7 @@ const SafetySection = () => {
                 {/* wave */}
                 <div className="mt-6 flex items-center gap-3 text-accent">
                   <span className="h-[2.5px] w-12 bg-linear-to-r from-white to-accent" />
-                  <img src="images/pulse.svg" alt="pulse" className="" />
+                  <img src="images/pulse.svg" alt="pulse"/>
                   <span className="h-[2.5px] w-12 bg-linear-to-l from-white to-accent" />
                 </div>
               </div>

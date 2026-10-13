@@ -52,7 +52,9 @@ const ProjectCTA = () => {
               rounded-xl
               bg-accent
               px-5
-              py-3.5
+              py-3
+              sm:px-6
+              sm:py-3
               text-sm
               sm:text-xl
               font-medium
@@ -80,7 +82,9 @@ const ProjectCTA = () => {
               border-accent
               bg-white
               px-5
-              py-3.5
+              py-3
+              sm:px-6
+              sm:py-3
               text-sm
               sm:text-xl
               font-medium

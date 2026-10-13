@@ -192,7 +192,7 @@ export default function Engineering() {
             to="/projects"
             className="flex h-[46px] w-full items-center justify-center gap-[10px] rounded-full bg-[#299BC1] px-[24px] text-[15px] font-medium text-white transition hover:bg-[#2189aa] sm:w-fit lg:relative lg:h-[49px] lg:w-[257px] lg:flex-none lg:gap-0 lg:px-0"
           >
-            <span className="text-[15px] font-medium leading-[27px] text-white lg:absolute lg:left-[12px] lg:top-[11px] lg:h-[27px] lg:w-[195px] lg:whitespace-nowrap lg:text-[16px] lg:leading-[27px] lg:tracking-[0]">
+            <span className="whitespace-nowrap text-[clamp(10px,4vw,15px)] font-medium leading-[27px] text-white lg:absolute lg:left-[12px] lg:top-[11px] lg:h-[27px] lg:w-[195px] lg:whitespace-nowrap lg:text-[16px] lg:leading-[27px] lg:tracking-[0]">
               Discover Our Engineering
             </span>
             <span
