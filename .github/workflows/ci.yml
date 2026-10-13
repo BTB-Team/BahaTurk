@@ -1,34 +1,58 @@
-name: Frontend CI
+name: Frontend CI/CD
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, main]
   push:
-    branches: [develop]
+    branches: [develop, main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 1. Setup Node.js FIRST (Ensures the environment is solid)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      # 2. Install pnpm SECOND (Registers correctly on top of Node 22)
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
-      # 3. Clean dependency installation (Bypasses local lockfile strictness mismatches)
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
-      # 4. Compile the React Project
       - name: Build
         run: pnpm build
+
+      - name: Copy db.json to build folder
+        run: cp db.json ./dist/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+        uses: actions/deploy-pages@v4
