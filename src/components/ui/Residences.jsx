@@ -24,7 +24,7 @@ export default function ResidencesSection() {
 
         <div className="flex w-full flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="w-full md:w-fit">
-            <p className="h-[19px] w-[305px] max-w-full text-[16px] font-normal leading-[100%] tracking-[0] text-[#000000] lg:h-[19px] lg:w-[305px] lg:text-left lg:text-[16px] lg:font-normal lg:leading-[100%] lg:tracking-[0] lg:text-[#000000]">
+            <p className="h-[19px] w-[305px] max-w-full text-[14px] font-normal leading-[100%] tracking-[0] text-[#000000] md:text-[16px] lg:h-[19px] lg:w-[305px] lg:text-left lg:text-[16px] lg:font-normal lg:leading-[100%] lg:tracking-[0] lg:text-[#000000]">
               DESIGNED FOR DIFFERENT LIFESTYLES
             </p>
 
@@ -96,7 +96,7 @@ export default function ResidencesSection() {
 
 function ResidenceCard({ residence }) {
   return (
-    <div className="mx-0 h-[420px] w-[300px] max-w-full translate-x-0 sm:h-[393px] sm:w-[275px]">
+    <div className="mx-auto h-[420px] w-[300px] max-w-full translate-x-0 ">
       <a
         href={residence.href || "#"}
         className="card group flex h-full w-full flex-col overflow-hidden rounded-[20px] border border-[#0F99CC2B] bg-white"

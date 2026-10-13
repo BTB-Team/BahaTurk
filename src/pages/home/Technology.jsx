@@ -230,7 +230,7 @@ export default function Technology() {
           </Link>
         </div>
 
-        <div className="order-1 relative w-full max-w-[580px] pb-[30px] sm:pb-[100px] md:order-2 md:w-[42%] md:items-end lg:w-[590px] lg:max-w-none lg:flex-none lg:pb-0">
+        <div className="order-1 relative w-full max-w-[580px] pb-[30px] sm:pb-[100px] md:order-2 md:w-[42%] md:items-end md:pb-[50px] lg:w-[590px] lg:max-w-none lg:flex-none lg:pb-0">
           <div className="relative ml-auto w-full rounded-[12px] md:w-[85%] md:rounded-[24px] lg:w-[590px] lg:rounded-[60px]">
             <img
               src={
@@ -240,11 +240,14 @@ export default function Technology() {
               className="block h-auto w-full rounded-[12px] object-cover md:rounded-[24px] lg:h-[612.5px] lg:rounded-[60px]"
             />
 
-            <div className="absolute right-0 top-0 z-20 h-[110px] w-[132px] rounded-[12px] border border-[#0F99CC2B] bg-white/95 shadow-md backdrop-blur-sm md:h-[124px] md:w-[150px] md:rounded-[14px] lg:h-[145px] lg:w-[176px] lg:rounded-[16px]">
-              <div className="absolute left-[5px] top-[7px] flex h-[56px] w-[56px] items-center justify-center text-[#0F99CC] md:left-[6px] md:top-[8px] md:h-[64px] md:w-[64px] lg:left-[7px] lg:top-[9px] lg:h-[74px] lg:w-[74px]">
-                <Layers className="h-[40px] w-[40px] md:h-[46px] md:w-[46px] lg:h-[51.88px] lg:w-[51.88px]" strokeWidth={2} />
+            <div className="absolute right-0 top-0 z-20 h-[96px] w-[116px] rounded-[12px] border border-[#0F99CC2B] bg-white/95 shadow-md backdrop-blur-sm sm:h-[104px] sm:w-[126px] md:h-[110px] md:w-[132px] md:rounded-[14px] lg:h-[145px] lg:w-[176px] lg:rounded-[16px]">
+              <div className="absolute left-[4px] top-[5px] flex h-[48px] w-[48px] items-center justify-center text-[#0F99CC] sm:left-[5px] sm:top-[6px] sm:h-[58px] sm:w-[58px] md:left-[5px] md:top-[6px] md:h-[52px] md:w-[52px] lg:left-[7px] lg:top-[9px] lg:h-[74px] lg:w-[74px]">
+                <Layers
+                  className="h-[36px] w-[36px] sm:h-[42px] sm:w-[42px] md:h-[40px] md:w-[40px] lg:h-[51.88px] lg:w-[51.88px]"
+                  strokeWidth={2}
+                />
               </div>
-              <span className="absolute left-[14px] top-[60px] h-[32px] w-[100px] text-left text-[11px] font-medium leading-[15px] text-black md:left-[15px] md:top-[70px] md:h-[36px] md:w-[116px] md:text-[13px] md:leading-[18px] lg:left-[18px] lg:top-[80px] lg:h-[40px] lg:w-[134px] lg:text-[15px] lg:leading-[20px]">
+              <span className="absolute left-[10px] top-[57px] h-[32px] w-[96px] text-left text-[10px] font-medium leading-[13px] text-black sm:left-[12px] sm:top-[62px] sm:h-[36px] sm:w-[102px] sm:text-[10px] sm:leading-[14px] md:left-[12px] md:top-[62px] md:h-[36px] md:w-[108px] md:text-[11px] md:leading-[14px] lg:left-[18px] lg:top-[80px] lg:h-[40px] lg:w-[134px] lg:text-[15px] lg:leading-[20px]">
                 Integrated concrete structure
               </span>
             </div>
