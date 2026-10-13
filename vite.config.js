@@ -4,7 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/BahaTurk/", //این خط برای آدرس‌دهی درست فایل‌ها در گیت‌هاب پیجز اضافه شد
+  // Reverted completely to your proven repository subfolder lock
+  base: "/BahaTurk/", 
   server: {
     port: 5173,
   },

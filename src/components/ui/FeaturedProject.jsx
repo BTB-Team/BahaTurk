@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import projectImage from "../../assets/images/featured_project.jpg";
+import projectImage from "../../assets/images/featured_project.webp";
 
 export default function FeaturedProject() {
   return (
