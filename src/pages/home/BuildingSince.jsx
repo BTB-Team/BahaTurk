@@ -1,17 +1,15 @@
-
 import React from "react";
 
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/800.css";
+// import "@fontsource/inter/400.css";
+// import "@fontsource/inter/500.css";
+// import "@fontsource/inter/600.css";
+// import "@fontsource/inter/800.css";
 
 /* ==================== COLORS ==================== */
 
 const BLUE = "#1496D3";
 
-const STAT_GRADIENT =
-  "linear-gradient(180deg, #0F99CC 0%, #084D66 100%)";
+const STAT_GRADIENT = "linear-gradient(180deg, #0F99CC 0%, #084D66 100%)";
 
 const fadeLeft = "linear-gradient(to right, transparent 0%, #000 45%)";
 
@@ -32,7 +30,16 @@ function Sparkle({ className = "" }) {
 
 function ArrowIcon({ className = "" }) {
   return (
-    <svg  viewBox="0 0 24 24"  aria-hidden="true"  className={className}  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M3 12h18M14 5l7 7-7 7" />
     </svg>
   );
@@ -86,9 +93,17 @@ const STATS = [
 function CtaBlock() {
   return (
     <div className="relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-x-clip">
-      <div  id="contact"  className="relative isolate min-h-[549px] w-full overflow-hidden bg-white lg:h-[549px] lg:rounded-none">
+      <div
+        id="contact"
+        className="relative isolate min-h-[549px] w-full overflow-hidden bg-white lg:h-[549px] lg:rounded-none"
+      >
         {/* Left image: left = 0, top = 80px */}
-        <img  src={LEFT_IMAGE}  alt="Baha Turk residential towers"  loading="lazy"  className="absolute left-0 top-[80px] z-0 hidden h-[330px] w-[24.43%] rounded-r-[40px] bg-slate-200 object-cover lg:block" />
+        <img
+          src={LEFT_IMAGE}
+          alt="Baha Turk residential towers"
+          loading="lazy"
+          className="absolute left-0 top-[80px] z-0 hidden h-[330px] w-[24.43%] rounded-r-[40px] bg-slate-200 object-cover lg:block"
+        />
 
         {/* Right image: right = 0, bottom = 0 */}
         <img

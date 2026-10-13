@@ -84,7 +84,7 @@ const AboutJourney = () => {
             {/* RIGHT IMAGE */}
             <div className="relative top-0 w-full overflow-hidden rounded-[15px] sm:rounded-[17px] lg:top-[-20px]">
               <img
-                src="/images/management.png"
+                src={`${import.meta.env.BASE_URL}images/management.webp`}
                 alt="Baha Turk Management Team"
                 className="h-[220px] w-full  object-top transition-transform duration-500 hover:scale-[1.02] sm:h-[280px] md:h-[320px] lg:h-[350px]"
               />
