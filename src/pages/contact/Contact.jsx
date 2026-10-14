@@ -24,13 +24,13 @@ export default function Contact() {
     "h-[42px] w-full rounded-lg border-0 bg-white px-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70";
 
   return (
-    <main className="bg-white" style={{ fontFamily: "Inter, sans-serif" }}>
+    <main className="bahaturk-inter bg-white">
       <section className="relative mt-4 flex min-h-[320px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#0F99CC] to-[#084D66] px-6 py-8 md:min-h-[401px] md:py-10">
         <img
-          src="/images/Bg_hero_contactpg.jpg"
+          src={`${import.meta.env.BASE_URL}images/Contact_hero.jpg`}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.04]"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-4"
         />
 
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center text-white">
