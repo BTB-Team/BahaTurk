@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-// import { FaLocationPinLock } from "react-icons/fa6";
-// import { MdMapsHomeWork } from "react-icons/md";
-// import { BiSolidBuildingHouse } from "react-icons/bi";
-// import { IoAirplane } from "react-icons/io5";
 import Loader from "../../components/Loader";
 
 const LocationSection = () => {
   const icons = [
-    // <IoAirplane />,
-    // <MdMapsHomeWork />,
-    // <FaLocationPinLock />,
-    // <BiSolidBuildingHouse />,
+    <img src="images/airplane.svg" alt="airplane" className="" />,
+    <img src="images/home.svg" alt="home" className="" />,
+    <img src="images/location.svg" alt="location" className="" />,
+    <img src="images/building.svg" alt="building" className="" />,
   ];
   const [locationData, setLocationData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,7 +41,7 @@ const LocationSection = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-6">
           {/* left */}
-          <div className="w-full lg:w-3/5">
+          <div className="w-full lg:w-3/5 flex flex-col justify-center items-start gap-0 sm:gap-2">
             <div className="mb-3 flex items-center gap-2">
               <span className="h-[2px] sm:h-[3px] w-8 sm:w-10 bg-accent" />
 
@@ -58,7 +54,7 @@ const LocationSection = () => {
               Connected to Kabul
             </p>
 
-            <h2 className="text-3xl font-extrabold leading-14 sm:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-5xl">
               <span className="text-text">A Prime Location in</span>
               <br />
               <span className="text-accent">
@@ -72,7 +68,7 @@ const LocationSection = () => {
             </p>
 
             {/* location cards */}
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="w-full mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {locationData.nearby_places.map((place, index) => (
                 <div
                   key={place}
@@ -102,7 +98,7 @@ const LocationSection = () => {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#E1F5FB]
+                      bg-accent/20
                       text-2xl
                       text-accent
                     "
