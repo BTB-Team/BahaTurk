@@ -16,7 +16,7 @@ export default function ResidencesSection() {
   const [status] = useState(residenceList.length ? "ready" : "error");
 
   return (
-    <section className="bahaturk-inter mx-auto mt-10 w-full max-w-[1200px] rounded-[30px] border border-[#0F99CC2B] bg-white px-4 py-6 sm:px-6 lg:h-[640px]">
+    <section className="bahaturk-inter mx-auto mt-10 w-full max-w-[1200px] rounded-[30px] border border-[#0F99CC2B] bg-white px-4 py-6 sm:px-6 lg:h-[670px]">
       <div className="mb-10 w-full lg:mb-4">
         <p className="eyebrow mb-3 text-[18px] font-semibold leading-[24px] tracking-[0] text-[#0F99CC] before:h-[3px] before:w-[41px] before:bg-[#0F99CC]">
           RESIDENCES
