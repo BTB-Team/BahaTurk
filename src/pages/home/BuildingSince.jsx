@@ -85,74 +85,67 @@ const STATS = [
 
 /* ==================== CTA BLOCK ==================== */
 
+
 function CtaBlock() {
   return (
     <div className="relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-x-clip">
       <div
         id="contact"
-        className="relative isolate min-h-[549px] w-full overflow-hidden bg-white lg:h-[549px] lg:rounded-none"
+        className="relative isolate mx-auto min-h-[620px] w-full overflow-hidden bg-white lg:h-[620px] lg:min-h-[620px] lg:w-[1658px] lg:max-w-none"
       >
         {/* Left image */}
-
         <img
           src={LEFT_IMAGE}
           alt="Baha Turk residential towers"
           loading="lazy"
-          className="absolute left-0 top-[80px] z-0 hidden h-[330px] w-[24.43%] rounded-r-[40px] bg-slate-200 object-cover lg:block"
+          className="absolute top-[71px] z-0 hidden h-[370px] w-[500px] max-w-none rounded-[36px] bg-slate-200 object-cover lg:left-[10px] lg:block"
         />
 
         {/* Right image */}
-
-        <img
-          src={RIGHT_IMAGE}
-          alt="Baha Turk residential tower"
-          loading="lazy"
-          className="absolute right-0 bottom-0 z-0 hidden h-[334px] w-[24.37%] rounded-l-[40px] bg-slate-200 object-cover lg:block"
+        <img  src={RIGHT_IMAGE}  alt="Baha Turk residential tower"  loading="lazy"  className="absolute top-[231px] z-0 hidden h-[375px] w-[500px] max-w-none rounded-[36px] bg-slate-200 object-cover lg:left-[1148px] lg:block"
         />
 
         {/* CTA content */}
-
         <div className="relative z-10 mx-auto flex flex-col items-center px-5 pb-10 pt-10 text-center sm:px-8 lg:h-full lg:justify-center lg:px-0 lg:py-0">
           <Sparkle className="h-14 w-14 lg:h-[72px] lg:w-[72px]" />
 
-          <h2 className="mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:w-[590px] lg:text-[48px] lg:leading-[65px]">
+          <h2 className="bahaturk-inter mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:h-[130px] lg:w-[590px] lg:text-[48px] lg:leading-[65px]">
             If you can <span style={{ color: BLUE }}>dream</span> it,
             <br />
             We can <span style={{ color: BLUE }}>build</span> it.
           </h2>
 
-          <p className="mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:text-[20px] lg:leading-[40px]">
+          <p className="bahaturk-inter mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:text-[20px] lg:leading-[40px]">
             We bring a modern and engineering-driven approach to every project,
-            creating durable spaces built for long-term value. With decades of
+            creating durable spaces built for long- <br /> term value. With decades of
             experience, advanced construction technology, and a strong
             commitment to quality, Baha Turk delivers reliable residential
             developments with precision and confidence.
           </p>
 
           <a
-            href="#contact-form"
+            href="#contact"
             style={{ backgroundColor: BLUE }}
-            className="mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 lg:mt-[22px]"
+            className="bahaturk-inter mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 lg:mt-[22px]"
           >
             Get in touch
           </a>
         </div>
 
         {/* Images: mobile and tablet */}
-
         <div className="relative z-10 grid grid-cols-2 gap-3 px-5 pb-10 sm:px-8 lg:hidden">
           <img
             src={LEFT_IMAGE}
             alt="Baha Turk residential towers"
             loading="lazy"
-            className="h-44 w-full rounded-2xl bg-slate-200 object-cover sm:h-64"
+            className="h-44 w-full rounded-[36px] bg-slate-200 object-cover sm:h-64"
           />
 
           <img
             src={RIGHT_IMAGE}
             alt="Baha Turk residential tower"
             loading="lazy"
-            className="h-44 w-full rounded-2xl bg-slate-200 object-cover sm:h-64"
+            className="h-44 w-full rounded-[36px] bg-slate-200 object-cover sm:h-64"
           />
         </div>
       </div>
@@ -164,14 +157,13 @@ function CtaBlock() {
 
 function AboutBlock() {
   return (
-    <div className="px-5 py-12 sm:px-8 lg:pb-[60px] lg:pt-[102px]">
+    <div className="bahaturk-inter px-5 py-12 sm:px-8 lg:pb-[60px] lg:pt-[102px]">
       <div
         id="about"
         style={{ backgroundColor: BLUE }}
         className="relative isolate mx-auto w-full max-w-[1200px] overflow-hidden rounded-[36px] lg:h-[539px]"
       >
         {/* Background image */}
-
         <img
           src={BUILDING_IMAGE}
           alt=""
@@ -181,45 +173,55 @@ function AboutBlock() {
             WebkitMaskImage: fadeLeft,
             maskImage: fadeLeft,
           }}
-          className="pointer-events-none absolute inset-y-0 right-0 z-0 h-full w-full object-cover object-right opacity-20 lg:w-[62%] lg:opacity-70"
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 h-full w-full object-cover object-right opacity-40 lg:w-[62%] lg:opacity-90"
         />
 
         {/* Soft overlay */}
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[1] bg-[#1496D3]/15"
+        <div  aria-hidden="true"  className="pointer-events-none absolute inset-0 z-[1] bg-[#1496D3]/[0.01]"
         />
 
-        {/* Blue gradient */}
-
+        {/* Soft blue gradient behind the text */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-[#1296D0] via-[#1496D3]/45 to-transparent"
+          className="pointer-events-none absolute inset-0 z-[2]"
+          style={{
+            background:
+              "linear-gradient(103.86deg, rgba(15, 153, 204, 0.01) 0%, rgba(15, 153, 204, 0.02) 30.77%, rgba(15, 153, 204, 0.04) 55%, rgba(15, 153, 204, 0.03) 80%, rgba(15, 153, 204, 0.01) 100%)",
+          }}
+        />
+
+        {/* Subtle blue tint at the top-right */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[3]"
+          style={{ background: "radial-gradient(ellipse at top right, rgba(20, 150, 211, 0.12) 0%, rgba(20, 150, 211, 0.05) 28%, transparent 58%)",
+          }}
         />
 
         {/* About content */}
-
         <div className="relative z-10 flex h-full flex-col justify-center px-6 py-12 sm:px-10 lg:px-[57px] lg:py-0">
-          <h2 className="text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-white sm:text-[40px] lg:w-[464px] lg:text-[48px] lg:leading-[65px]">
+          {/* Heading */}
+          <h2 className="w-full text-center text-[32px] font-extrabold leading-[45px] tracking-[-0.48px] text-white sm:text-[40px] sm:leading-[55px] lg:w-[464px] lg:text-left lg:text-[48px] lg:leading-[65px] lg:tracking-[-0.48px]">
             Building Since 2001
           </h2>
 
-          <div className="mt-2 max-w-[547px] text-base font-normal leading-7 text-white lg:mt-0 lg:h-[270px] lg:text-[20px] lg:leading-[30px]">
+          {/* Description */}
+          <div className="mt-4 w-full max-w-[547px] text-[15px] font-normal leading-[24px] text-white sm:text-[17px] sm:leading-[27px] lg:mt-[6px] lg:h-[270px] lg:text-[18px] lg:leading-[28px]">
             <p>
               Founded in Turkey in 2001, Baha Turk Construction Company brings
               together international experience, technical expertise, advanced
               construction technology, and a strong commitment to quality.
             </p>
 
-            <p className="mt-7 lg:mt-[30px]">
+            <p className="mt-5 lg:mt-[30px]">
               Our presence in Afghanistan reflects our vision to introduce
-              modern construction methods, raise building standards, and develop
-              projects designed around safety, durability, quality, and
-              long-term value.
+              modern construction methods, raise building standards, and
+              develop projects designed around safety, durability, quality,
+              and long-term value.
             </p>
           </div>
 
+          {/* About button */}
           <a
             href="#about-baha-turk"
             style={{ color: BLUE }}
@@ -238,12 +240,11 @@ function AboutBlock() {
 
 function Stats() {
   return (
-    <section className="px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24 xl:px-12">
+    <section className="bahaturk-inter px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24 xl:px-12">
       <div className="mx-auto w-full max-w-[1200px]">
         {/* Section heading */}
-
         <div className="flex flex-col items-center justify-center gap-2 text-center">
-          <h2 className="flex min-h-[65px] w-full max-w-[671px] items-center justify-center gap-2 px-2 text-center text-[28px] font-extrabold leading-[40px] tracking-[-0.4px] sm:text-[34px] lg:h-[65px] lg:text-[40px] lg:leading-[65px]">
+          <h2 className="flex min-h-[65px] w-full max-w-[671px] flex-wrap items-center justify-center gap-x-2 gap-y-0 px-2 text-center text-[28px] font-extrabold leading-[40px] tracking-[-0.4px] sm:flex-nowrap sm:text-[34px] lg:h-[65px] lg:text-[40px] lg:leading-[65px]">
             <Sparkle className="h-6 w-6 shrink-0 sm:h-8 sm:w-8 lg:h-9 lg:w-9" />
 
             <span className="text-black">Experience.</span>
@@ -253,7 +254,6 @@ function Stats() {
         </div>
 
         {/* Statistics cards */}
-
         <ul className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-5">
           {STATS.map((stat, index) => (
             <li
@@ -262,18 +262,12 @@ function Stats() {
               style={{ borderColor: `${BLUE}70` }}
             >
               {/* Statistic image */}
-
               <div className="flex h-[95px] w-[95px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#E5F5FC] transition-transform duration-300 group-hover:scale-105 sm:h-[105px] sm:w-[105px] lg:h-[118px] lg:w-[118px]">
-                <img
-                  src={stat.image}
-                  alt={stat.imageAlt}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
+                <img  src={stat.image}  alt={stat.imageAlt}  loading="lazy"  className="h-full w-full object-cover"
                 />
               </div>
 
               {/* Gradient statistic value */}
-
               <p
                 className="mt-4 bg-clip-text text-center text-[28px] font-extrabold leading-[1] tracking-normal text-transparent sm:mt-5 sm:text-[32px] lg:text-[36px]"
                 style={{
@@ -285,8 +279,7 @@ function Stats() {
               </p>
 
               {/* Statistic description */}
-
-              <p className="mt-3 max-w-[205px] text-center text-[13px] font-medium leading-[1.45rem] text-neutral-800 sm:text-[14px] sm:leading-[1.55rem]">
+              <p className="mt-3 w-full max-w-[203px] text-center text-[16px] font-normal leading-[1.2] tracking-normal text-neutral-800 sm:text-[17px] lg:text-[18px] lg:leading-[100%]">
                 {stat.label}
               </p>
             </li>
