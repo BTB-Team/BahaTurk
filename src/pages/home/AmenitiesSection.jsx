@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import Loader from "../../components/Loader";
 
 const AmenitiesSection = () => {
   const [amenitiesData, setAmenitiesData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getAmenitiesData = async () => {
       try {
-        const response = await fetch("/db.json");
+        const response = await fetch("db.json");
         if (!response.ok) {
           throw new Error("Failed to fetch amenities data");
         }
@@ -14,10 +16,19 @@ const AmenitiesSection = () => {
         setAmenitiesData(data.project_amenities);
       } catch (error) {
         console.error("Error fetching amenities data:", error);
+      } finally {
+        setLoading(false);
       }
     };
     getAmenitiesData();
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+  if (!amenitiesData || amenitiesData.length === 0) {
+    return <div className="py-16 text-center">Section data not found.</div>;
+  }
 
   return (
     <section className="bahaturk-inter w-full bg-white py-16 sm:py-20 lg:py-24">
@@ -56,7 +67,7 @@ const AmenitiesSection = () => {
           {/* image */}
           <div className="overflow-hidden rounded-xl">
             <img
-              src="/images/amenities.webp"
+              src="images/amenities.webp"
               alt="Solh residential interior"
               className="h-[220px] w-full object-cover sm:h-[280px]"
             />

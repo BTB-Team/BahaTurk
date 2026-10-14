@@ -6,16 +6,14 @@ import Logo from "../ui/Logo";
 export default function Navbar() {
   const [activeHref, setActiveHref] = useState("/");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const getLinkClass = (isActive) =>
-    `text-sm font-medium transition-colors duration-150 border-b-2 focus:outline-none ${isActive ? "text-text border-accent" : "text-text border-transparent"
-    }`;
+const getLinkClass = (isActive) =>
+  `font-bahaturk-inter text-[14px] md:text-[15px] lg:text-[16px] font-medium transition-colors duration-150 border-b-2 focus:outline-none ${
+    isActive ? "text-black border-accent" : "text-black border-transparent"
+  }`;
 
   return (
     <header className="bg-header relative">
-      <div className="mx-auto h-[65px] flex max-w-7xl items-center justify-between px-6 py-4 mt-5">
-
-        {/* Logo - Untouched */}
+      <div className="mx-auto h-[40px] md:h-[90px] lg:h-[110px] xl:h-[150px] flex max-w-7xl items-center justify-between px-6 md:px-12 lg:px-16 mt-5">        {/* Logo - Untouched */}
         <Logo />
 
         {/* Desktop nav - Untouched */}

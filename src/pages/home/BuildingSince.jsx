@@ -1,12 +1,10 @@
-
 import React from "react";
 
 /* ==================== COLORS ==================== */
 
 const BLUE = "#1496D3";
 
-const STAT_GRADIENT =
-  "linear-gradient(180deg, #0F99CC 0%, #084D66 100%)";
+const STAT_GRADIENT = "linear-gradient(180deg, #0F99CC 0%, #084D66 100%)";
 
 const fadeLeft = "linear-gradient(to right, transparent 0%, #000 45%)";
 

@@ -1,4 +1,5 @@
-import { AiOutlineArrowRight } from "react-icons/ai";
+// import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const ProjectCTA = () => {
   return (
@@ -40,9 +41,10 @@ const ProjectCTA = () => {
 
         {/* buttons */}
         <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row">
-          <button
-            type="button"
+          <Link
+            to="projects"
             className="
+            scroll-smooth
               inline-flex
               items-center
               justify-center
@@ -61,11 +63,11 @@ const ProjectCTA = () => {
             "
           >
             Explore Solh Project
-            <AiOutlineArrowRight className="font-black text-2xl" />
-          </button>
+            {/* <AiOutlineArrowRight className="font-black text-2xl" /> */}
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            to="contact"
             className="
               inline-flex
               items-center
@@ -87,8 +89,8 @@ const ProjectCTA = () => {
             "
           >
             Contact Our Team
-            <AiOutlineArrowRight className="font-black text-2xl" />
-          </button>
+            {/* <AiOutlineArrowRight className="font-black text-2xl" /> */}
+          </Link>
         </div>
       </div>
     </section>
