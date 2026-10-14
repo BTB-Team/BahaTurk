@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-// import { AiOutlineArrowRight } from "react-icons/ai";
-// import { IoMdPulse } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 
@@ -37,7 +35,7 @@ const SafetySection = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-12">
           {/* LEFT CONTENT */}
-          <div className="flex flex-col justify-center items-start gap-3">
+          <div className="flex flex-col justify-center items-start gap-0 sm:gap-2">
             {/* section label */}
             <div className="mb-3 flex items-center gap-2">
               <span className="h-[2px] sm:h-[3px] w-8 sm:w-10 bg-accent" />
@@ -52,7 +50,7 @@ const SafetySection = () => {
             </p>
 
             {/* heading */}
-            <h2 className="text-3xl font-extrabold leading-14 sm:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-5xl">
               <span className="text-accent">Engineering for Strength.</span>
               <br />
               <span className="text-text">Building for Peace of Mind.</span>
@@ -70,7 +68,7 @@ const SafetySection = () => {
               className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-accent px-5 py-3 text-xs sm:text-base font-medium text-white transition hover:bg-accent-hover cursor-pointer"
             >
               Quality & Safety
-              {/* <AiOutlineArrowRight className="font-black text-2xl" />{" "} */}
+              <img src="images/Vector1.svg" alt="vector" className="w-5" />
             </Link>
           </div>
 
@@ -119,7 +117,7 @@ const SafetySection = () => {
                 {/* wave */}
                 <div className="mt-6 flex items-center gap-3 text-accent">
                   <span className="h-[2.5px] w-12 bg-linear-to-r from-white to-accent" />
-                  {/* <IoMdPulse className="text-6xl leading-none" /> */}
+                  <img src="images/pulse.svg" alt="pulse"/>
                   <span className="h-[2.5px] w-12 bg-linear-to-l from-white to-accent" />
                 </div>
               </div>
