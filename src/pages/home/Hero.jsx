@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const BG_IMAGE = `${import.meta.env.BASE_URL}images/hero-bg.webp`;
 
 export default function Hero() {
@@ -36,19 +36,19 @@ export default function Hero() {
         <div className="mt-8 flex items-center justify-center gap-[11px]">
           <span
             aria-hidden="true"
-            className="h-px w-8 bg-[#1496D3] sm:w-14 lg:w-[76px]"
+            className="h-[2px] w-8 bg-[#1496D3] sm:w-14 lg:w-[76px]"
           />
 
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="inline-flex items-center justify-center rounded-xl bg-[#1496D3] px-4 py-2.5 text-base font-medium text-white transition hover:bg-[#0F7DB3] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1496D3] focus-visible:ring-offset-2 lg:h-[42px] lg:px-3 lg:py-0 lg:text-[20px]"
           >
             Explore Our Projects
-          </a>
+          </Link>
 
           <span
             aria-hidden="true"
-            className="h-px w-8 bg-[#1496D3] sm:w-14 lg:w-[76px]"
+            className="h-[2px] w-8 bg-[#1496D3] sm:w-14 lg:w-[76px]"
           />
         </div>
       </div>
