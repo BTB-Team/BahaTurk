@@ -3,30 +3,30 @@ const BG_IMAGE = `${import.meta.env.BASE_URL}images/hero-bg.webp`;
 
 export default function Hero() {
   return (
-    <section className="bahaturk-inter relative isolate mt-0 h-auto w-full max-w-none overflow-hidden bg-white lg:mt-[190px] lg:h-[461px]">
+    <section className="bahaturk-inter relative isolate mt-9 h-auto w-full max-w-none overflow-hidden bg-white  lg:h-[461px]">
       {/* Background image - full width */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-cover bg-center"
+        className="absolute inset-0 -z-20 bg-cover bg-center lg:left[-11px]"
         style={{ backgroundImage: `url("${BG_IMAGE}")` }}
       />
 
       {/* White overlay gradient */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#ffffff_0%,rgba(255,255,255,0.81)_50%,#ffffff_100%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#FFFFFF_0%,rgba(255,255,255,0.81)_62.67%,#FFFFFF_101.84%)]"
       />
 
       {/* Hero content */}
-      <div className="mx-auto flex h-full w-full max-w-[1100px] flex-col items-center justify-start px-5 py-16 text-center sm:px-8 lg:pt-2">
+      <div className="mx-auto flex h-full w-full max-w-[1100px] lg:mt-10 flex-col items-center justify-start px-5 py-16 text-center sm:px-8 lg:pt-2">
         {/* Main heading */}
-        <h1 className="text-[36px] font-extrabold leading-[1.2] tracking-normal text-[#1496D3] sm:text-[48px] lg:w-[933px] lg:text-[64px] lg:leading-[75px]">
+        <h1 className="text-[36px] text-center font-serif font-extrabold leading-[1.2] tracking-[0%] text-[#1496D3] sm:text-[48px] lg:w-[933px] lg:text-[64px] lg:leading-[75px]">
           Building Afghanistan’s Future
           <br className="hidden sm:block" /> with Strength &amp; Precision
         </h1>
 
         {/* Description */}
-        <p className="mt-5 max-w-[840px] text-base font-medium leading-8 text-neutral-950 sm:text-lg lg:text-[20px] lg:leading-9">
+        <p className="mt-3 max-w-[840px] text-center font-inter-medium leading-8 text-neutral-950 sm:text-lg lg:text-[20px] lg:leading-[37px] tracking-[0%]">
           Baha Turk Construction delivers modern, durable, and high-quality
           residential projects through advanced engineering and Tunnel Form
           construction technology.
