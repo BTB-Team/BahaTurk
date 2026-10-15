@@ -50,11 +50,11 @@ const LocationSection = () => {
               </span>
             </div>
 
-            <p className="mb-2 text-base uppercase text-text">
+            <p className="mb-2 text-sm sm:text-lg uppercase text-text">
               Connected to Kabul
             </p>
 
-            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-6xl">
               <span className="text-text">A Prime Location in</span>
               <br />
               <span className="text-accent">
@@ -62,13 +62,13 @@ const LocationSection = () => {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-full lg:max-w-[580px] text-base leading-8 text-text font-medium">
+            <p className="mt-5 max-w-full lg:max-w-[650px] text-base sm:text-lg text-justify leading-8 text-text font-medium font-inter-medium">
               {locationData?.description ||
-                "Solh Residential Project is strategically located in Makroyan 5, providing easy access to key areas of Kabul. The location offers a blend of urban convenience and serene living, making it an ideal choice for residents seeking both comfort and connectivity."}
+                "Solh Residential Project is located in Makroyan 5, Kabul, with convenient access to the city's important destinations."}
             </p>
 
             {/* location cards */}
-            <div className="w-full mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="w-full mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {locationData.nearby_places.map((place, index) => (
                 <div
                   key={place}
@@ -77,15 +77,15 @@ const LocationSection = () => {
                     min-h-[62px]
                     items-center
                     gap-3
-                    rounded-2xl
-                    border
+                    rounded-3xl
+                    border-2
                     border-accent
-                    px-4
-                    py-3
+                    px-5
+                    py-5
                     duration-300
                     transition
                     hover:shadow-[0_8px_25px_rgba(21,159,204,0.10)]
-                    hover:border-2
+                    hover:border-[2.5px]
                     hover:-translate-y-1
                 "
                 >
@@ -99,14 +99,13 @@ const LocationSection = () => {
                       justify-center
                       rounded-full
                       bg-accent/20
-                      text-2xl
                       text-accent
                     "
                   >
                     {icons[index] || <span>{index + 1}</span>}
                   </div>
 
-                  <span className="text-sm font-bold text-accent leading-7 sm:text-base">
+                  <span className="text-sm font-bold text-accent leading-7 sm:text-lg">
                     {place}
                   </span>
                 </div>
