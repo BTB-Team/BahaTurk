@@ -24,17 +24,8 @@ function Sparkle({ className = "" }) {
 
 function ArrowIcon({ className = "" }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 12h18M14 5l7 7-7 7" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 28 20" fill="none">
+       <path d="M16.0833 17.164C15.9298 17.307 15.8067 17.4795 15.7213 17.6712C15.6359 17.8629 15.59 18.0698 15.5863 18.2796C15.5826 18.4894 15.6212 18.6978 15.6997 18.8923C15.7783 19.0869 15.8953 19.2636 16.0437 19.412C16.192 19.5604 16.3688 19.6773 16.5633 19.7559C16.7579 19.8345 16.9663 19.8731 17.1761 19.8694C17.3859 19.8657 17.5928 19.8198 17.7845 19.7344C17.9761 19.649 18.1486 19.5258 18.2917 19.3723L26.625 11.039C26.9176 10.746 27.082 10.3489 27.082 9.93482C27.082 9.52076 26.9176 9.12362 26.625 8.83065L18.2917 0.497321C18.1486 0.343806 17.9761 0.220677 17.7844 0.135278C17.5928 0.049878 17.3859 0.0039586 17.1761 0.000256451C16.9663 -0.00344379 16.7579 0.0351476 16.5633 0.113732C16.3688 0.192319 16.192 0.309287 16.0437 0.45766C15.8953 0.606032 15.7783 0.782769 15.6997 0.977328C15.6212 1.17189 15.5826 1.38028 15.5863 1.59008C15.59 1.79987 15.6359 2.00678 15.7213 2.19844C15.8067 2.39011 15.9298 2.56261 16.0833 2.70566L21.75 8.37232L1.5625 8.37232C1.1481 8.37232 0.750667 8.53694 0.457641 8.82997C0.164615 9.12299 -2.81211e-06 9.52042 -2.77588e-06 9.93482C-2.73965e-06 10.3492 0.164615 10.7467 0.457641 11.0397C0.750667 11.3327 1.1481 11.4973 1.5625 11.4973L21.75 11.4973L16.0833 17.164Z" fill="#0F99CC"/>
     </svg>
   );
 }
@@ -45,7 +36,7 @@ const IMAGE_BASE = `${import.meta.env.BASE_URL}images/`;
 
 const LEFT_IMAGE = `${IMAGE_BASE}building-left-2.webp`;
 const RIGHT_IMAGE = `${IMAGE_BASE}building-right.webp`;
-const BUILDING_IMAGE = `${IMAGE_BASE}building-since.webp`;
+const BUILDING_IMAGE = `${IMAGE_BASE}about.webp`;
 
 /* ==================== STATISTICS DATA ==================== */
 
@@ -167,8 +158,8 @@ function AboutBlock() {
     <div className="bahaturk-inter px-5 py-12 sm:px-8 lg:pb-[60px] lg:pt-[102px]">
       <div
         id="about"
-        style={{ backgroundColor: BLUE }}
-        className="relative isolate mx-auto w-full max-w-[1200px] overflow-hidden rounded-[36px] lg:h-[539px]"
+        // {/* 👈 رنگ بک‌گراند ثابت حذف شد تا عکس و گرادینت با هم ترکیب شوند */}
+        className="relative isolate mx-auto w-full max-w-[1200px] overflow-hidden rounded-[36px] bg-[#0F99CC] lg:h-[539px]"
       >
         {/* Background image */}
         <img
@@ -176,68 +167,44 @@ function AboutBlock() {
           alt=""
           aria-hidden="true"
           loading="lazy"
-          style={{
-            WebkitMaskImage: fadeLeft,
-            maskImage: fadeLeft,
-          }}
-          className="pointer-events-none absolute inset-y-0 right-0 z-0 h-full w-full object-cover object-right opacity-40 lg:w-[62%] lg:opacity-90"
+          // {/* 👈 کدهای مسدودکننده ماسک حذف شدند. عرض عکس w-full شد تا ساختمان‌ها تا زیر متن‌های سمت چپ کشیده شوند */}
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-right opacity-40 lg:opacity-90"
         />
 
-        {/* Soft overlay */}
-        <div  aria-hidden="true"  className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(103.86deg,rgba(15,153,204,0.95)_0%,rgba(15,153,204,0.85)_25%,rgba(15,153,204,0.4)_65%,rgba(15,153,204,0)_100%)]
-"
-        />
-
-        {/* Soft blue gradient behind the text */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[2]"
-          style={{
-            background:
-              "linear-gradient(103.86deg, rgba(15, 153, 204, 0.01) 0%, rgba(15, 153, 204, 0.02) 30.77%, rgba(15, 153, 204, 0.04) 55%, rgba(15, 153, 204, 0.03) 80%, rgba(15, 153, 204, 0.01) 100%)",
-          }}
-        />
-
-        {/* Subtle blue tint at the top-right */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[3]"
-          style={{ background: "radial-gradient(ellipse at top right, rgba(20, 150, 211, 0.12) 0%, rgba(20, 150, 211, 0.05) 28%, transparent 58%)",
-          }}
+{/*         
+          Soft overlay:
+          گرادینت کاملاً مایل (۱۵۵ درجه) که از گوشه بالا چپ غلیظ شروع می‌شود 
+          و به صورت کاملاً کج به پایین سمت راست محو می‌شود تا ساختمان‌ها نمایان شوند
+        */}
+        <div  
+          aria-hidden="true"  
+          className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(103.86deg,#0F99CC_0%,#0F99CC_30.77%,rgba(15,153,204,0.5)_71.63%,rgba(15,153,204,0)_100%)]"
         />
 
         {/* About content */}
         <div className="relative z-10 flex h-full flex-col justify-center px-6 py-12 sm:px-10 lg:px-[57px] lg:py-0">
           {/* Heading */}
-          <h2 className="w-full text-center text-[32px] font-extrabold leading-[45px] tracking-[-0.48px] text-white sm:text-[40px] sm:leading-[55px] lg:w-[464px] lg:text-left lg:text-[48px] lg:leading-[65px] lg:tracking-[-0.48px]">
+          <h2 className="w-full text-center text-[32px] font-serif font-extrabold leading-[45px] tracking-[-0.48px] text-white sm:text-[40px] sm:leading-[55px] lg:w-[464px] lg:text-left lg:text-[48px] lg:leading-[65px] lg:tracking-[-0.48px]">
             Building Since 2001
           </h2>
 
           {/* Description */}
-          <div className="mt-4 w-full max-w-[547px] text-[15px] font-normal leading-[24px] text-white sm:text-[17px] sm:leading-[27px] lg:mt-[6px] lg:h-[270px] lg:text-[18px] lg:leading-[28px]">
+          <div className="mt-4 w-full max-w-[540px] text-[15px] font-normal font-bahaturk-inter leading-[24px] text-white sm:text-[17px] sm:leading-[27px] lg:mt-[6px] lg:h-[270px] lg:text-[20px] lg:leading-[30px]">
             <p>
-              Founded in Turkey in 2001, Baha Turk Construction Company brings
-              together international experience, technical expertise, advanced
-              construction technology, and a strong commitment to quality.
-            </p>
-
-            <p className="mt-5 lg:mt-[30px]">
-              Our presence in Afghanistan reflects our vision to introduce
-              modern construction methods, raise building standards, and
-              develop projects designed around safety, durability, quality,
-              and long-term value.
+              Founded in Turkey in 2001, Baha Turk Construction Company brings together international experience, technical expertise, advanced construction technology, and a strong commitment to quality.
+              <br /><br />
+              Our presence in Afghanistan reflects our vision to introduce modern construction methods, raise building standards, and develop projects designed around safety, durability, quality, and long-term value.
             </p>
           </div>
 
-
           {/* About button rewritten with React Router Link */}
           <Link
-            to="/about" // 👈 Changed from href="#about-baha-turk" to clean route path string
+            to="/about"
             style={{ color: BLUE }}
-            className="mt-6 inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-xl bg-white px-4 text-base font-semibold transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1496D3] lg:mt-[25px] lg:w-[228px] lg:text-[18px]"
+            className="mt-6 inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-xl bg-white px-4 transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1496D3] lg:mt-[25px] lg:w-[228px] leading-[30px] lg:text-[20px]"
           >
             <ArrowIcon className="h-6 w-6 shrink-0" />
-            <span>About Baha Turk</span>
+            <span className="font-bahaturk-inter font-semibold tracking-[0%] text-justify">About Baha Turk</span>
           </Link>
 
         </div>
@@ -246,40 +213,43 @@ function AboutBlock() {
   );
 }
 
+
 /* ==================== STATISTICS BLOCK ==================== */
 
 function Stats() {
   return (
-    <section className="bahaturk-inter px-4 py-14 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24 xl:px-12">
-      <div className="mx-auto w-full max-w-[1200px]">
-        {/* Section heading */}
-        <div className="flex flex-col items-center justify-center gap-2 text-center">
-          <h2 className="flex min-h-[65px] w-full max-w-[671px] flex-wrap items-center justify-center gap-x-2 gap-y-0 px-2 text-center text-[28px] font-extrabold leading-[40px] tracking-[-0.4px] sm:flex-nowrap sm:text-[34px] lg:h-[65px] lg:text-[40px] lg:leading-[65px]">
-            <Sparkle className="h-6 w-6 shrink-0 sm:h-8 sm:w-8 lg:h-9 lg:w-9" />
-
-            <span className="text-black">Experience.</span>
-            <span className="text-[#0F99CC]">Scale.</span>
-            <span className="text-black">Engineering.</span>
-          </h2>
-        </div>
-
-        {/* Statistics cards */}
-        <ul className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-5">
+    <section className="px-4 py-14 -mt-10 sm:py-16 md:py-20">
+      
+      {/* باکس والد اصلی برای تراز مرکز */}
+      <div className="w-full flex flex-col items-center justify-center">
+        
+        {/* 
+          🔄 سوییچ کامل به سیستم فلکس‌باکس هوشمند:
+          - flex-wrap: به کارت‌ها اجازه می‌دهد با کوچک شدن صفحه، به ردیف بعدی هدایت شوند.
+          - justify-center: 👈 شاه‌کلید طلایی؛ تضمین می‌کند کارت‌های ردیف دوم همیشه در وسط ردیف قرار بگیرند.
+          - gap-6: ایجاد فاصله مساوی و استاندارد بین تک‌تک کارت‌ها در تمام جهات.
+        */}
+        <ul className="mt-10 flex flex-wrap justify-center gap-6 w-full max-w-[1240px] mx-auto sm:mt-12 lg:mt-14">
           {STATS.map((stat, index) => (
             <li
               key={`${stat.label}-${index}`}
-              className="group flex min-h-[275px] flex-col items-center rounded-[24px] border bg-white px-5 pb-7 pt-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[290px] sm:rounded-[28px] lg:min-h-[315px] lg:rounded-[30px] lg:px-5 lg:pb-8 lg:pt-8"
-              style={{ borderColor: `${BLUE}70` }}
+              // {/* عرض ثابت کارت بر اساس ابعاد فیکس فیگما (w-[228px]) حفظ شد تا ساختار داخلی آن در لپ‌تاپ و تبلت هرگز مچاله نشود */}
+              className="group flex min-h-[275px] w-[228px] shrink-0 flex-col items-center rounded-[24px] border bg-white px-5 pb-7 pt-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[290px] sm:rounded-[28px] lg:min-h-[315px] lg:rounded-[20px] lg:px-5 lg:pb-8 lg:pt-8"
+              style={{ border: "2px solid #0F99CC" }}
             >
               {/* Statistic image */}
               <div className="flex h-[95px] w-[95px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#E5F5FC] transition-transform duration-300 group-hover:scale-105 sm:h-[105px] sm:w-[105px] lg:h-[118px] lg:w-[118px]">
-                <img  src={stat.image}  alt={stat.imageAlt}  loading="lazy"  className="h-full w-full object-cover"
+                <img 
+                  src={stat.image} 
+                  alt={stat.imageAlt} 
+                  loading="lazy" 
+                  className="h-full w-full object-cover" 
                 />
               </div>
 
               {/* Gradient statistic value */}
               <p
-                className="mt-4 bg-clip-text text-center text-[28px] font-extrabold leading-[1] tracking-normal text-transparent sm:mt-5 sm:text-[32px] lg:text-[36px]"
+                className="mt-4 bg-clip-text text-center text-[28px] font-serif font-extrabold leading-[100%] tracking-normal text-transparent sm:mt-5 sm:text-[32px] lg:text-[36px]"
                 style={{
                   backgroundImage: STAT_GRADIENT,
                   lineHeight: "100%",
@@ -288,8 +258,11 @@ function Stats() {
                 {stat.value}
               </p>
 
-              {/* Statistic description */}
-              <p className="mt-3 w-full max-w-[203px] text-center text-[16px] font-normal leading-[1.2] tracking-normal text-neutral-800 sm:text-[17px] lg:text-[18px] lg:leading-[100%]">
+              {/* 
+                Statistic description:
+                👈 بازگشت به فونت اصلی پروژه شما با اصلاح پیکسلی ارتفاع خط (leading-[100%]) برای تطابق مو به مو با فیگما
+              */}
+              <p className="mt-3 w-[203px] h-[44px] flex items-center justify-center text-center text-[15px] sm:text-[17px] lg:text-[18px] font-bahaturk-inter font-normal leading-[100%] tracking-normal text-black">
                 {stat.label}
               </p>
             </li>
@@ -299,6 +272,8 @@ function Stats() {
     </section>
   );
 }
+
+
 
 /* ==================== MAIN COMPONENT ==================== */
 

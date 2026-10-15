@@ -97,7 +97,7 @@ const AmenitiesSection = () => {
                 {item.title}
               </h3>
 
-              <p className="mt-1.5 text-base leading-5 text-text font-medium sm:text-lg font-inter-medium">
+              <p className="mt-1.5 w-full max-w-[328px] font-inter-medium text-[16px] font-medium leading-[27px] tracking-normal text-black text-left">
                 {item.description}
               </p>
             </div>
