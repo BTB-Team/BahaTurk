@@ -27,7 +27,7 @@ const AmenitiesSection = () => {
     return <Loader />;
   }
   if (!amenitiesData || amenitiesData.length === 0) {
-    return <div className="py-16 text-center">Section data not found.</div>;
+    return <div className="py-16 text-center">Data Not Found.</div>;
   }
 
   return (
@@ -36,7 +36,7 @@ const AmenitiesSection = () => {
         {/* top */}
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_1fr] lg:gap-14">
           {/* content */}
-          <div>
+          <div className="flex flex-col justify-center items-start gap-0 sm:gap-2">
             <div className="mb-3 flex items-center gap-2">
               <span className="h-[2px] sm:h-[3px] w-8 sm:w-10 bg-accent" />
 
@@ -45,18 +45,18 @@ const AmenitiesSection = () => {
               </span>
             </div>
 
-            <p className="mb-2 text-base uppercase text-text">
+            <p className="mb-2 text-sm sm:text-lg uppercase text-text">
               Everyday Comfort
             </p>
 
-            <h2 className="text-3xl font-extrabold leading-14 sm:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-5xl">
               <span className="text-text">Designed Around the Way</span>
               <br />
               <span className="text-text">You </span>
               <span className="text-accent">Live.</span>
             </h2>
 
-            <p className="mt-5 max-w-full lg:max-w-[580px] text-base leading-8 text-text font-medium">
+            <p className="mt-5 max-w-full lg:max-w-[580px] text-base sm:text-lg text-justify leading-8 text-text font-medium font-inter-medium">
               Solh Residential Project is planned as more than a collection of
               residential buildings. It is designed as a complete living
               environment where essential services, comfort, and community come
@@ -65,11 +65,11 @@ const AmenitiesSection = () => {
           </div>
 
           {/* image */}
-          <div className="overflow-hidden rounded-xl">
+          <div className="overflow-hidden rounded-2xl">
             <img
               src="images/amenities.webp"
               alt="Solh residential interior"
-              className="h-[220px] w-full object-cover sm:h-[280px]"
+              className="h-[220px] w-full object-cover sm:h-[320px]"
             />
           </div>
         </div>
@@ -81,24 +81,23 @@ const AmenitiesSection = () => {
               key={item.title}
               className="
                 min-h-[108px]
-                rounded-2xl
-                border
+                rounded-3xl
+                border-2
                 border-accent
                 bg-white
-                px-8
-                py-6
+                p-8
                 transition
                 duration-300
                 hover:-translate-y-1
                 hover:shadow-[0_8px_25px_rgba(21,159,204,0.10)]
-                hover:border-2
+                hover:border-[2.5px]
               "
             >
-              <h3 className="text-base font-bold text-accent sm:text-xl">
+              <h3 className="text-base font-bold text-accent sm:text-2xl">
                 {item.title}
               </h3>
 
-              <p className="mt-1.5 text-sm leading-5 text-text font-medium sm:text-base">
+              <p className="mt-1.5 text-base leading-5 text-text font-medium sm:text-lg font-inter-medium">
                 {item.description}
               </p>
             </div>
