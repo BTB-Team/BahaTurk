@@ -23,7 +23,7 @@ const ProjectCTA = () => {
 
       {/* content */}
       <div className="relative z-10 mx-auto max-w-[800px] px-5 text-center">
-        <p className="mb-2 text-base uppercase text-text">
+        <p className="mb-2 text-sm sm:text-lg uppercase text-text">
           Your Future Starts Here
         </p>
 
@@ -33,7 +33,7 @@ const ProjectCTA = () => {
           An Investment in <span className="text-accent">Your Future.</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-[740px] text-black text-base leading-10 sm:text-2xl font-medium">
+        <p className="mx-auto mt-5 max-w-[700px] text-black text-base leading-10 sm:text-2xl font-medium">
           Discover a modern residential community built around engineering,
           safety, comfort, and long-term value.
         </p>
@@ -42,6 +42,7 @@ const ProjectCTA = () => {
         <div className="mt-7 flex flex-col justify-center items-center gap-4 sm:flex-row">
           <Link
             to="projects"
+            onClick={() => window.scrollTo(0, 0)}
             className="
               w-2/3
               sm:w-auto
@@ -50,11 +51,13 @@ const ProjectCTA = () => {
               justify-center
               gap-3
               rounded-xl
+              border-2
+              border-accent
               bg-accent
               px-5
               py-3
               sm:px-6
-              sm:py-3
+              sm:py-4
               text-sm
               sm:text-xl
               font-medium
@@ -70,6 +73,7 @@ const ProjectCTA = () => {
 
           <Link
             to="contact"
+            onClick={() => window.scrollTo(0, 0)}
             className="
             w-2/3
             sm:w-auto
@@ -78,13 +82,13 @@ const ProjectCTA = () => {
               justify-center
               gap-3
               rounded-xl
-              border
+              border-2
               border-accent
               bg-white
               px-5
-              py-3
+              py-4
               sm:px-6
-              sm:py-3
+              sm:py-3.5
               text-sm
               sm:text-xl
               font-medium
