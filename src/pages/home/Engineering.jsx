@@ -1,34 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import projectData from "../../../db.json";
-
-function navigateToDesignedForLife(event, navigate) {
-  event.preventDefault();
-  window.scrollTo(0, 0);
-  navigate("/projects");
-
-  let attempts = 0;
-  const scrollToSection = () => {
-    const projectsPage = document.querySelector("main main");
-    const projectsHeading = projectsPage?.querySelector(
-      ":scope > section:first-of-type h1",
-    );
-
-    if (projectsHeading?.textContent.includes("Engineering Ideas")) {
-      projectsPage
-        .querySelector(":scope > section:nth-of-type(3)")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-
-    if (attempts < 60) {
-      attempts += 1;
-      window.setTimeout(scrollToSection, 50);
-    }
-  };
-
-  window.setTimeout(scrollToSection, 50);
-}
 
 function PileIcon({ className = "" }) {
   return (
@@ -137,8 +109,6 @@ const engineeringStats = [
 ];
 
 export default function Engineering() {
-  const navigate = useNavigate();
-
   return (
     <section className="bahaturk-inter w-full bg-white px-4 pt-[40px] pb-[40px] md:px-6 md:pt-[60px] md:pb-[60px] lg:pt-[41px]">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-stretch justify-between gap-8 rounded-[30px] border border-[#0F99CC2B] bg-white p-4 md:gap-10 md:rounded-[30px] md:p-6 xl:h-[640px] xl:flex-row xl:gap-[18px] xl:pr-[24px] xl:pl-[29px] xl:py-[29px]">
@@ -236,7 +206,6 @@ export default function Engineering() {
           {/* BUTTON */}
           <Link
             to="/projects"
-            onClick={(event) => navigateToDesignedForLife(event, navigate)}
             className="flex h-[46px] w-full items-center justify-center gap-[10px] rounded-[12px] bg-[#299BC1] px-[24px] text-[15px] font-medium text-white transition hover:bg-[#2189aa] sm:w-fit xl:relative xl:h-[49px] xl:w-[257px] xl:flex-none xl:gap-0 xl:px-0"
           >
             <span className="whitespace-nowrap text-[clamp(10px,4vw,15px)] font-medium leading-[27px] text-white xl:absolute xl:left-[12px] xl:top-[11px] xl:h-[27px] xl:w-[195px] xl:whitespace-nowrap xl:text-[16px] xl:leading-[27px] xl:tracking-[0]">
