@@ -36,15 +36,6 @@
   --color-border: #e1e8ed;
 }
 
-/* English variable font */
-@font-face {
-  font-family: "bahaturk-inter";
-  src: url("./assets/fonts/InterVariable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 
 .bahaturk-inter {
   font-family: "bahaturk-inter", sans-serif;
@@ -60,7 +51,7 @@
 @font-face {
   font-family: "bahaturk-inter";
   src: url("./assets/fonts/InterVariable.woff2") format("woff2");
-  font-weight: 100 900 800; /* این خط به مرورگر اجازه می‌دهد ضخامت‌ها را دقیق رندر کند */
+  font-weight: 100 900; /* این خط به مرورگر اجازه می‌دهد ضخامت‌ها را دقیق رندر کند */
   font-style: normal;
   font-display: swap;
 }
@@ -74,6 +65,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "bahaturk-inter-medium";
   src: url("./assets/fonts/Inter_18pt-Medium.woff2") format("woff2");
