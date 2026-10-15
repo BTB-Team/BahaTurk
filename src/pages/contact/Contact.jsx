@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -24,15 +24,14 @@ export default function Contact() {
     "h-[42px] w-full rounded-lg border-0 bg-white px-3 text-sm text-gray-800 outline-none transition focus:ring-2 focus:ring-white/70";
 
   return (
-    <main className="bg-white" style={{ fontFamily: "Inter, sans-serif" }}>
-      <section className="relative mt-4 flex min-h-[320px] items-center justify-center overflow-hidden bg-[#084D66] px-6 py-8 md:min-h-[401px] md:py-10">
+    <main className="bahaturk-inter bg-white">
+      <section className="relative mt-4 flex min-h-[320px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#0F99CC] to-[#084D66] px-6 py-8 md:min-h-[401px] md:py-10">
         <img
-          src={`${import.meta.env.BASE_URL}images/Bg_hero_contactpg.jpg`}
+          src={`${import.meta.env.BASE_URL}images/Contact_hero.jpg`}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-4"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F99CC]/70 to-[#084D66]/80" />
 
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center text-white">
           <p className="mb-8 text-2xl font-bold leading-none">
@@ -58,7 +57,7 @@ export default function Contact() {
           <div className="rounded-[20px] bg-gradient-to-r from-[#0F99CC] to-[#084D66] p-6 lg:min-h-[551px] lg:p-8">
             <div className="grid h-full grid-cols-1 gap-8 lg:grid-cols-[286px_minmax(0,1fr)] lg:items-start lg:gap-11">
               <div className="text-white lg:pt-8">
-                <h2 className="max-w-[286px] text-3xl font-semibold leading-none md:text-4xl">
+                <h2 className="max-w-[286px] text-3xl font-extrabold leading-none md:text-4xl">
                   Get in touch
                   <br />
                   with our team.

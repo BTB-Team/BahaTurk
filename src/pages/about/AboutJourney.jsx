@@ -53,7 +53,7 @@ const AboutJourney = () => {
           </h2>
 
           {/* CONTENT */}
-          <div className="grid grid-cols-1 items-start gap-8 md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+          <div className="grid grid-cols-1 items-start  gap-7 md:gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-9">
             {/* LEFT CONTENT */}
             <div className="space-y-5">
               {messages.map((message, index) => {
@@ -62,7 +62,7 @@ const AboutJourney = () => {
                 return (
                   <div
                     key={index}
-                    className="flex items-center sm:items-start gap-3 sm:gap-4"
+                    className="flex items-center sm:items-start gap-3 sm:gap-4 "
                   >
                     {/* ICON */}
                     <div className="flex h-[42px] w-[46px] shrink-0 items-center justify-center rounded-[10px] bg-[#def3fa] sm:h-[58px] sm:w-[70px] sm:rounded-[14px]">
@@ -73,7 +73,7 @@ const AboutJourney = () => {
                     <div className="hidden h-[60px] w-[2px] shrink-0 bg-[#d9eef4] sm:block" />
 
                     {/* TEXT */}
-                    <p className="min-w-0 pt-1 text-[14px] font-medium leading-[1.7] text-[#161616]  md:text-[16px] lg:text-[20px] lg:leading-[35px]">
+                    <p className="min-w-0    text-[14px] font-medium leading-[1.7] text-[#161616]  md:text-[16px] lg:text-[20px] lg:leading-[35px] lg:relative lg:-top-[6px]">
                       {message.text}
                     </p>
                   </div>
@@ -82,11 +82,11 @@ const AboutJourney = () => {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="relative top-0 w-full overflow-hidden rounded-[15px] sm:rounded-[17px] lg:top-[-20px]">
+            <div className="relative top-0 w-full overflow-hidden rounded-[15px] sm:rounded-[17px] lg:top-[-65px]">
               <img
                 src={`${import.meta.env.BASE_URL}images/management.webp`}
                 alt="Baha Turk Management Team"
-                className="h-[220px] w-full  object-top transition-transform duration-500 hover:scale-[1.02] sm:h-[280px] md:h-[320px] lg:h-[350px]"
+                className="h-[400px] w-full  object-top transition-transform duration-500 hover:scale-[1.02] sm:h-[500px]  lg:h-[430px]"
               />
             </div>
           </div>

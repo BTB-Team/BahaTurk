@@ -58,15 +58,18 @@ const SafetySection = () => {
 
             {/* description */}
             <div className="mt-5 max-w-full lg:max-w-[580px] text-base sm:text-lg text-justify leading-8 text-text font-medium font-inter-medium">
-              {safetyData?.description ||
-                "Safety is a top priority in our residential project. We ensure that every building is constructed with the highest standards of engineering and materials to withstand natural disasters and provide a secure living environment for our residents."}
+                <p>
+                  Safety is a fundamental priority in the design and construction of Solh Residential Project. <br />
+                  Through its integrated structural system and engineering approach, the project is designed to deliver strong performance against lateral forces and seismic activity. <br />
+                  According to the project's specifications, the structural system is designed for earthquake resistance of up to 10 on the Richter scale.
+                </p>
             </div>
 
             {/* button */}
             <Link
               to="projects"
               onClick={() => window.scrollTo(0, 0)}
-              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-4 text-xs sm:text-base font-medium text-white transition hover:bg-accent-hover cursor-pointer"
+              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-4 text-[16px] sm:text-base font-inter-medium leading[27px] font-medium text-white transition hover:bg-accent-hover cursor-pointer"
             >
               Quality & Safety
               <img src="images/Vector1.svg" alt="vector" className="w-5" />
