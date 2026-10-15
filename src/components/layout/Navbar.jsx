@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { NAV_LINKS } from "../constant";
 import Logo from "../ui/Logo";
@@ -32,22 +32,39 @@ const getLinkClass = (isActive) =>
           ))}
         </nav>
 
-        {/* Mobile menu toggle button (Animated Hamburger to X) */}
+        {/* Mobile menu toggle button (Animated Hamburger to X) - تنظیم شده روی ۳۶ پیکسل */}
         <button
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 p-2 rounded-lg text-text focus:outline-none transition-colors active:scale-95"
+          className="md:hidden flex flex-col justify-center items-center w-9 h-9 p-0 rounded-lg text-text focus:outline-none transition-colors active:scale-95"
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
         >
-
           {
             isMenuOpen ? (
-              <svg fill="#0f99cc" viewBox="0 0 200 200" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" stroke="#0f99cc" stroke-width="0.002"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"></path></g></svg>
+              <svg  fill="#0f99cc"  viewBox="0 0 200 200"  data-name="Layer 1"  id="Layer_1"  xmlns="http://www.w3.org/2000/svg"  stroke="#0f99cc"  strokeWidth="0.002" className="w-full h-full" /* 👈 آیکون را مجبور می‌کند تا ۳۶ پیکسل دکمه را پر کند */
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <title></title>
+                  <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"></path>
+                </g>
+              </svg>
             ) : (
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 7L4 7" stroke="#0f99cc" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 12L4 12" stroke="#0f99cc" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 17L4 17" stroke="#0f99cc" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+              <svg  viewBox="0 0 24 24"  fill="none"  xmlns="http://www.w3.org/2000/svg" className="w-full h-full" /* 👈 آیکون را مجبور می‌کند تا ۳۶ پیکسل دکمه را پر کند */
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M20 7L4 7" stroke="#0f99cc" strokeWidth="1.5" strokeLinecap="round"></path>
+                  <path d="M20 12L4 12" stroke="#0f99cc" strokeWidth="1.5" strokeLinecap="round"></path>
+                  <path d="M20 17L4 17" stroke="#0f99cc" strokeWidth="1.5" strokeLinecap="round"></path>
+                </g>
+              </svg>
             )
           }
         </button>
+
       </div>
 
       {/* Mobile nav (Enhanced Dropdown Card) */}

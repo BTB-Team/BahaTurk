@@ -1,4 +1,3 @@
-import React from "react";
 import FooterLinks from "../ui/FooterLinks";
 import { NAV_LINKS } from "../constant";
 import Logo from "../ui/Logo";
@@ -17,7 +16,7 @@ export default function Footer() {
               <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[36px] leading-[44px] bg-gradient-to-r from-[rgba(15,153,204,1)] to-[rgba(8,77,102,1)] bg-clip-text text-transparent tracking-normal py-1">
                 Engineering That Lasts.
               </h3>
-              <p className="font-sans text-[15px] md:text-[18px] lg:text-[20px] leading-[27px] mt-4 lg:mt-[24px] text-black font-medium tracking-normal">
+              <p className="font-inter-medium text-[15px] md:text-[18px] lg:text-[20px] leadimediumpx] mt-4 lg:mt- tracking-[0%][24px] text-black font-medium tracking-normal">
                 Building with quality, innovation,<br /> safety, and responsibility since 2001.
               </p>
             </div>
@@ -44,7 +43,7 @@ export default function Footer() {
                 <path d="M18.5 19.625C20.364 19.625 21.875 18.114 21.875 16.25C21.875 14.386 20.364 12.875 18.5 12.875C16.636 12.875 15.125 14.386 15.125 16.25C15.125 18.114 16.636 19.625 18.5 19.625Z" stroke="#0F99CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M12.136 9.88604C13.8239 8.19821 16.1131 7.25 18.5 7.25C20.8869 7.25 23.1761 8.19821 24.864 9.88604C26.5518 11.5739 27.5 13.8631 27.5 16.25C27.5 18.3785 27.0477 19.7712 25.8125 21.3125L18.5 29.75L11.1875 21.3125C9.95225 19.7712 9.5 18.3785 9.5 16.25C9.5 13.8631 10.4482 11.5739 12.136 9.88604Z" stroke="#0F99CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="font-sans text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] lg:leading-[27px] text-start break-words text-black">
+              <span className="font-inter-medium text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] tracking-[0%] lg:leading-[27px] text-start break-words text-black">
                 5th Macrorayan, Solh Project
               </span>
             </a>
@@ -55,7 +54,7 @@ export default function Footer() {
                 <circle cx="18.5" cy="18.5" r="18.5" fill="#0F99CC" fillOpacity="0.17" />
                 <path d="M12.6371 7.55077L14.2378 7.06863C14.9665 6.8488 15.7503 6.90165 16.4428 7.21732C17.1354 7.53299 17.6894 8.0899 18.0014 8.7841L18.9976 11C19.266 11.597 19.3407 12.263 19.2114 12.9046C19.082 13.5462 18.755 14.1312 18.2763 14.5775L16.5357 16.2004C16.5149 16.2211 16.4973 16.2448 16.4837 16.2708C16.3014 16.643 16.5782 17.6372 17.4451 19.1396C18.4228 20.8328 19.1779 21.5021 19.5279 21.3989L21.8123 20.6998C22.4379 20.5087 23.1076 20.5182 23.7276 20.727C24.3475 20.9357 24.8866 21.3332 25.2693 21.8637L26.6848 23.8241C27.1293 24.4396 27.3351 25.1955 27.2642 25.9514C27.1932 26.7073 26.8503 27.4118 26.2991 27.9338L25.0812 29.0862C24.6577 29.4873 24.1434 29.7801 23.5823 29.9394C23.0211 30.0988 22.4297 30.12 21.8586 30.0013C18.4672 29.2954 15.4287 26.5646 12.7172 21.8685C10.0046 17.1695 9.15895 13.1677 10.2486 9.87663C10.431 9.32564 10.7433 8.82666 11.1592 8.42183C11.5751 8.017 12.0814 7.71824 12.6371 7.55077ZM13.0566 8.93549C12.7232 9.03592 12.4188 9.21514 12.1692 9.458C11.9196 9.70086 11.7322 10.0002 11.6227 10.3308C10.6835 13.1668 11.4443 16.7693 13.9707 21.1453C16.4952 25.5183 19.2319 27.9772 22.1546 28.5847C22.4973 28.6559 22.8521 28.643 23.1888 28.5473C23.5255 28.4516 23.834 28.2759 24.088 28.0351L25.3049 26.8837C25.6019 26.6027 25.7866 26.2234 25.8249 25.8164C25.8632 25.4093 25.7525 25.0022 25.5132 24.6707L24.0977 22.7093C23.8916 22.4237 23.6014 22.2098 23.2677 22.0974C22.934 21.985 22.5734 21.9798 22.2366 22.0826L19.9464 22.7836C18.6793 23.1606 17.4875 22.1047 16.1934 19.8618C15.097 17.9641 14.7171 16.5929 15.1857 15.6353C15.277 15.4489 15.3985 15.2847 15.5502 15.1426L17.2908 13.5197C17.5487 13.2794 17.7248 12.9643 17.7945 12.6188C17.8642 12.2733 17.8239 11.9146 17.6794 11.5931L16.6823 9.3781C16.5143 9.0042 16.2159 8.70425 15.8429 8.53426C15.4699 8.36426 15.0478 8.33584 14.6554 8.45431L13.0566 8.93549Z" fill="#0F99CC" />
               </svg>
-              <span className="font-sans text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] lg:leading-[27px] text-start break-words text-black">
+              <span className="font-inter-medium text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] tracking-[0%] lg:leading-[27px] text-start break-words text-black">
                 +93 749 17 17 17 - +90 534 953 56 81
               </span>
             </div>
@@ -66,7 +65,7 @@ export default function Footer() {
                 <circle cx="18.5" cy="18.5" r="18.5" fill="#0F99CC" fillOpacity="0.17" />
                 <path d="M29 9.5H8C7.60218 9.5 7.22064 9.65804 6.93934 9.93934C6.65804 10.2206 6.5 10.6022 6.5 11V26C6.5 26.3978 6.65804 26.7794 6.93934 27.0607C7.22064 27.342 7.60218 27.5 8 27.5H29C29.3978 27.5 29.7794 27.342 30.0607 27.0607C30.342 26.7794 30.5 26.3978 30.5 26V11C30.5 10.6022 30.342 10.2206 30.0607 9.93934C29.7794 9.65804 29.3978 9.5 29 9.5ZM27.845 26H9.245L14.495 20.57L13.415 19.5275L8 25.13V12.14L17.3225 21.4175C17.6035 21.6969 17.9837 21.8537 18.38 21.8537C18.7763 21.8537 19.1565 21.6969 19.4375 21.4175L29 11.9075V25.0325L23.48 19.5125L22.4225 20.57L27.845 26ZM8.9825 11H27.785L18.38 20.3525L8.9825 11Z" fill="#0F99CC" />
               </svg>
-              <span className="font-sans text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] lg:leading-[27px] text-start break-words text-black">
+              <span className="font-inter-medium text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] tracking-[0%] lg:leading-[27px] text-start break-words text-black">
                 info@bahaturk.com
               </span>
             </div>
@@ -80,14 +79,14 @@ export default function Footer() {
         {/* Bottom Bar Content */}
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between lg:justify-between sm:justify-center gap-5 mt-10 lg:mt-12 text-center lg:text-left">
           <div>
-            <p className="font-sans text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] lg:leading-[27px] text-center lg:text-start break-words text-black">
+            <p className="font-inter-medium text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] tracking-[0%] lg:leading-[27px] text-center lg:text-start break-words text-black">
               <span className="font-['Arial',sans-serif] font-bold text-[15px] md:text-[20px] lg:text-[20px] leading-[27px] tracking-normal px-1 select-none">©</span>
               <span>Baha Turk Construction Company. All Rights Reserved.</span>
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-center justify-center">
-            <span className="font-sans text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] lg:leading-[27px] text-center lg:text-start break-words text-black">
+            <span className="font-inter-medium text-[15px] md:text-[18px] lg:text-[20px] font-medium leading-[22px] tracking-[0%] lg:leading-[27px] text-center lg:text-start break-words text-black">
               Follow Us on Social Media:
             </span>
 
