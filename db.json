@@ -151,7 +151,8 @@
     { "id": 2, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic2.webp", "alt_text": "Exterior View 2" },
     { "id": 3, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic3.webp", "alt_text": "Interior Living Room" },
     { "id": 4, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic4.webp", "alt_text": "Interior Bedroom" },
-    { "id": 5, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic5.webp", "alt_text": "Interior Corridor" }
+    { "id": 5, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic5.webp", "alt_text": "Aerial View" },
+    { "id": 6, "project_id": "solh-residential-project", "image_url": "/images/gallery/pic6.webp", "alt_text": "Interior Corridor" }
   ],
 
   "news": [],

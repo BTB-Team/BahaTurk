@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-// import { FaLocationPinLock } from "react-icons/fa6";
-// import { MdMapsHomeWork } from "react-icons/md";
-// import { BiSolidBuildingHouse } from "react-icons/bi";
-// import { IoAirplane } from "react-icons/io5";
 import Loader from "../../components/Loader";
 
 const LocationSection = () => {
   const icons = [
-    // <IoAirplane />,
-    // <MdMapsHomeWork />,
-    // <FaLocationPinLock />,
-    // <BiSolidBuildingHouse />,
+    <img src="images/airplane.svg" alt="airplane" className="" />,
+    <img src="images/home.svg" alt="home" className="" />,
+    <img src="images/location.svg" alt="location" className="" />,
+    <img src="images/building.svg" alt="building" className="" />,
   ];
   const [locationData, setLocationData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,7 +41,7 @@ const LocationSection = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-6">
           {/* left */}
-          <div className="w-full lg:w-3/5">
+          <div className="w-full lg:w-3/5 flex flex-col justify-center items-start gap-0 sm:gap-2">
             <div className="mb-3 flex items-center gap-2">
               <span className="h-[2px] sm:h-[3px] w-8 sm:w-10 bg-accent" />
 
@@ -54,11 +50,11 @@ const LocationSection = () => {
               </span>
             </div>
 
-            <p className="mb-2 text-base uppercase text-text">
+            <p className="mb-2 text-sm sm:text-lg uppercase text-text">
               Connected to Kabul
             </p>
 
-            <h2 className="text-3xl font-extrabold leading-14 sm:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-6xl">
               <span className="text-text">A Prime Location in</span>
               <br />
               <span className="text-accent">
@@ -66,13 +62,13 @@ const LocationSection = () => {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-full lg:max-w-[580px] text-base leading-8 text-text font-medium">
+            <p className="mt-5 max-w-full lg:max-w-[650px] text-base sm:text-lg text-justify leading-8 text-text font-medium font-inter-medium">
               {locationData?.description ||
-                "Solh Residential Project is strategically located in Makroyan 5, providing easy access to key areas of Kabul. The location offers a blend of urban convenience and serene living, making it an ideal choice for residents seeking both comfort and connectivity."}
+                "Solh Residential Project is located in Makroyan 5, Kabul, with convenient access to the city's important destinations."}
             </p>
 
             {/* location cards */}
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="w-full mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {locationData.nearby_places.map((place, index) => (
                 <div
                   key={place}
@@ -81,15 +77,15 @@ const LocationSection = () => {
                     min-h-[62px]
                     items-center
                     gap-3
-                    rounded-2xl
-                    border
+                    rounded-3xl
+                    border-2
                     border-accent
-                    px-4
-                    py-3
+                    px-5
+                    py-5
                     duration-300
                     transition
                     hover:shadow-[0_8px_25px_rgba(21,159,204,0.10)]
-                    hover:border-2
+                    hover:border-[2.5px]
                     hover:-translate-y-1
                 "
                 >
@@ -102,15 +98,14 @@ const LocationSection = () => {
                       items-center
                       justify-center
                       rounded-full
-                      bg-[#E1F5FB]
-                      text-2xl
+                      bg-accent/20
                       text-accent
                     "
                   >
                     {icons[index] || <span>{index + 1}</span>}
                   </div>
 
-                  <span className="text-sm font-bold text-accent leading-7 sm:text-base">
+                  <span className="text-sm font-bold text-accent leading-7 sm:text-lg">
                     {place}
                   </span>
                 </div>
