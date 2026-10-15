@@ -36,6 +36,7 @@
   --color-border: #e1e8ed;
 }
 
+
 .bahaturk-inter {
   font-family: "bahaturk-inter", sans-serif;
 }
@@ -64,6 +65,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "bahaturk-inter-medium";
   src: url("./assets/fonts/Inter_18pt-Medium.woff2") format("woff2");
