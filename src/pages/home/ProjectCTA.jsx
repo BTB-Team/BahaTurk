@@ -1,4 +1,3 @@
-// import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const ProjectCTA = () => {
@@ -24,7 +23,7 @@ const ProjectCTA = () => {
 
       {/* content */}
       <div className="relative z-10 mx-auto max-w-[800px] px-5 text-center">
-        <p className="mb-2 text-base uppercase text-text">
+        <p className="mb-2 text-sm sm:text-lg uppercase text-text">
           Your Future Starts Here
         </p>
 
@@ -34,26 +33,32 @@ const ProjectCTA = () => {
           An Investment in <span className="text-accent">Your Future.</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-[740px] text-black text-sm leading-10 sm:text-2xl font-medium">
+        <p className="mx-auto mt-5 max-w-[700px] text-black text-base leading-10 sm:text-2xl font-medium">
           Discover a modern residential community built around engineering,
           safety, comfort, and long-term value.
         </p>
 
         {/* buttons */}
-        <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row">
+        <div className="mt-7 flex flex-col justify-center items-center gap-4 sm:flex-row">
           <Link
             to="projects"
+            onClick={() => window.scrollTo(0, 0)}
             className="
-            scroll-smooth
+              w-2/3
+              sm:w-auto
               inline-flex
               items-center
               justify-center
               gap-3
               rounded-xl
+              border-2
+              border-accent
               bg-accent
               px-5
-              py-4
-              text-xs
+              py-3
+              sm:px-6
+              sm:py-4
+              text-sm
               sm:text-xl
               font-medium
               text-white
@@ -63,22 +68,27 @@ const ProjectCTA = () => {
             "
           >
             Explore Solh Project
-            {/* <AiOutlineArrowRight className="font-black text-2xl" /> */}
+            <img src="images/Vector1.svg" alt="vector" className="w-4 sm:w-6" />
           </Link>
 
           <Link
             to="contact"
+            onClick={() => window.scrollTo(0, 0)}
             className="
+            w-2/3
+            sm:w-auto
               inline-flex
               items-center
               justify-center
               gap-3
               rounded-xl
-              border
+              border-2
               border-accent
               bg-white
               px-5
               py-4
+              sm:px-6
+              sm:py-3.5
               text-sm
               sm:text-xl
               font-medium
@@ -89,7 +99,7 @@ const ProjectCTA = () => {
             "
           >
             Contact Our Team
-            {/* <AiOutlineArrowRight className="font-black text-2xl" /> */}
+            <img src="images/Vector2.svg" alt="vector" className="w-4 sm:w-6" />
           </Link>
         </div>
       </div>
