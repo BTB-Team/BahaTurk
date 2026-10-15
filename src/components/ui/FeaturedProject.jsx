@@ -2,36 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import projectImage from "../../assets/images/featured_project.webp";
 
-function scrollToProjectIntro(attempts = 0) {
-  const projectsHeading = document.querySelector(
-    "main main > section:first-of-type h1",
-  );
-
-  if (projectsHeading?.textContent.includes("Engineering Ideas")) {
-    [300, 900].forEach((delay) => {
-      window.setTimeout(() => {
-        const projectIntro = document.querySelector(
-          "main main > section:nth-of-type(2)",
-        );
-        if (projectIntro) {
-          window.scrollTo({
-            top: projectIntro.getBoundingClientRect().top + window.scrollY,
-            behavior: "auto",
-          });
-        }
-      }, delay);
-    });
-    return;
-  }
-
-  if (attempts < 40) {
-    window.setTimeout(() => scrollToProjectIntro(attempts + 1), 50);
-  }
-}
-
 export default function FeaturedProject() {
   return (
-    <section className="bahaturk-inter mx-auto w-full max-w-[1440px] [#0F99CC2B] px-4 pb-14 py-12 sm:px-6 md:py-16 xl:h-[693px] xl:px-0 xl:pb-[39px] xl:pt-[39px]">
+    <section className="bahaturk-inter mx-auto w-full max-w-[1440px] bg-[#0F99CC2B] px-4 pb-14 py-12 sm:px-6 md:py-16 xl:h-[693px] xl:px-0 xl:pb-[39px] xl:pt-[39px]">
       <div className="max-w-[1200px] mx-auto">
         {/* Section Heading */}
         <h2 className="mx-auto mb-8 h-6 w-[259px] max-w-full text-center text-[28px] font-bold leading-6 tracking-[0] text-black sm:text-[32px] md:mb-10 xl:mb-[33px] xl:h-[24px] xl:w-[259px] xl:text-[32px] xl:font-[700] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
@@ -56,14 +29,8 @@ export default function FeaturedProject() {
                 </div>
               )}
             </div>
-
-            {/* Button - Placed inside the relative wrapper, OUTSIDE the overflow-hidden box */}
             <Link
               to="/projects"
-              onClick={() => {
-                window.scrollTo(0, 0);
-                window.setTimeout(() => scrollToProjectIntro(), 300);
-              }}
               className="absolute bottom-[-10px] left-0 z-20 inline-flex h-[50px] w-full max-w-[290px] items-center gap-2 rounded-tr-[22px] border-0 bg-white px-[13px] text-[clamp(9px,3.4vw,12px)] font-medium leading-6 tracking-[0] text-[#0F99CC] shadow-none outline-none transition-all duration-200 hover:gap-3 focus:outline-none focus-visible:outline-none md:gap-1 md:text-[13px] md:hover:gap-1 xl:left-[-7px] xl:top-[462px] xl:w-[290px] xl:items-center xl:gap-2 xl:rounded-bl-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-tr-[22px] xl:pb-0 xl:pl-[13px] xl:pr-0 xl:pt-0 xl:text-[16px]"
             >
               <span className="h-6 min-w-0 whitespace-nowrap xl:w-[242px] xl:shrink-0 xl:-translate-y-[4px]">
@@ -100,7 +67,7 @@ export default function FeaturedProject() {
               </h4>
 
               {/* Paragraphs */}
-              <div className="featured-project-description space-y-3 text-[14px] font-[400] leading-relaxed text-[#000000] sm:text-[16px] xl:space-y-2 xl:leading-6">
+              <div className="font-inter-medium featured-project-description space-y-3 text-[14px] font-[400] leading-relaxed text-[#000000] sm:text-[16px] xl:space-y-2 xl:leading-6">
                 <p className="xl:ml-px xl:h-[48px] xl:w-[631px] xl:text-[16px] xl:font-[400] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
                   Located in Makroyan 5, Kabul, Solh Residential Project is Baha
                   Turk's first and largest project in Afghanistan.

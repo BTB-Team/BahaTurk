@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import projectData from "../../../db.json";
 
 const residenceList = (projectData?.residence_types || []).map((item) => ({
@@ -10,52 +10,6 @@ const residenceList = (projectData?.residence_types || []).map((item) => ({
   image: item.image || item.image_url || `/images/room-${item.id}.webp`,
   href: item.href || "#",
 }));
-
-function navigateToProjectsSection(
-  event,
-  navigate,
-  sectionNumber,
-  attempts = 0,
-) {
-  event.preventDefault();
-
-  if (attempts === 0) {
-    window.scrollTo(0, 0);
-    navigate("/projects", { preventScrollReset: true });
-  }
-
-  const projectsHeading = document.querySelector(
-    "main main > section:first-of-type h1",
-  );
-
-  if (projectsHeading?.textContent.includes("Engineering Ideas")) {
-    const target = document.querySelector(
-      `main main > section:nth-of-type(${sectionNumber})`,
-    );
-
-    window.scrollTo(0, 0);
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        const targetTop = target?.getBoundingClientRect().top;
-        if (targetTop !== undefined) {
-          window.scrollTo({
-            top: targetTop + window.scrollY,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-    return;
-  }
-
-  if (attempts < 40) {
-    window.setTimeout(
-      () =>
-        navigateToProjectsSection(event, navigate, sectionNumber, attempts + 1),
-      50,
-    );
-  }
-}
 
 export default function ResidencesSection() {
   const [residences] = useState(residenceList);
@@ -89,7 +43,6 @@ export default function ResidencesSection() {
 
           <Link
             to="/projects"
-            onClick={() => window.scrollTo(0, 0)}
             className="btn btn-primary mt-0 h-[49px] w-[216px] shrink-0 justify-center gap-2 px-0 py-0 text-sm font-medium md:mt-[62px] lg:relative lg:mt-[35px]"
             style={{ borderRadius: "12px" }}
           >
@@ -142,13 +95,10 @@ export default function ResidencesSection() {
 }
 
 function ResidenceCard({ residence }) {
-  const navigate = useNavigate();
-
   return (
     <div className="mx-auto h-[420px] w-full max-w-[300px] translate-x-0">
       <Link
         to="/projects"
-        onClick={(event) => navigateToProjectsSection(event, navigate, 4)}
         className="card group flex h-full w-full flex-col overflow-hidden rounded-[20px] border border-[#0F99CC2B] bg-white"
         style={{ borderColor: "#0F99CC2B" }}
       >
