@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import projectData from "../../../db.json";
 
 const residenceList = (projectData?.residence_types || []).map((item) => ({
@@ -11,12 +11,58 @@ const residenceList = (projectData?.residence_types || []).map((item) => ({
   href: item.href || "#",
 }));
 
+function navigateToProjectsSection(
+  event,
+  navigate,
+  sectionNumber,
+  attempts = 0,
+) {
+  event.preventDefault();
+
+  if (attempts === 0) {
+    window.scrollTo(0, 0);
+    navigate("/projects", { preventScrollReset: true });
+  }
+
+  const projectsHeading = document.querySelector(
+    "main main > section:first-of-type h1",
+  );
+
+  if (projectsHeading?.textContent.includes("Engineering Ideas")) {
+    const target = document.querySelector(
+      `main main > section:nth-of-type(${sectionNumber})`,
+    );
+
+    window.scrollTo(0, 0);
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const targetTop = target?.getBoundingClientRect().top;
+        if (targetTop !== undefined) {
+          window.scrollTo({
+            top: targetTop + window.scrollY,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+    return;
+  }
+
+  if (attempts < 40) {
+    window.setTimeout(
+      () =>
+        navigateToProjectsSection(event, navigate, sectionNumber, attempts + 1),
+      50,
+    );
+  }
+}
+
 export default function ResidencesSection() {
   const [residences] = useState(residenceList);
   const [status] = useState(residenceList.length ? "ready" : "error");
 
   return (
-    <section className="bahaturk-inter mx-auto mt-10 w-full max-w-[1200px] rounded-[30px] border border-[#0F99CC2B] bg-white px-4 py-6 sm:px-6 lg:h-[670px]">
+    <section className="bahaturk-inter mx-auto mt-10 w-[calc(100%-2rem)] max-w-[1200px] rounded-[30px] border border-[#0F99CC2B] bg-white px-4 py-6 sm:px-6 xl:h-[670px]">
       <div className="mb-10 w-full lg:mb-4">
         <p className="eyebrow mb-3 text-[18px] font-semibold leading-[24px] tracking-[0] text-[#0F99CC] before:h-[3px] before:w-[41px] before:bg-[#0F99CC]">
           RESIDENCES
@@ -27,9 +73,8 @@ export default function ResidencesSection() {
             <p className="h-[19px] w-[305px] max-w-full text-[14px] font-normal leading-[100%] tracking-[0] text-[#000000] md:text-[16px] lg:h-[19px] lg:w-[305px] lg:text-left lg:text-[16px] lg:font-normal lg:leading-[100%] lg:tracking-[0] lg:text-[#000000]">
               DESIGNED FOR DIFFERENT LIFESTYLES
             </p>
-
             <h2 className="mt-[10px] text-[26px] font-extrabold leading-tight tracking-[0] text-[#000000] sm:text-[30px] lg:mt-[16px] lg:h-[48px] lg:w-[619px] lg:whitespace-nowrap lg:text-[40px] lg:leading-[100%]">
-              <span className="text-[#0F99CC]">Find a Home</span>
+              <span className="mr-2 text-[#0F99CC]">Find a Home</span>
               <span className="block text-[#000000] sm:inline">
                 That Fits Your Life.
               </span>
@@ -44,7 +89,9 @@ export default function ResidencesSection() {
 
           <Link
             to="/projects"
+            onClick={() => window.scrollTo(0, 0)}
             className="btn btn-primary mt-0 h-[49px] w-[216px] shrink-0 justify-center gap-2 px-0 py-0 text-sm font-medium md:mt-[62px] lg:relative lg:mt-[35px]"
+            style={{ borderRadius: "12px" }}
           >
             <span className="text-[16px] font-medium leading-[27px] tracking-[0] text-white lg:absolute lg:left-[12px] lg:top-[11px]">
               Explore Residences
@@ -71,16 +118,16 @@ export default function ResidencesSection() {
         </div>
       </div>
 
-      {/* Content row: hero image + 4 residence cards, all side by side */}
+      {/* Residence cards adjust their column count to the available width. */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {status === "loading" && (
-          <div className="col-span-full flex items-center justify-center py-12 text-slate-500 lg:col-span-4">
+          <div className="col-span-full flex items-center justify-center py-12 text-slate-500">
             Loading residences…
           </div>
         )}
 
         {status === "error" && (
-          <div className="col-span-full flex items-center justify-center py-12 text-slate-500 lg:col-span-4">
+          <div className="col-span-full flex items-center justify-center py-12 text-slate-500">
             Couldn't load residences right now. Please try again shortly.
           </div>
         )}
@@ -95,10 +142,13 @@ export default function ResidencesSection() {
 }
 
 function ResidenceCard({ residence }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="mx-auto h-[420px] w-[300px] max-w-full translate-x-0 ">
-      <a
-        href={residence.href || "#"}
+    <div className="mx-auto h-[420px] w-full max-w-[300px] translate-x-0">
+      <Link
+        to="/projects"
+        onClick={(event) => navigateToProjectsSection(event, navigate, 4)}
         className="card group flex h-full w-full flex-col overflow-hidden rounded-[20px] border border-[#0F99CC2B] bg-white"
         style={{ borderColor: "#0F99CC2B" }}
       >
@@ -125,7 +175,7 @@ function ResidenceCard({ residence }) {
             <ArrowIcon className="h-full w-full" />
           </span>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

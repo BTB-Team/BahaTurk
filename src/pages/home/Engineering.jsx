@@ -1,6 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import projectData from "../../../db.json";
+
+function navigateToDesignedForLife(event, navigate) {
+  event.preventDefault();
+  window.scrollTo(0, 0);
+  navigate("/projects");
+
+  let attempts = 0;
+  const scrollToSection = () => {
+    const projectsPage = document.querySelector("main main");
+    const projectsHeading = projectsPage?.querySelector(
+      ":scope > section:first-of-type h1",
+    );
+
+    if (projectsHeading?.textContent.includes("Engineering Ideas")) {
+      projectsPage
+        .querySelector(":scope > section:nth-of-type(3)")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (attempts < 60) {
+      attempts += 1;
+      window.setTimeout(scrollToSection, 50);
+    }
+  };
+
+  window.setTimeout(scrollToSection, 50);
+}
 
 function PileIcon({ className = "" }) {
   return (
@@ -109,11 +137,13 @@ const engineeringStats = [
 ];
 
 export default function Engineering() {
+  const navigate = useNavigate();
+
   return (
     <section className="bahaturk-inter w-full bg-white px-4 pt-[40px] pb-[40px] md:px-6 md:pt-[60px] md:pb-[60px] lg:pt-[41px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-stretch justify-between gap-8 rounded-[30px] border border-[#0F99CC2B] bg-white p-4 md:gap-10 md:rounded-[30px] md:p-6 lg:h-[640px] lg:flex-row lg:gap-[18px] lg:pr-[24px] lg:pl-[29px] lg:py-[29px]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-stretch justify-between gap-8 rounded-[30px] border border-[#0F99CC2B] bg-white p-4 md:gap-10 md:rounded-[30px] md:p-6 xl:h-[640px] xl:flex-row xl:gap-[18px] xl:pr-[24px] xl:pl-[29px] xl:py-[29px]">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col justify-between flex-1 w-full lg:max-w-[561px] order-2 lg:order-1">
+        <div className="order-2 flex w-full min-w-0 flex-1 flex-col justify-between xl:order-1 xl:max-w-[561px]">
           <div>
             {/* Engineering label */}
             <div className="mb-[10px] flex items-center gap-[14px] lg:mb-[15px] lg:gap-[5px]">
@@ -129,7 +159,7 @@ export default function Engineering() {
             </p>
 
             {/* Main heading */}
-            <h2 className="mb-[16px] text-[28px] font-extrabold leading-[34px] md:text-[34px] md:leading-[40px] lg:h-[96px] lg:w-[560px] lg:text-[40px] lg:leading-[48px]">
+            <h2 className="mb-[16px] text-[28px] font-extrabold leading-[34px] md:text-[34px] md:leading-[40px] xl:h-[96px] xl:w-[560px] xl:text-[40px] xl:leading-[48px]">
               <span className="text-[#299BC1]">{engineeringPrimaryTitle}</span>
               <br />
               <span className="text-black">{engineeringSecondaryTitle}</span>
@@ -153,11 +183,11 @@ export default function Engineering() {
             </div>
 
             {/* STAT CARDS*/}
-            <div className="mb-[24px] grid grid-cols-2 gap-[8px] md:grid-cols-3 lg:grid-cols-[179px_179px_179px] lg:gap-x-[12px]">
+            <div className="mb-[24px] grid grid-cols-2 gap-[8px] md:grid-cols-3 xl:grid-cols-[179px_179px_179px] xl:gap-x-[12px]">
               {engineeringStats.map(({ icon: Icon, value, label }, index) => (
                 <div
                   key={label}
-                  className={`flex h-[127px] flex-col rounded-[12px] px-[12px] py-[12px] ${index === 2 ? "col-span-2 md:col-span-1" : ""} ${index === 0 ? "bg-[#0F99CC2B] lg:h-[127px] lg:w-[179px] lg:pt-[11px]" : index === 1 ? "bg-[#D8F2FA] lg:h-[127px] lg:w-[179px]" : index === 2 ? "bg-[#D8F2FA] lg:h-[127px] lg:w-[182px]" : "bg-[#D8F2FA]"}`}
+                  className={`flex h-[127px] min-w-0 flex-col rounded-[12px] px-[12px] py-[12px] ${index === 2 ? "col-span-2 md:col-span-1" : ""} ${index === 0 ? "bg-[#0F99CC2B] xl:h-[127px] xl:w-[179px] xl:pt-[11px]" : index === 1 ? "bg-[#D8F2FA] xl:h-[127px] xl:w-[179px]" : index === 2 ? "bg-[#D8F2FA] xl:h-[127px] xl:w-[182px]" : "bg-[#D8F2FA]"}`}
                 >
                   <div
                     className={`mb-[4px] flex items-center justify-center bg-[#0F99CC2B] ${index === 1 ? "h-[45px] w-[45px] rounded-[22.5px] lg:mt-[-1px]" : "h-[45px] w-[45px] rounded-[22.5px]"}`}
@@ -206,17 +236,18 @@ export default function Engineering() {
           {/* BUTTON */}
           <Link
             to="/projects"
-            className="flex h-[46px] w-full items-center justify-center gap-[10px] rounded-full bg-[#299BC1] px-[24px] text-[15px] font-medium text-white transition hover:bg-[#2189aa] sm:w-fit lg:relative lg:h-[49px] lg:w-[257px] lg:flex-none lg:gap-0 lg:px-0"
+            onClick={(event) => navigateToDesignedForLife(event, navigate)}
+            className="flex h-[46px] w-full items-center justify-center gap-[10px] rounded-[12px] bg-[#299BC1] px-[24px] text-[15px] font-medium text-white transition hover:bg-[#2189aa] sm:w-fit xl:relative xl:h-[49px] xl:w-[257px] xl:flex-none xl:gap-0 xl:px-0"
           >
-            <span className="whitespace-nowrap text-[clamp(10px,4vw,15px)] font-medium leading-[27px] text-white lg:absolute lg:left-[12px] lg:top-[11px] lg:h-[27px] lg:w-[195px] lg:whitespace-nowrap lg:text-[16px] lg:leading-[27px] lg:tracking-[0]">
+            <span className="whitespace-nowrap text-[clamp(10px,4vw,15px)] font-medium leading-[27px] text-white xl:absolute xl:left-[12px] xl:top-[11px] xl:h-[27px] xl:w-[195px] xl:whitespace-nowrap xl:text-[16px] xl:leading-[27px] xl:tracking-[0]">
               Discover Our Engineering
             </span>
             <span
-              className="flex h-[39px] w-[39px] shrink-0 items-center justify-center lg:absolute lg:left-[209px] lg:top-[5px]"
+              className="flex h-[39px] w-[39px] shrink-0 items-center justify-center xl:absolute xl:left-[209px] xl:top-[5px]"
               aria-hidden="true"
             >
               <svg
-                className="h-[15px] w-[21px] lg:absolute lg:left-[9.34px] lg:top-[11.81px] lg:h-[15.4375px] lg:w-[21.1239px]"
+                className="h-[15px] w-[21px] xl:absolute xl:left-[9.34px] xl:top-[11.81px] xl:h-[15.4375px] xl:w-[21.1239px]"
                 width="21.1239"
                 height="15.4375"
                 viewBox="0 0 21.1239 15.4375"
@@ -233,7 +264,7 @@ export default function Engineering() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="order-1 h-[240px] w-full overflow-hidden rounded-[20px] md:h-[350px] lg:order-2 lg:h-[581px] lg:w-[566px] lg:flex-none lg:rounded-[29px]">
+        <div className="order-1 h-[240px] w-full overflow-hidden rounded-[20px] md:h-[350px] xl:order-2 xl:h-[581px] xl:w-[566px] xl:flex-none xl:rounded-[29px]">
           <img
             src={engineeringData?.image || "/images/engineering1.webp"}
             alt={engineeringData?.title || "Engineering construction workers"}
