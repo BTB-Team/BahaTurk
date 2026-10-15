@@ -1,5 +1,4 @@
-import React from "react";
-
+import { Link } from "react-router-dom";
 /* ==================== COLORS ==================== */
 
 const BLUE = "#1496D3";
@@ -44,7 +43,7 @@ function ArrowIcon({ className = "" }) {
 
 const IMAGE_BASE = `${import.meta.env.BASE_URL}images/`;
 
-const LEFT_IMAGE = `${IMAGE_BASE}building-left.webp`;
+const LEFT_IMAGE = `${IMAGE_BASE}building-left-2.webp`;
 const RIGHT_IMAGE = `${IMAGE_BASE}building-right.webp`;
 const BUILDING_IMAGE = `${IMAGE_BASE}building-since.webp`;
 
@@ -88,70 +87,78 @@ const STATS = [
 
 function CtaBlock() {
   return (
-    <div className="relative left-1/2 w-screen max-w-none -translate-x-1/2 overflow-x-clip">
-      <div
-        id="contact"
-        className="relative isolate mx-auto min-h-[620px] w-full overflow-hidden bg-white lg:h-[620px] lg:min-h-[620px] lg:w-[1658px] lg:max-w-none"
-      >
-        {/* Left image */}
+    // تگ والد اصلی - کلاس h-[620px] فقط در اسکرین‌های بسیار بزرگ (2xl) اعمال می‌شود
+    <div className="relative w-full mx-auto overflow-hidden max-w-[1658px] bg-white min-h-[620px] 2xl:h-[620px]">
+      
+      {/* 
+        تصویر سمت چپ:
+        👈 کلاس‌ها به 2xl:block و 2xl:left-... تغییر یافتند تا در اسکرین‌های زیر ۱۲۸۰ و خود ۱۲۸۰ کاملاً مخفی بماند و تداخل ایجاد نکند
+      */}
+      <img
+        src={LEFT_IMAGE}
+        alt="Baha Turk residential towers"
+        loading="lazy"
+        className="absolute top-[71px] z-0 hidden h-[383px] w-[490px] max-w-none rounded-r-[36px] bg-slate-200 object-cover 2xl:block 2xl:left-[calc(50%-800px)]"
+      />
+
+      {/* 
+        تصویر سمت راست:
+        👈 کلاس‌ها به 2xl:block و 2xl:left-... تغییر یافتند تا در اسکرین‌های زیر ۱۲۸۰ و خود ۱۲۸۰ کاملاً مخفی بماند و تداخل ایجاد نکند
+      */}
+      <img  
+        src={RIGHT_IMAGE}  
+        alt="Baha Turk residential tower"  
+        loading="lazy"  
+        className="absolute top-[231px] z-0 hidden h-[389px] w-[490px] max-w-none rounded-l-[36px] bg-slate-200 object-cover 2xl:block 2xl:left-[calc(50%+286px)]"
+      />
+
+      {/* باکس محتوای وسط که همیشه در مرکز هندسی مانیتور قفل است */}
+      {/* تمام بریک‌پوینت‌های موقعیت‌دهی مطلق وسط به 2xl: تبدیل شدند تا در اسکرین‌های متوسط فضای متن کاملاً باز بماند */}
+      <div className="relative z-10 2xl:ml-[-10px] flex flex-col items-center px-10 py-20 text-center sm:px-8 2xl:absolute 2xl:bottom-3 2xl:left-1/2 2xl:-translate-x-1/2 2xl:h-full 2xl:w-[590px] 2xl:justify-center 2xl:px-0 2xl:py-0">
+        <Sparkle className="h-14 w-14 2xl:h-[88px] 2xl:w-[88px] 2xl:mb-10" />
+
+        <h2 className="font-bahaturk-inter text-center mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] 2xl:mt-[14px] 2xl:w-[750px] 2xl:text-[48px] 2xl:leading-[65px] tracking-[-1px]">
+          If you can <span style={{ color: BLUE }}>dream</span> it,
+          <br />
+          We can <span style={{ color: BLUE }}>build</span> it.
+        </h2>
+
+        <p className="font-inter-medium mt-3 px-7 w-full max-w-[600px] text-center text-base font-medium leading-8 text-black sm:text-lg 2xl:mt-[6px] 2xl:text-[20px] 2xl:leading-[40px]">
+          We bring a modern and engineering-driven approach to every project, creating durable spaces built for long-term value. With decades of experience, advanced construction technology, and a strong commitment to quality, Baha Turk delivers reliable residential developments with precision and confidence.
+        </p>
+
+        {/* Contact button converted to React Router Link */}
+        <Link
+          to="/contact" // 👈 Changed from href="#contact" to a clean SPA route path string
+          style={{ backgroundColor: BLUE }}
+          className="font-inter-medium mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 2xl:mt-[22px]"
+        >
+          Get in touch
+        </Link>
+      </div>
+
+      {/* نمایش تصاویر در حالت موبایل، تبلت و دسکتاپ‌های تا مرز ۱۲۸۰ پیکسل */}
+      {/* 👈 کلاس به 2xl:hidden تغییر یافت تا در اسکرین‌های ۱۰۲۴px و ۱۲۸۰px این گریدِ دو ستونه‌ی زیبا و امن نمایش داده شود */}
+      <div className="relative z-10 grid grid-cols-2 gap-3 px-5 pb-10 sm:px-8 2xl:hidden">
         <img
           src={LEFT_IMAGE}
           alt="Baha Turk residential towers"
           loading="lazy"
-          className="absolute top-[71px] z-0 hidden h-[370px] w-[500px] max-w-none rounded-[36px] bg-slate-200 object-cover lg:left-[10px] lg:block"
+          className="h-44 w-full rounded-[36px] bg-slate-200 object-cover sm:h-64 lg:h-80"
         />
-
-        {/* Right image */}
-        <img  src={RIGHT_IMAGE}  alt="Baha Turk residential tower"  loading="lazy"  className="absolute top-[231px] z-0 hidden h-[375px] w-[500px] max-w-none rounded-[36px] bg-slate-200 object-cover lg:left-[1148px] lg:block"
+        <img
+          src={RIGHT_IMAGE}
+          alt="Baha Turk residential tower"
+          loading="lazy"
+          className="h-44 w-full rounded-[36px] bg-slate-200 object-cover sm:h-64 lg:h-80"
         />
-
-        {/* CTA content */}
-        <div className="relative z-10 mx-auto flex flex-col items-center px-5 pb-10 pt-10 text-center sm:px-8 lg:h-full lg:justify-center lg:px-0 lg:py-0">
-          <Sparkle className="h-14 w-14 lg:h-[72px] lg:w-[72px]" />
-
-          <h2 className="bahaturk-inter mt-4 w-full text-[32px] font-extrabold leading-tight tracking-[-0.48px] text-black sm:text-[40px] lg:mt-[14px] lg:h-[130px] lg:w-[590px] lg:text-[48px] lg:leading-[65px]">
-            If you can <span style={{ color: BLUE }}>dream</span> it,
-            <br />
-            We can <span style={{ color: BLUE }}>build</span> it.
-          </h2>
-
-          <p className="bahaturk-inter mt-3 w-full max-w-[534px] text-center text-base font-medium leading-8 text-black sm:text-lg lg:mt-[6px] lg:text-[20px] lg:leading-[40px]">
-            We bring a modern and engineering-driven approach to every project,
-            creating durable spaces built for long- <br /> term value. With decades of
-            experience, advanced construction technology, and a strong
-            commitment to quality, Baha Turk delivers reliable residential
-            developments with precision and confidence.
-          </p>
-
-          <a
-            href="#contact"
-            style={{ backgroundColor: BLUE }}
-            className="bahaturk-inter mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 lg:mt-[22px]"
-          >
-            Get in touch
-          </a>
-        </div>
-
-        {/* Images: mobile and tablet */}
-        <div className="relative z-10 grid grid-cols-2 gap-3 px-5 pb-10 sm:px-8 lg:hidden">
-          <img
-            src={LEFT_IMAGE}
-            alt="Baha Turk residential towers"
-            loading="lazy"
-            className="h-44 w-full rounded-[36px] bg-slate-200 object-cover sm:h-64"
-          />
-
-          <img
-            src={RIGHT_IMAGE}
-            alt="Baha Turk residential tower"
-            loading="lazy"
-            className="h-44 w-full rounded-[36px] bg-slate-200 object-cover sm:h-64"
-          />
-        </div>
       </div>
+
     </div>
   );
 }
+
+
 
 /* ==================== ABOUT BLOCK ==================== */
 
@@ -177,7 +184,8 @@ function AboutBlock() {
         />
 
         {/* Soft overlay */}
-        <div  aria-hidden="true"  className="pointer-events-none absolute inset-0 z-[1] bg-[#1496D3]/[0.01]"
+        <div  aria-hidden="true"  className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(103.86deg,rgba(15,153,204,0.95)_0%,rgba(15,153,204,0.85)_25%,rgba(15,153,204,0.4)_65%,rgba(15,153,204,0)_100%)]
+"
         />
 
         {/* Soft blue gradient behind the text */}
@@ -221,15 +229,17 @@ function AboutBlock() {
             </p>
           </div>
 
-          {/* About button */}
-          <a
-            href="#about-baha-turk"
+
+          {/* About button rewritten with React Router Link */}
+          <Link
+            to="/about" // 👈 Changed from href="#about-baha-turk" to clean route path string
             style={{ color: BLUE }}
-            className="mt-6 inline-flex h-12 w-fit items-center gap-2.5 rounded-xl bg-white px-4 text-base font-semibold transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1496D3] lg:mt-[25px] lg:w-[228px] lg:text-[18px]"
+            className="mt-6 inline-flex h-12 w-fit items-center justify-center gap-2.5 rounded-xl bg-white px-4 text-base font-semibold transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1496D3] lg:mt-[25px] lg:w-[228px] lg:text-[18px]"
           >
-            <ArrowIcon className="h-6 w-6" />
-            About Baha Turk
-          </a>
+            <ArrowIcon className="h-6 w-6 shrink-0" />
+            <span>About Baha Turk</span>
+          </Link>
+
         </div>
       </div>
     </div>
