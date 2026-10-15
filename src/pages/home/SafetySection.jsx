@@ -45,19 +45,19 @@ const SafetySection = () => {
               </span>
             </div>
 
-            <p className="mb-2 text-base uppercase text-text">
+            <p className="mb-2 text-sm sm:text-lg uppercase text-text">
               Built With Safety In Mind
             </p>
 
             {/* heading */}
-            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-10 sm:leading-14 sm:text-3xl md:text-4xl lg:text-5xl text-text">
               <span className="text-accent">Engineering for Strength.</span>
               <br />
               <span className="text-text">Building for Peace of Mind.</span>
             </h2>
 
             {/* description */}
-            <div className="mt-5 max-w-full lg:max-w-[580px] text-base leading-8 text-text font-medium">
+            <div className="mt-5 max-w-full lg:max-w-[580px] text-base sm:text-lg text-justify leading-8 text-text font-medium font-inter-medium">
               {safetyData?.description ||
                 "Safety is a top priority in our residential project. We ensure that every building is constructed with the highest standards of engineering and materials to withstand natural disasters and provide a secure living environment for our residents."}
             </div>
@@ -65,7 +65,8 @@ const SafetySection = () => {
             {/* button */}
             <Link
               to="projects"
-              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-accent px-5 py-3 text-xs sm:text-base font-medium text-white transition hover:bg-accent-hover cursor-pointer"
+              onClick={() => window.scrollTo(0, 0)}
+              className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-accent px-7 py-4 text-xs sm:text-base font-medium text-white transition hover:bg-accent-hover cursor-pointer"
             >
               Quality & Safety
               <img src="images/Vector1.svg" alt="vector" className="w-5" />
@@ -76,48 +77,58 @@ const SafetySection = () => {
           <div className="flex justify-center items-center">
             {/* blue circle */}
             <div
-              className=" bg-[#D9F3FA] translate-y-30 rounded-full lg:mt-10 mb-30 sm:mb-10 flex 
+              className=" bg-accent/20 translate-y-20 xl:translate-y-30 rounded-full lg:mt-10 mb-30 sm:mb-10 flex 
             h-[340px] w-[350px]
-            sm:h-[530px] sm:w-[545px] justify-center"
+            sm:h-[500px] sm:w-[500px] xl:h-[570px] xl:w-[570px] justify-center"
             >
               {/* card */}
               <div
                 className="
                    z-10
-                  -translate-y-15
+                  -translate-y-10
                   flex 
                   h-[300px] w-[200px] 
-                  sm:h-[450px] sm:w-[314px]
+                  sm:h-[420px] sm:w-[300px]
+                  xl:h-[480px] xl:w-[330px]
                   flex-col items-center justify-between
-                  rounded-2xl
-                  border-4 border-[#D9F3FA]
-                  bg-white
+                  rounded-4xl
+                  border-4 border-accent/20
+                  bg-linear-to-tr
+                  from-white
+                  via-white
+                  to-accent/20
+                  bg-clip-padding
+                  backdrop-blur-[30px]
                   px-5 py-5 sm:py-10
                   text-center
-                  shadow-[0_15px_35px_rgba(21,159,204,0.18)]
+                  shadow-[0_5px_30px_rgba(21,159,204,0.3)]
                   overflow-hidden
                 "
               >
-                <p className="text-xs sm:text-sm font-medium uppercase tracking-normal sm:tracking-[0.25em] text-gray-400">
+                <p className="text-xs sm:text-[15px] font-extra sm:font-medium uppercase tracking-tight sm:tracking-[0.15em] text-gray-400/95">
                   Earthquake Resistance
                 </p>
 
-                <p className="mt-5 text-2xl sm:text-4xl font-semibold text-black">
+                <p className="mt-5 text-2xl sm:text-4xl font-bold text-text">
                   Up To
                 </p>
 
-                <p className="mt-0 text-6xl sm:text-[150px] font-bold leading-none bg-linear-to-t from-text to-accent bg-clip-text text-transparent">
+                <p className="mt-0 text-6xl sm:text-[160px] font-bold tracking-wider leading-none bg-linear-to-t from-text/80 to-accent bg-clip-text text-transparent">
                   {safetyData?.earthquake_resistance_richter || 10}
                 </p>
 
-                <p className="text-xl font-bold text-black sm:text-2xl">
+                <p className="text-xl font-bold text-text sm:text-4xl">
                   Richter scale
                 </p>
 
                 {/* wave */}
                 <div className="mt-6 flex items-center gap-3 text-accent">
                   <span className="h-[2.5px] w-12 bg-linear-to-r from-white to-accent" />
-                  <img src="images/pulse.svg" alt="pulse"/>
+                  <img
+                    src="images/pulse.svg"
+                    alt="pulse"
+                    className="w-10 sm:w-14"
+                  />
                   <span className="h-[2.5px] w-12 bg-linear-to-l from-white to-accent" />
                 </div>
               </div>
