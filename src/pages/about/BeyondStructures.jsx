@@ -20,7 +20,7 @@ const BeyondStructures = () => {
         </h1>
 
         {/* DESCRIPTION */}
-        <p className="mx-auto mt-1 max-w-[780px] text-[13px] font-medium leading-[1.8] text-[#151515] sm:mt-2 sm:text-[14px] md:mt-3 md:text-[16px] md:leading-[1.8] min-[769px]:max-[1200px]:mt-7 min-[769px]:max-[1200px]:text-[19px] min-[769px]:max-[1200px]:leading-[1.9] lg:mt-7 lg:text-[24px] lg:leading-[36px]">
+        <p className="mx-auto mt-1 max-w-[780px] text-[13px] font-medium leading-[1.8] text-[#151515] sm:mt-2 sm:text-[14px] md:mt-3 md:text-[16px] md:leading-[1.8] min-[769px]:max-[1200px]:mt-7 min-[769px]:max-[1200px]:text-[19px] min-[769px]:max-[1200px]:leading-[1.9]  lg:text-[24px] lg:leading-[36px] lg:tracking-[0.5px]">
           We believe every building should be more than a structure. It should
           be a place where people live safely, families grow with confidence,
           and investments continue to create value. This philosophy drives every

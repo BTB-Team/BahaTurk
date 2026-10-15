@@ -36,6 +36,16 @@
   --color-border: #e1e8ed;
 }
 
+/* English variable font */
+@font-face {
+  font-family: "bahaturk-inter";
+  src: url("./assets/fonts/InterVariable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 .bahaturk-inter {
   font-family: "bahaturk-inter", sans-serif;
 }
