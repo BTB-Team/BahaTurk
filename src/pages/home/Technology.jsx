@@ -1,7 +1,13 @@
 import React from "react";
 import { Layers } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import projectData from "../../../db.json";
+
+function navigateToProjectsTop(event, navigate) {
+  event.preventDefault();
+  window.scrollTo(0, 0);
+  navigate("/projects");
+}
 
 function GreaterIcon({ className = "" }) {
   return (
@@ -129,52 +135,54 @@ const technologyFeatures = [
 });
 
 export default function Technology() {
+  const navigate = useNavigate();
+
   return (
     <section className="bahaturk-inter w-full bg-white px-3 py-[30px] md:px-6 md:py-[60px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px] p-3 md:flex-row md:items-center md:justify-between md:gap-8 md:rounded-[29px] md:p-6 lg:h-[676px] lg:p-[32px]">
-        <div className="order-2 w-full md:order-1 md:w-[55%] lg:max-w-[561px]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px] p-3 md:rounded-[29px] md:p-6 lg:min-h-[676px] lg:flex-row lg:items-center lg:justify-between lg:gap-[76px] lg:p-[32px] xl:h-[676px] xl:justify-start xl:gap-[24.5px] xl:p-0">
+        <div className="order-2 w-full lg:order-1 lg:w-[calc(50%-38px)] lg:max-w-[561px] xl:ml-[32px] xl:w-[561px] xl:flex-none">
           {/* Technology label */}
-          <div className="mb-[6px] flex items-center gap-[6px] md:mb-[10px] md:gap-[14px] lg:-ml-[32px] lg:gap-[5px]">
-            <div className="h-[3px] w-[41px] bg-[#0F99CC]" />
-            <h2 className="text-[11px] font-semibold text-[#299BC1] tracking-wide md:text-[18px] lg:h-[24px] lg:w-[127px] lg:text-[18px] lg:font-semibold lg:leading-[24px] lg:tracking-[0] lg:text-[#0F99CC]">
+          <div className="mb-[6px] flex items-center gap-[6px] md:mb-[10px] md:gap-[14px] lg:gap-[5px] xl:-ml-[32px]">
+            <div className="h-[3px] w-[41px] shrink-0 bg-[#0F99CC]" />
+            <h2 className="bahaturk-inter h-[24px] w-[127px] shrink-0 text-[18px] font-semibold leading-[24px] tracking-[0] text-[#0F99CC]">
               TECHNOLOGY
             </h2>
           </div>
 
           {/* Small heading */}
-          <p className="mb-[4px] whitespace-nowrap text-[10px] font-normal text-gray-500 md:mb-[8px] md:text-[16px] lg:-ml-[32px] lg:mt-[7px] lg:h-[19px] lg:w-[336px] lg:text-left lg:text-[16px] lg:font-normal lg:leading-[100%] lg:tracking-[0] lg:text-[#000000]">
+          <p className="mb-[4px] text-[10px] font-normal text-gray-500 md:mb-[8px] md:text-[16px] lg:mt-[7px] lg:min-h-[19px] lg:w-full lg:max-w-[336px] lg:text-left lg:text-[16px] lg:font-normal lg:leading-[100%] lg:tracking-[0] lg:text-[#000000] xl:-ml-[32px] xl:h-[19px] xl:w-[336px] xl:flex-none">
             ADVANCED CONSTRUCTION TECHNOLOGY
           </p>
 
           {/* Main title */}
-          <h1 className="mb-[10px] text-[20px] font-extrabold leading-tight text-[#299BC1] md:mb-[16px] md:text-[34px] lg:-ml-[32px] lg:mt-[14px] lg:mb-[11px] lg:h-[48px] lg:w-[560px] lg:text-left lg:text-[40px] lg:font-extrabold lg:leading-[100%] lg:tracking-[0] lg:text-[#0F99CC]">
+          <h1 className="mb-[10px] text-[20px] font-extrabold leading-tight text-[#299BC1] md:mb-[16px] md:text-[34px] lg:mt-[14px] lg:mb-[11px] lg:min-h-[48px] lg:w-full lg:max-w-[560px] lg:text-left lg:text-[40px] lg:font-extrabold lg:leading-[100%] lg:tracking-[0] lg:text-[#0F99CC] xl:-ml-[32px] xl:h-[48px] xl:w-[560px] xl:flex-none">
             {technologyData?.technology_title || "Tunnel Form System"}
             <span className="text-[#299BC1]">.</span>
           </h1>
 
           {/* Paragraphs */}
           <div className="mb-[14px] space-y-2 font-medium text-[11px] leading-[16px] text-black md:mb-[24px] md:text-[16px] md:leading-[27px] lg:space-y-[10px]">
-            <p className="line-clamp-3 md:line-clamp-none lg:-ml-[32px] lg:h-[81px] lg:w-[561px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]">
+            <p className="md:line-clamp-none lg:min-h-[81px] lg:w-full lg:max-w-[561px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000] xl:-ml-[32px] xl:h-[81px] xl:w-[561px] xl:max-w-none xl:flex-none">
               {technologyIntro}
             </p>
             {technologyDetails && (
-              <p className="lg:-ml-[32px] lg:h-[54px] lg:w-[561px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000]">
+              <p className="lg:min-h-[54px] lg:w-full lg:max-w-[561px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px] lg:tracking-[0] lg:text-[#000000] xl:-ml-[32px] xl:h-[54px] xl:w-[561px] xl:max-w-none xl:flex-none">
                 {technologyDetails}
               </p>
             )}
           </div>
 
           {/* Supports heading */}
-          <h3 className="mb-[10px] font-bold text-[12px] text-black md:mb-[18px] md:text-[20px] lg:-ml-[32px] lg:h-[27px] lg:w-[561px] lg:text-left lg:text-[20px] lg:leading-[27px]">
+          <h3 className="mb-[10px] font-bold text-[12px] text-black md:mb-[18px] md:text-[20px] lg:min-h-[27px] lg:w-full lg:max-w-[561px] lg:text-left lg:text-[20px] lg:leading-[27px] xl:-ml-[32px] xl:h-[27px] xl:w-[561px] xl:max-w-none xl:flex-none xl:font-bold xl:text-[20px] xl:leading-[27px] xl:text-[#000000]">
             The system supports:
           </h3>
-          <div className="mb-[16px] grid grid-cols-1 gap-2 sm:grid-cols-2 md:mb-[28px] md:gap-2.5 lg:-ml-[32px] lg:w-[510px] lg:grid-cols-[249px_249px] lg:gap-2">
+          <div className="mb-[16px] grid grid-cols-1 gap-2 sm:grid-cols-2 md:mb-[28px] md:gap-2.5 lg:w-full lg:max-w-[510px] lg:grid-cols-2 lg:gap-2 xl:-ml-[32px]">
             {technologyFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
                 <div
                   key={`${feature.title}-${index}`}
-                  className="flex min-w-0 items-center gap-2 rounded-[8px] border border-[#E5EEF2] bg-white px-2 py-2 md:gap-2.5 md:rounded-[12px] md:px-3 lg:h-[68px] lg:w-[249px] lg:gap-2 lg:border-[#0F99CC2B] lg:px-[10px] lg:py-2"
+                  className="flex min-w-0 items-center gap-2 rounded-[8px] border border-[#E5EEF2] bg-white px-2 py-2 md:gap-2.5 md:rounded-[12px] md:px-3 lg:min-h-[68px] lg:w-full lg:gap-2 lg:border-[#0F99CC2B] lg:px-[10px] lg:py-2"
                 >
                   <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#0F99CC2B] text-[#299BC1] md:h-[51px] md:w-[51px]">
                     <IconComponent
@@ -183,12 +191,10 @@ export default function Technology() {
                     />
                   </div>
 
-                  <p
-                    className={`min-w-0 flex-1 text-[9px] leading-tight text-gray-500 md:text-[13px] ${index === 0 ? "lg:h-[40px] lg:w-[135px] lg:flex-none lg:text-[15px] lg:font-medium lg:leading-[20px] lg:text-black" : index === 1 ? "lg:h-[40px] lg:w-[148px] lg:flex-none lg:text-[15px] lg:font-medium lg:leading-[20px] lg:text-black" : index === 2 ? "lg:h-[40px] lg:w-[168px] lg:flex-none lg:text-[15px] lg:font-medium lg:leading-[20px] lg:text-black" : ""}`}
-                  >
-                    <span
-                      className={`block text-[8px] font-bold tracking-wide text-gray-500 md:text-[11px] ${index < 3 ? "lg:text-[15px] lg:font-medium lg:leading-[20px] lg:tracking-normal lg:text-black" : ""}`}
-                    >
+              
+                 <p className="min-w-0 flex-1 text-[9px] leading-tight text-gray-500 md:text-[13px] lg:text-[12px] xl:text-[14px] lg:font-medium lg:leading-[18px] lg:text-black">
+                    
+                    <span className="block text-[8px] font-bold tracking-wide text-gray-500 md:text-[11px] lg:text-[12px] xl:text-[14px] lg:font-medium lg:leading-[18px] lg:tracking-normal lg:text-black">
                       {feature.title}
                     </span>
                     <span
@@ -205,7 +211,8 @@ export default function Technology() {
           {/* BUTTON */}
           <Link
             to="/projects"
-            className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-full bg-[#299BC1] px-3 text-[10px] font-medium text-white transition hover:bg-[#2189aa] md:h-[46px] md:px-6 md:text-[15px] lg:ml-[-32px] lg:mt-0 lg:h-[52px] lg:w-[327px] lg:flex-none lg:gap-[2px] lg:pl-[19px] lg:pr-[18px]"
+            onClick={(event) => navigateToProjectsTop(event, navigate)}
+            className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-[12px] bg-[#299BC1] px-3 text-[10px] font-medium text-white transition hover:bg-[#2189aa] md:h-[46px] md:px-6 md:text-[15px] lg:ml-0 lg:mt-0 lg:h-[52px] lg:w-[327px] lg:flex-none lg:gap-[2px] lg:pl-[19px] lg:pr-[18px] xl:ml-[-32px]"
           >
             <span className="whitespace-nowrap lg:h-[27px] lg:w-[249px] lg:text-left lg:text-[16px] lg:font-medium lg:leading-[27px]">
               Explore Tunnel Form Technology
@@ -230,36 +237,40 @@ export default function Technology() {
           </Link>
         </div>
 
-        <div className="order-1 relative w-full max-w-[580px] pb-[30px] sm:pb-[100px] md:order-2 md:w-[42%] md:items-end md:pb-[50px] lg:w-[590px] lg:max-w-none lg:flex-none lg:pb-0">
-          <div className="relative ml-auto w-full rounded-[12px] md:w-[85%] md:rounded-[24px] lg:w-[590px] lg:rounded-[60px]">
-            <img
-              src={
-                technologyData?.technology_image || "/images/Rectangle39.webp"
-              }
-              alt="Tunnel Form Building Construction"
-              className="block h-auto w-full rounded-[12px] object-cover md:rounded-[24px] lg:h-[612.5px] lg:rounded-[60px]"
-            />
+        <div className="order-1 relative mx-auto w-full max-w-[590px] translate-y-[32px] lg:order-2 lg:mx-0 lg:w-[calc(50%-38px)] lg:max-w-none lg:flex-none xl:w-[590px] xl:translate-y-[43px]">
+          <div className="relative mx-auto aspect-[590/720] w-full max-w-[590px] lg:mx-0 xl:h-[720px] xl:aspect-auto">
+            <div className="absolute left-[13%] top-0 h-[85.07%] w-[87%] overflow-hidden rounded-[60px] lg:left-0 lg:w-full xl:h-[612.5px] xl:w-[590px]">
+              <img
+                src={
+                  technologyData?.technology_image || "/images/Rectangle39.webp"
+                }
+                alt="Tunnel Form Building Construction"
+                className="h-full w-full rotate-0 object-cover opacity-100"
+              />
+            </div>
 
-            <div className="absolute right-0 top-0 z-20 h-[96px] w-[116px] rounded-[12px] border border-[#0F99CC2B] bg-white/95 shadow-md backdrop-blur-sm sm:h-[104px] sm:w-[126px] md:h-[110px] md:w-[132px] md:rounded-[14px] lg:h-[145px] lg:w-[176px] lg:rounded-[16px]">
-              <div className="absolute left-[4px] top-[5px] flex h-[48px] w-[48px] items-center justify-center text-[#0F99CC] sm:left-[5px] sm:top-[6px] sm:h-[58px] sm:w-[58px] md:left-[5px] md:top-[6px] md:h-[52px] md:w-[52px] lg:left-[7px] lg:top-[9px] lg:h-[74px] lg:w-[74px]">
+            <div className="absolute right-0 top-0 z-20 h-[96px] w-[116px] translate-x-0 rounded-[12px] border border-[#0F99CC2B] bg-white/95 shadow-md backdrop-blur-sm sm:h-[104px] sm:w-[126px] md:h-[110px] md:w-[132px] md:rounded-[14px] xl:h-[145px] xl:w-[176px] xl:translate-x-0 xl:rounded-[30px] xl:border-white xl:bg-white">
+              <div className="absolute left-[4px] top-[5px] flex h-[48px] w-[48px] items-center justify-center text-[#0F99CC] sm:left-[5px] sm:top-[6px] sm:h-[58px] sm:w-[58px] md:left-[5px] md:top-[6px] md:h-[52px] md:w-[52px] xl:left-[7px] xl:top-[9px] xl:h-[74px] xl:w-[74px]">
                 <Layers
-                  className="h-[36px] w-[36px] sm:h-[42px] sm:w-[42px] md:h-[40px] md:w-[40px] lg:h-[51.88px] lg:w-[51.88px]"
+                  className="h-[36px] w-[36px] sm:h-[42px] sm:w-[42px] md:h-[40px] md:w-[40px] xl:h-[51.88px] xl:w-[51.88px]"
                   strokeWidth={2}
                 />
               </div>
-              <span className="absolute left-[10px] top-[57px] h-[32px] w-[96px] text-left text-[10px] font-medium leading-[13px] text-black sm:left-[12px] sm:top-[62px] sm:h-[36px] sm:w-[102px] sm:text-[10px] sm:leading-[14px] md:left-[12px] md:top-[62px] md:h-[36px] md:w-[108px] md:text-[11px] md:leading-[14px] lg:left-[18px] lg:top-[80px] lg:h-[40px] lg:w-[134px] lg:text-[15px] lg:leading-[20px]">
+              <span className="absolute left-[10px] top-[57px] h-[32px] w-[96px] text-left text-[10px] font-medium leading-[13px] text-black sm:left-[12px] sm:top-[62px] sm:h-[36px] sm:w-[102px] sm:text-[10px] sm:leading-[14px] md:left-[12px] md:top-[62px] md:h-[36px] md:w-[108px] md:text-[11px] md:leading-[14px] xl:left-[18px] xl:top-[80px] xl:h-[40px] xl:w-[134px] xl:text-[15px] xl:leading-[20px]">
                 Integrated concrete structure
               </span>
             </div>
+            <div className="absolute left-0 top-[61%] z-10 aspect-[381/237] w-[56.1%] overflow-hidden rounded-[12px] border-[-3px] border-white shadow-md sm:rounded-[16px] md:rounded-[20px] lg:left-[-13%] lg:w-[64.5%] lg:rounded-[24px] lg:shadow-none xl:left-[-76px] xl:top-[439px] xl:h-[237px] xl:w-[381px] xl:rounded-[30px]">
+              <img
+                src={
+                  technologyData?.technology_image_secondary ||
+                  "/images/Rectangle40.webp"
+                }
+                alt="Construction interior showing the tunnel form structure"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
-          <img
-            src={
-              technologyData?.technology_image_secondary ||
-              "/images/Rectangle40.webp"
-            }
-            alt="Construction interior showing the tunnel form structure"
-            className="absolute bottom-0 left-0 z-10 h-auto w-[54%] rounded-[12px] border border-white object-cover shadow-md sm:rounded-[16px] md:rounded-[20px] md:border-2 lg:bottom-auto lg:-left-[76px] lg:top-[439px] lg:h-[237px] lg:w-[381px] lg:rounded-[30px] lg:border-2 lg:border-white lg:shadow-none"
-          />
         </div>
       </div>
     </section>

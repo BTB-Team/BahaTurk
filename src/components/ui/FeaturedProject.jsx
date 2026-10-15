@@ -2,21 +2,48 @@ import React from "react";
 import { Link } from "react-router-dom";
 import projectImage from "../../assets/images/featured_project.webp";
 
+function scrollToProjectIntro(attempts = 0) {
+  const projectsHeading = document.querySelector(
+    "main main > section:first-of-type h1",
+  );
+
+  if (projectsHeading?.textContent.includes("Engineering Ideas")) {
+    [300, 900].forEach((delay) => {
+      window.setTimeout(() => {
+        const projectIntro = document.querySelector(
+          "main main > section:nth-of-type(2)",
+        );
+        if (projectIntro) {
+          window.scrollTo({
+            top: projectIntro.getBoundingClientRect().top + window.scrollY,
+            behavior: "auto",
+          });
+        }
+      }, delay);
+    });
+    return;
+  }
+
+  if (attempts < 40) {
+    window.setTimeout(() => scrollToProjectIntro(attempts + 1), 50);
+  }
+}
+
 export default function FeaturedProject() {
   return (
-    <section className="bahaturk-inter mx-auto w-full max-w-[1440px] bg-[#0F99CC2B] px-4 py-12 sm:px-6 md:py-16 lg:h-[691px] lg:px-0 lg:pb-[39px] lg:pt-[39px]">
+    <section className="bahaturk-inter mx-auto w-full max-w-[1440px] [#0F99CC2B] px-4 pb-14 py-12 sm:px-6 md:py-16 xl:h-[693px] xl:px-0 xl:pb-[39px] xl:pt-[39px]">
       <div className="max-w-[1200px] mx-auto">
         {/* Section Heading */}
-        <h2 className="mx-auto mb-8 h-6 w-[259px] max-w-full text-center text-[28px] font-bold leading-6 tracking-[0] text-black sm:text-[32px] md:mb-10 lg:mb-[33px]">
+        <h2 className="mx-auto mb-8 h-6 w-[259px] max-w-full text-center text-[28px] font-bold leading-6 tracking-[0] text-black sm:text-[32px] md:mb-10 xl:mb-[33px] xl:h-[24px] xl:w-[259px] xl:text-[32px] xl:font-[700] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
           Featured Project
         </h2>
 
         {/* Main Card Container */}
-        <div className="flex flex-col items-center gap-8 rounded-[30px] bg-white p-4 shadow-sm sm:p-5 lg:h-[556px] lg:flex-row lg:items-start lg:gap-[49px] lg:px-[22px] lg:pb-[23px] lg:pt-[25px]">
+        <div className="flex flex-col items-center gap-8 rounded-[30px] bg-white p-4 shadow-sm sm:p-5 xl:h-[556px] xl:flex-row xl:items-start xl:gap-[49px] xl:px-[22px] xl:pb-[23px] xl:pt-[25px]">
           {/* Left Column Wrapper - ABSOLUTELY NO overflow-hidden HERE */}
-          <div className="relative w-full shrink-0 lg:w-[476px]">
+          <div className="relative w-full shrink-0 xl:w-[476px]">
             {/* Image Box - overflow-hidden belongs exclusively HERE */}
-            <div className="h-[350px] w-full overflow-hidden rounded-[30px] bg-slate-200 sm:h-[508px] lg:h-[508px]">
+            <div className="h-[350px] w-full overflow-hidden rounded-[30px] bg-slate-200 sm:h-[508px] xl:h-[508px]">
               {projectImage ? (
                 <img
                   src={projectImage}
@@ -33,13 +60,17 @@ export default function FeaturedProject() {
             {/* Button - Placed inside the relative wrapper, OUTSIDE the overflow-hidden box */}
             <Link
               to="/projects"
-              className="absolute bottom-[-10px] left-0 z-20 inline-flex h-[50px] w-full max-w-[290px] items-center gap-2 rounded-tr-[22px] border-0 bg-white px-[13px] text-[clamp(9px,3.4vw,12px)] font-medium leading-6 tracking-[0] text-[#0F99CC] shadow-none outline-none transition-all duration-200 hover:gap-3 focus:outline-none focus-visible:outline-none md:gap-1 md:text-[13px] md:hover:gap-1 lg:left-[-7px] lg:top-[462px] lg:w-[290px] lg:items-center lg:gap-2 lg:rounded-bl-none lg:rounded-br-none lg:rounded-tl-none lg:rounded-tr-[22px] lg:pb-0 lg:pl-[13px] lg:pr-0 lg:pt-0 lg:text-[16px]"
+              onClick={() => {
+                window.scrollTo(0, 0);
+                window.setTimeout(() => scrollToProjectIntro(), 300);
+              }}
+              className="absolute bottom-[-10px] left-0 z-20 inline-flex h-[50px] w-full max-w-[290px] items-center gap-2 rounded-tr-[22px] border-0 bg-white px-[13px] text-[clamp(9px,3.4vw,12px)] font-medium leading-6 tracking-[0] text-[#0F99CC] shadow-none outline-none transition-all duration-200 hover:gap-3 focus:outline-none focus-visible:outline-none md:gap-1 md:text-[13px] md:hover:gap-1 xl:left-[-7px] xl:top-[462px] xl:w-[290px] xl:items-center xl:gap-2 xl:rounded-bl-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-tr-[22px] xl:pb-0 xl:pl-[13px] xl:pr-0 xl:pt-0 xl:text-[16px]"
             >
-              <span className="h-6 min-w-0 whitespace-nowrap lg:w-[242px] lg:shrink-0 lg:-translate-y-[4px]">
+              <span className="h-6 min-w-0 whitespace-nowrap xl:w-[242px] xl:shrink-0 xl:-translate-y-[4px]">
                 Explore Solh Residential Project
               </span>
               <svg
-                className="h-[37px] w-[37px] shrink-0 lg:absolute lg:right-[2px] lg:top-[4px]"
+                className="h-[37px] w-[37px] shrink-0 xl:absolute xl:right-[2px] xl:top-[4px]"
                 width="37"
                 height="37"
                 viewBox="0 0 37 37"
@@ -55,46 +86,46 @@ export default function FeaturedProject() {
           </div>
 
           {/* Right Column: Content Details */}
-          <div className="flex w-full flex-1 flex-col space-y-6 lg:mt-[18px] lg:h-[467px] lg:w-[631px] lg:flex-none lg:justify-start lg:space-y-0">
+          <div className="featured-project-content flex w-full flex-1 flex-col space-y-6 xl:mt-[18px] xl:h-[467px] xl:w-[631px] xl:flex-none xl:justify-start xl:space-y-0">
             <div>
               {/* Title */}
-              <h3 className="mb-2 text-[28px] font-extrabold leading-tight tracking-[-0.01em] text-black sm:text-[34px] md:text-[48px] lg:mb-[-15px] lg:ml-px lg:h-[65px] lg:w-[552px] lg:whitespace-nowrap lg:leading-[65px]">
+              <h3 className="featured-project-title mb-2 text-[28px] font-extrabold leading-tight tracking-[-0.01em] text-black sm:text-[34px] md:text-[48px] xl:mb-[-15px] xl:ml-px xl:h-[65px] xl:w-[552px] xl:whitespace-nowrap xl:text-[48px] xl:font-[800] xl:leading-[65px] xl:tracking-[-0.01em] xl:text-center">
                 <span className="text-[#00A3E0]">Solh </span>
                 Residential Project
               </h3>
 
               {/* Subtitle */}
-              <h4 className="mb-4 text-[16px] font-semibold text-black sm:text-[18px] lg:mb-0 lg:ml-px lg:h-[65px] lg:w-[503px] lg:text-center lg:text-[20px] lg:leading-[65px] lg:tracking-[-0.01em]">
+              <h4 className="featured-project-subtitle mb-4 text-[16px] font-semibold text-black sm:text-[18px] xl:mb-0 xl:ml-px xl:h-[65px] xl:w-[503px] xl:text-left xl:text-[20px] xl:font-[600] xl:leading-[65px] xl:tracking-[-0.01em] xl:text-[#000000]">
                 Modern Engineering. Lasting Quality. A Better Future.
               </h4>
 
               {/* Paragraphs */}
-              <div className="space-y-3 text-[14px] font-[400] leading-relaxed text-[#000000] sm:text-[16px] lg:space-y-2 lg:leading-6">
-                <p className="lg:ml-px lg:h-[48px] lg:w-[631px]">
+              <div className="featured-project-description space-y-3 text-[14px] font-[400] leading-relaxed text-[#000000] sm:text-[16px] xl:space-y-2 xl:leading-6">
+                <p className="xl:ml-px xl:h-[48px] xl:w-[631px] xl:text-[16px] xl:font-[400] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
                   Located in Makroyan 5, Kabul, Solh Residential Project is Baha
                   Turk's first and largest project in Afghanistan.
                 </p>
-                <p className="lg:ml-px lg:h-[96px] lg:w-[631px] lg:text-left lg:font-normal lg:text-[16px] lg:leading-6 lg:tracking-[0] lg:text-[#000000]">
+                <p className="xl:ml-px xl:h-[96px] xl:w-[631px] xl:text-left xl:font-[400] xl:text-[16px] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
                   Developed in cooperation with the Ministry of Urban
                   Development and Housing,
-                  <br className="hidden lg:block" /> the project is envisioned
+                  <br className="hidden xl:block" /> the project is envisioned
                   as a modern, safe, and well-planned residential
-                  <br className="hidden lg:block" /> community designed to
+                  <br className="hidden xl:block" /> community designed to
                   provide a higher standard of urban living for Afghan
-                  <br className="hidden lg:block" /> families.
+                  <br className="hidden xl:block" /> families.
                 </p>
-                <p className="lg:ml-px lg:h-[48px] lg:w-[631px]">
+                <p className="xl:ml-px xl:h-[48px] xl:w-[631px] xl:text-[16px] xl:font-[400] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
                   The overall development is planned to include 118 residential
                   blocks, with 20
-                  <br className="hidden lg:block" /> blocks in Phase One.
+                  <br className="hidden xl:block" /> blocks in Phase One.
                 </p>
               </div>
             </div>
 
             {/* Bottom Meta Stats Grid */}
-            <div className="grid grid-cols-1 gap-6 pt-4 sm:grid-cols-3 lg:mt-[29px] lg:box-border lg:h-[115px] lg:w-[409px] lg:grid-cols-[134px_134px_134px] lg:gap-x-[3.5px] lg:gap-y-1 lg:pt-0">
+            <div className="grid grid-cols-1 gap-6 pt-4 sm:grid-cols-3 xl:mt-[29px] xl:box-border xl:h-[115px] xl:w-[409px] xl:grid-cols-[134px_134px_134px] xl:gap-x-[3.5px] xl:gap-y-1 xl:pt-0">
               {/* Stat 1: Location */}
-              <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-4 lg:box-border lg:h-[115px] lg:w-[134px] lg:gap-0">
+              <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-4 xl:box-border xl:h-[115px] xl:w-[134px] xl:gap-0">
                 <div className="relative h-[55px] w-[55px] shrink-0 rounded-full bg-[#0F99CC2B]">
                   <svg
                     className="absolute left-[7px] top-[7px] h-[40px] w-[40px]"
@@ -120,19 +151,19 @@ export default function FeaturedProject() {
                     />
                   </svg>
                 </div>
-                <div className="lg:mt-[10px]">
-                  <span className="block text-[12px] font-medium leading-6 tracking-[0] text-[#0F99CC] sm:text-[14px] sm:font-semibold lg:h-6 lg:w-[63px] lg:text-[14px] lg:font-semibold lg:leading-6 lg:text-[#0F99CC]">
+                <div className="xl:mt-[10px]">
+                  <span className="block text-[12px] font-medium leading-6 tracking-[0] text-[#0F99CC] sm:text-[14px] sm:font-semibold xl:h-6 xl:w-[63px] xl:text-[14px] xl:font-semibold xl:leading-6 xl:text-[#0F99CC]">
                     Location:
                   </span>
-                  <span className="mt-[2px] block text-[14px] font-semibold leading-6 tracking-[0] text-black sm:text-[15px] lg:h-6 lg:w-[134px]">
+                  <span className="mt-[2px] block text-[14px] font-semibold leading-6 tracking-[0] text-black sm:text-[15px] xl:h-6 xl:w-[134px]">
                     Makroyan 5, Kabul
                   </span>
                 </div>
               </div>
 
               {/* Stat 2: Phase One Area */}
-              <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-4 lg:box-border lg:h-[115px] lg:w-[134px] lg:gap-0">
-                <div className="relative h-[55px] w-[55px] rounded-full bg-[#0F99CC2B] lg:translate-x-[28.5px]">
+              <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-4 xl:box-border xl:h-[115px] xl:w-[134px] xl:gap-0">
+                <div className="relative h-[55px] w-[55px] rounded-full bg-[#0F99CC2B] xl:translate-x-[28.5px]">
                   <svg
                     className="absolute left-[7px] top-[7px] h-[40px] w-[40px]"
                     width="40"
@@ -147,19 +178,19 @@ export default function FeaturedProject() {
                     />
                   </svg>
                 </div>
-                <div className="lg:mt-[10px] lg:translate-x-[28.5px]">
-                  <span className="block whitespace-nowrap text-[12px] font-medium leading-6 tracking-[0] text-[#0F99CC] sm:text-[14px] sm:font-semibold lg:h-[24px] lg:w-[112px] lg:text-left lg:text-[14px] lg:font-semibold lg:leading-[24px] lg:tracking-[0] lg:text-[#0F99CC]">
+                <div className="xl:mt-[10px] xl:translate-x-[28.5px]">
+                  <span className="block whitespace-nowrap text-[12px] font-medium leading-6 tracking-[0] text-[#0F99CC] sm:text-[14px] sm:font-semibold xl:h-[24px] xl:w-[112px] xl:text-left xl:text-[14px] xl:font-semibold xl:leading-[24px] xl:tracking-[0] xl:text-[#0F99CC]">
                     Phase One Area:
                   </span>
-                  <span className="mt-[2px] block text-[14px] font-semibold leading-6 tracking-[0] text-black sm:text-[15px] lg:mt-[2px] lg:h-[24px] lg:w-[68px] lg:text-left lg:text-[15px] lg:font-semibold lg:leading-[24px] lg:tracking-[0] lg:text-[#000000]">
+                  <span className="mt-[2px] block text-[14px] font-semibold leading-6 tracking-[0] text-black sm:text-[15px] xl:mt-[2px] xl:h-[24px] xl:w-[68px] xl:text-left xl:text-[15px] xl:font-semibold xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
                     32 Jeribs
                   </span>
                 </div>
               </div>
 
               {/* Stat 3: Phase One Blocks */}
-              <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-4 lg:box-border lg:h-[115px] lg:w-[134px] lg:gap-0">
-                <div className="relative h-[55px] w-[55px] rounded-full bg-[#0F99CC2B] lg:translate-x-[54px]">
+              <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-4 xl:box-border xl:h-[115px] xl:w-[134px] xl:gap-0">
+                <div className="relative h-[55px] w-[55px] rounded-full bg-[#0F99CC2B] xl:translate-x-[54px]">
                   <svg
                     className="absolute left-[7px] top-[7px] h-[40px] w-[40px]"
                     width="40"
@@ -174,11 +205,11 @@ export default function FeaturedProject() {
                     />
                   </svg>
                 </div>
-                <div className="lg:mt-[10px] lg:translate-x-[54px]">
-                  <span className="block whitespace-nowrap text-[12px] font-medium leading-6 tracking-[0] text-[#0F99CC] sm:text-[14px] sm:font-semibold lg:h-[24px] lg:w-[77px] lg:text-left lg:text-[14px] lg:font-semibold lg:leading-[24px] lg:tracking-[0] lg:text-[#0F99CC]">
+                <div className="xl:mt-[10px] xl:translate-x-[54px]">
+                  <span className="block whitespace-nowrap text-[12px] font-medium leading-6 tracking-[0] text-[#0F99CC] sm:text-[14px] sm:font-semibold xl:h-[24px] xl:w-[77px] xl:text-left xl:text-[14px] xl:font-semibold xl:leading-[24px] xl:tracking-[0] xl:text-[#0F99CC]">
                     Phase One:
                   </span>
-                  <span className="mt-[2px] block text-[14px] font-semibold leading-6 tracking-[0] text-black sm:text-[15px] lg:mt-[2px] lg:h-[24px] lg:w-[72px] lg:text-left lg:text-[15px] lg:font-semibold lg:leading-[24px] lg:tracking-[0] lg:text-[#000000]">
+                  <span className="mt-[2px] block text-[14px] font-semibold leading-6 tracking-[0] text-black sm:text-[15px] xl:mt-[2px] xl:h-[24px] xl:w-[72px] xl:text-left xl:text-[15px] xl:font-semibold xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
                     20 Blocks
                   </span>
                 </div>
