@@ -11,8 +11,7 @@ export default function ProjectCard({ project }) {
   return (
     <section aria-labelledby="project-card-title" className="py-8 md:py-12">
       <Container>
-        <div className="grid items-center gap-8 lg:grid-cols-[5fr_6fr] lg:gap-12">
-     
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,590px)] lg:gap-[34px]">
           <div className="relative">
             <img
               src={project.cover_image}
@@ -35,16 +34,16 @@ export default function ProjectCard({ project }) {
           <div>
             <h2
               id="project-card-title"
-              className="heading font-extrabold md:text-[40px] lg:text-[44px]"
+              className="heading md:text-[40px]"
             >
               <span className="text-accent">{firstWord}</span> {restOfTitle.join(" ")}
             </h2>
 
-            <p className="mt-4 text-[15px] leading-relaxed text-text md:text-justify">
+            <p className="mt-4 max-w-[590px] text-justify text-[20px] font-medium leading-[40px] tracking-normal text-text">
               {card.description}
             </p>
 
-            <dl className="mt-6 grid gap-3 sm:grid-cols-2">
+            <dl className="mt-6 grid max-w-[536px] grid-cols-[258px_258px] justify-between gap-y-4">
               {CARD_STATS.map(({ icon, label, getValue }) => {
                 const value = getValue(project);
                 if (value == null) return null;
@@ -52,14 +51,14 @@ export default function ProjectCard({ project }) {
                 return (
                   <div
                     key={label}
-                    className="flex items-center gap-3 rounded-xl border border-accent bg-white px-3 py-3"
+                    className="flex items-center gap-3 rounded-xl border border-accent bg-white px-3.5 py-5"
                   >
-                    <span className="icon-circle shrink-0">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-icon-bg text-accent">
                       <StatIcon className="h-6 w-6" />
                     </span>
-                    <div>
+                    <div className="leading-snug">
                       <dt className="text-xs text-muted">{label}:</dt>
-                      <dd className="text-[13px] font-semibold text-text">{value}</dd>
+                      <dd className="text-[15px] font-semibold text-text">{value}</dd>
                     </div>
                   </div>
                 );
@@ -68,7 +67,7 @@ export default function ProjectCard({ project }) {
 
             <a
               href="#overview"
-              className="btn mt-5 bg-accent px-6 text-white hover:bg-accent-hover"
+              className="btn mt-5 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-hover"
             >
               {card.ctaLabel}
             </a>

@@ -1,11 +1,11 @@
 
 export default function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-3">
-      <h3 className="whitespace-nowrap text-sm font-semibold uppercase tracking-wide text-accent">
+    <div className="flex items-center gap-2">
+      <h3 className="whitespace-nowrap text-base font-semibold uppercase text-accent md:text-xl">
         {children}
       </h3>
-      <span className="h-px flex-1 bg-accent" aria-hidden="true" />
+      <span className="h-px flex-1 translate-y-1.5 bg-accent" aria-hidden="true" />
     </div>
   );
 }
