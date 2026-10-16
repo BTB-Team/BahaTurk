@@ -10,27 +10,30 @@ export default function ProjectCTA({ project }) {
       <img
         src={image}
         alt=""
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 -z-10 bg-white/75" aria-hidden="true" />
 
-      <Container className="py-14 text-center md:py-16">
-        <p className="text-sm font-semibold uppercase tracking-wide text-accent md:text-base">
+      <Container className="py-16 text-center md:py-20">
+        <p className="text-base font-bold uppercase tracking-wide text-accent md:text-lg">
           {eyebrow}
         </p>
-        <h2 className="heading mt-3 md:text-[40px]">
+        <h2 className="mt-3 font-serif text-[32px] leading-tight text-text md:text-[48px]">
           {title.plain} <span className="text-accent">{title.accent}</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base font-medium text-text md:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed font-inter-medium text-text md:text-lg">
           {text(project.title)}
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Link to={primary.to} className="btn bg-accent px-5 text-white hover:bg-accent-hover">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            to={primary.to}
+            className="btn rounded-lg bg-accent px-6 text-white hover:bg-accent-hover"
+          >
             {primary.label}
           </Link>
           <Link
             to={secondary.to}
-            className="btn border border-border bg-white px-5 text-accent hover:bg-icon-bg"
+            className="btn rounded-lg border border-border bg-white px-6 text-accent hover:bg-icon-bg"
           >
             {secondary.label}
           </Link>

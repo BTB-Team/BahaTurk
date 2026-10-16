@@ -15,18 +15,18 @@ export default function LegalAssurance({ legal }) {
         <div className="mt-6 grid items-center gap-8 md:grid-cols-2 md:gap-12">
           <div>
             {legal.title && (
-              <h2 className="heading md:text-[40px]">
+              <h2 className="heading font-serif text-[32px] md:text-[40px] leading-[1.15]">
                 {firstWord}
                 <span className="block text-accent">{restOfTitle.join(" ")}</span>
               </h2>
             )}
-            <div className="mt-4 space-y-2 text-sm leading-relaxed text-text md:text-justify">
+            <div className="mt-6 space-y-5 text-base leading-[1.7] text-text font-inter-medium md:text-justify">
               <p>{intro}</p>
               <p>{legal.description}</p>
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] border border-accent">
+          <div className="overflow-hidden rounded-[53px] border border-accent">
             <img src={image} alt={imageAlt} className="h-full w-full object-cover" />
           </div>
         </div>
