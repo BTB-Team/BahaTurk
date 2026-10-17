@@ -71,7 +71,7 @@ const VisionAndMission = () => {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="mt-3 text-justify text-[14px] font-medium leading-[1.7] text-[#151515]  sm:leading-[1.75] md:text-[16px] md:leading-[1.8] lg:text-[20px] lg:leading-[30px]">
+          <p className="mt-3 text-justify text-[14px] font-medium leading-[1.7] text-[#151515]  sm:leading-[1.75] md:text-[16px] md:leading-[1.8] lg:text-[20px] lg:leading-[30px] lg:tracking-[0.3px]">
             Our mission is to design and deliver world-class construction
             projects by applying advanced engineering technologies, maintaining
             the highest quality standards, ensuring safety, and creating modern
