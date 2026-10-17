@@ -16,8 +16,8 @@ export default function ProjectOverview({ project, company }) {
           </h2>
         </div>
 
-        <div className="mt-8 grid items-center gap-8 md:grid-cols-[1.25fr_1fr]">
-          <div className="space-y-1 text-sm leading-relaxed text-text md:text-justify">
+        <div className="mt-8 grid items-center gap-8 md:grid-cols-2">
+          <div className="text-justify text-[20px] font-medium leading-[34px] tracking-normal text-text">
             {buildOverviewParagraphs(project, company).map((text) => (
               <p key={text}>{text}</p>
             ))}
@@ -25,7 +25,7 @@ export default function ProjectOverview({ project, company }) {
           <img
             src={image}
             alt={imageAlt}
-            className="aspect-[3/2] w-full rounded-2xl object-cover"
+            className="aspect-[618/339] w-full rounded-2xl object-cover"
           />
         </div>
       </Container>
