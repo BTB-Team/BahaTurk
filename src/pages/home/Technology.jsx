@@ -131,8 +131,8 @@ const technologyFeatures = [
 export default function Technology() {
   return (
     <section className="bahaturk-inter w-full bg-white px-3 py-[30px] md:px-6 md:py-[60px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px] p-3 md:rounded-[29px] md:p-6 lg:min-h-[676px] lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:p-[32px] xl:h-[676px] xl:min-h-[676px] xl:max-w-[1200px] xl:justify-start xl:gap-[33px] xl:p-0">
-        <div className="order-2 w-full lg:order-1 lg:w-[calc(50%-16px)] lg:max-w-[561px] lg:flex-none xl:w-[561px]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 rounded-[20px] p-3 md:rounded-[29px] md:p-6 lg:min-h-[676px] lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:p-[32px] xl:h-[676px] xl:min-h-[676px] xl:max-w-[1200px] xl:justify-start xl:gap-[33px] xl:p-0">
+        <div className="order-2 w-full lg:order-1 lg:w-1/2 lg:flex-1 xl:w-[561px] xl:flex-none">
           {/* Technology label */}
           <div className="mb-[6px] flex items-center gap-[6px] md:mb-[10px] md:gap-[14px] lg:gap-[5px]">
             <div className="h-[3px] w-[41px] shrink-0 bg-[#0F99CC]" />
@@ -168,28 +168,26 @@ export default function Technology() {
           <h3 className="mb-[10px] font-bold text-[12px] text-black md:mb-[18px] md:text-[20px] lg:min-h-[27px] lg:w-full lg:max-w-[561px] lg:text-left lg:text-[20px] lg:leading-[27px] xl:min-h-[27px] xl:w-full xl:max-w-none xl:flex-none xl:font-bold xl:text-[20px] xl:leading-[27px] xl:text-[#000000]">
             The system supports:
           </h3>
-          <div className="mb-[16px] grid grid-cols-1 gap-2 sm:grid-cols-2 md:mb-[28px] md:gap-2.5 lg:w-full lg:max-w-[510px] lg:grid-cols-2 lg:gap-2">
+          <div className="mb-[16px] grid grid-cols-1 gap-2 sm:grid-cols-2 md:mb-[28px] md:gap-2.5 lg:w-full lg:max-w-[400px] lg:grid-cols-2 lg:gap-2 xl:max-w-[510px]">
             {technologyFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
                 <div
                   key={`${feature.title}-${index}`}
-                  className="flex min-w-0 items-center gap-2 rounded-[8px] border border-[#E5EEF2] bg-white px-2 py-2 md:gap-2.5 md:rounded-[12px] md:px-3 lg:min-h-[68px] lg:w-full lg:gap-2 lg:border-[#0F99CC2B] lg:px-[10px] lg:py-2"
+                  className="flex min-w-0 items-center gap-2 rounded-[8px] border border-[#E5EEF2] bg-white px-2 py-2 md:gap-2.5 md:rounded-[12px] md:px-3 lg:min-h-[60px] lg:w-full lg:gap-1.5 lg:border-[#0F99CC2B] lg:px-2 lg:py-1.5 xl:min-h-[68px] xl:gap-2 xl:px-[10px] xl:py-2"
                 >
-                  <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#0F99CC2B] text-[#299BC1] md:h-[51px] md:w-[51px]">
+                  <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#0F99CC2B] text-[#299BC1] md:h-[51px] md:w-[51px] lg:h-[40px] lg:w-[40px] xl:h-[51px] xl:w-[51px]">
                     <IconComponent
-                      className="h-[24px] w-[24px] md:h-[32px] md:w-[32px]"
+                      className="h-[24px] w-[24px] md:h-[32px] md:w-[32px] lg:h-[24px] lg:w-[24px] xl:h-[32px] xl:w-[32px]"
                       strokeWidth={2.5}
                     />
                   </div>
 
-                  <p className="min-w-0 flex-1 text-[9px] leading-tight text-gray-500 md:text-[13px] lg:text-[12px] xl:text-[14px] lg:font-medium lg:leading-[18px] lg:text-black">
-                    <span className="block text-[8px] font-bold tracking-wide text-gray-500 md:text-[11px] lg:text-[12px] xl:text-[14px] lg:font-medium lg:leading-[18px] lg:tracking-normal lg:text-black">
+                  <p className="min-w-0 flex-1 text-[9px] leading-tight text-gray-500 md:text-[13px] lg:text-[11px] xl:text-[14px] lg:font-medium lg:leading-[16px] xl:leading-[18px] lg:text-black">
+                    <span className="block text-[8px] font-bold tracking-wide text-gray-500 md:text-[11px] lg:text-[11px] xl:text-[14px] lg:font-medium lg:leading-[16px] xl:leading-[18px] lg:tracking-normal lg:text-black">
                       {feature.title}
                     </span>
-                    <span
-                      className={`font-bold text-gray-600 ${index < 3 ? "lg:font-medium lg:text-black" : ""}`}
-                    >
+                    <span className="font-bold text-gray-600 lg:font-medium lg:text-black">
                       {feature.subtitle}
                     </span>
                   </p>
@@ -226,28 +224,32 @@ export default function Technology() {
           </Link>
         </div>
 
-        <div className="order-1 relative mx-auto aspect-[666/676] w-full max-w-[666px] lg:order-2 lg:mx-0 lg:w-[calc(50%-16px)] lg:flex-none xl:mx-0 xl:h-[676px] xl:aspect-auto xl:w-auto xl:min-w-0 xl:flex-1">
-          <div className="absolute inset-0">
-            <div className="absolute right-0 top-6 h-[90.6%] w-[88.6%] overflow-hidden rounded-tl-[clamp(24px,4.5vw,60px)] rounded-tr-[clamp(24px,4.5vw,60px)] rounded-bl-[clamp(24px,4.5vw,60px)] rounded-br-none xl:h-[612.5px] xl:w-[590px] xl:rounded-tl-[60px] xl:rounded-tr-[60px] xl:rounded-bl-[60px] xl:rounded-br-none">
+        <div className="order-1 relative mx-auto aspect-[606/676] w-[90.991%] max-w-[606px] lg:order-2 lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 xl:w-auto xl:min-w-0">
+          <div className="@container absolute inset-y-0 left-[-9.90099%] h-full w-[109.90099%] translate-y-[8px] xl:translate-x-[7.5px]">
+            <div className="absolute right-0 top-0 h-[90.6065%] w-[88.5886%]">
               <img
                 src={
-                  technologyData?.technology_image || "/images/Rectangle39-flat.webp"
+                  technologyData?.technology_image ||
+                  "/images/Rectangle39-flat.webp"
                 }
                 alt="Tunnel Form Building Construction"
-                className="h-full w-full rotate-0 rounded-tl-[clamp(24px,4.5vw,60px)] rounded-tr-[clamp(24px,4.5vw,60px)] rounded-bl-[clamp(24px,4.5vw,60px)] rounded-br-[clamp(60px,12.8vw,170px)] object-cover opacity-100 xl:rounded-[60px]"
+                className="h-full w-full object-fill"
               />
             </div>
 
-            <div className="@container absolute right-0 top-0 z-20 flex aspect-[176/145] w-[clamp(110px,26.4%,176px)] items-center rounded-[clamp(16px,2.25vw,30px)] border border-white bg-white shadow-md xl:h-[145px] xl:w-[176px] xl:aspect-auto xl:border">
-              <div className="absolute left-[4%] top-[6%] flex aspect-square w-[42%] items-center justify-center text-[#0F99CC]">
+            <div className="absolute right-0 top-0 z-20 flex h-[21.4497%] w-[26.4264%] items-center rounded-[4.5cqw] border border-white bg-white shadow-md">
+              <div className="absolute left-[4%] top-[6%] flex aspect-square w-[38%] items-center justify-center text-[#0F99CC]">
                 <Layers className="h-[70%] w-[70%]" strokeWidth={2} />
               </div>
-              <span className="absolute left-[10%] top-[55%] h-[40%] w-[78%] text-left text-[clamp(9px,8.5cqw,15px)] font-medium leading-[1.33] text-black xl:left-[18px] xl:top-[80px] xl:h-[40px] xl:w-[134px] xl:text-[15px] xl:leading-[20px]">
-                Integrated concrete structure
+              <span className="absolute left-[8%] top-[55%] h-[45%] w-[84%] text-left text-[clamp(6px,2.2523cqw,15px)] font-medium leading-[1.05] text-black">
+                <span className="block">Integrated</span>
+                <span className="block whitespace-nowrap">
+                  Concrete Structure
+                </span>
               </span>
             </div>
 
-            <div className="absolute bottom-0 left-[5px] xl:left-[-50px] z-10 h-[35.1%] w-[57.2%] overflow-hidden rounded-[clamp(16px,2.25vw,30px)] border-[-2px] border-white shadow-md xl:h-[237px] xl:w-[381px] xl:rounded-[30px]">
+            <div className="absolute left-0 top-[64.9408%] z-10 h-[35.0592%] w-[57.2072%] overflow-hidden rounded-[4.5cqw] border-[-0.75cqw] border-white shadow-md">
               <img
                 src={
                   technologyData?.technology_image_secondary ||
