@@ -5,7 +5,7 @@ const IMG = assetUrl("/images/projects");
 export const PROJECT_PAGE_CONTENT = {
   country: "Afghanistan",
   hero: {
-    eyebrow: "Our Projects",
+    eyebrow: " Our Projects",
     title: { plain: "Engineering Ideas", accent: "Into Lasting Places." },
     text: "Explore developments shaped by quality, technology, safety, and long-term thinking.",
     image: `${IMG}/project-hero.webp`,
