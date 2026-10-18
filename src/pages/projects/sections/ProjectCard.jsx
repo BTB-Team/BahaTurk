@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"; 
 import Container from "../../../components/ui/project-ui/Container";
 import { PinIcon, STAT_ICONS } from "../../../components/ui/project-ui/icons";
 import { CARD_STATS, PROJECT_PAGE_CONTENT } from "../content";
@@ -71,7 +72,7 @@ export default function ProjectCard({ project }) {
                 return (
                   <div
                     key={label}
-                    className="flex min-w-0 items-center gap-3 rounded-[13px] border border-accent bg-white px-3 py-3 sm:gap-3 sm:px-4 sm:py-4 lg:h-[89px] lg:gap-[18px] lg:px-3 lg:py-0 lg:pl-[19px]"
+                    className="flex min-w-0 items-center gap-3 rounded-[13px] border-2 border-accent bg-white px-3 py-3 sm:gap-3 sm:px-4 sm:py-4 lg:h-[89px] lg:gap-[18px] lg:px-3 lg:py-0 lg:pl-[19px]"
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/17 text-accent sm:h-11 sm:w-11 lg:h-[50px] lg:w-[50px]">
                       <StatIcon
@@ -81,10 +82,10 @@ export default function ProjectCard({ project }) {
                     </span>
 
                     <div className="min-w-0 flex-1">
-                      <dt className="text-xs leading-snug text-muted sm:text-sm lg:text-base">
+                      <dt className="text-xs font-inter-medium leading-[40px] text-justify text-muted sm:text-sm lg:text-base">
                         {label}:
                       </dt>
-                      <dd className="break-words text-sm font-semibold leading-snug text-black sm:text-sm lg:text-base">
+                      <dd className="break-words text-sm font-semibold leading-[40px] font-inter-medium py-0 text-black sm:text-sm lg:text-base">
                         {value}
                       </dd>
                     </div>
@@ -93,12 +94,15 @@ export default function ProjectCard({ project }) {
               })}
             </dl>
 
-            <a
-              href="#overview"
-              className="btn mt-5 flex min-h-[48px] w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover sm:mt-4 sm:w-fit sm:min-w-[185px] sm:text-lg lg:h-[55px] lg:min-w-[185px] lg:px-6 lg:py-0 lg:text-xl"
-            >
-              {card.ctaLabel}
-            </a>
+
+{/* Interactive button rewritten with React Router Link */}
+{/* <Link
+  to="/" // 👈 Swapped from href="#overview" to a clean destination route path string
+  className="btn mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover sm:mt-4 sm:w-fit sm:min-w-[185px] sm:text-lg lg:h-[55px] lg:min-w-[185px] lg:px-6 lg:py-0 lg:text-xl"
+>
+  {card.ctaLabel}
+</Link> */}
+
           </div>
         </div>
       </Container>
