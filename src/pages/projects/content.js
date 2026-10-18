@@ -19,15 +19,25 @@ export const PROJECT_PAGE_CONTENT = {
     title: { plain: "Designed for Life.", accent: "Engineered for the Future." },
     image: `${IMG}/image2.webp`,
     imageAlt: "Construction workers on site",
+
+    // 👈 با گذاشتن یک \n بعد از هر نقطه، متن را مجبور می‌کنیم دقیقاً مثل فیگما به خط بعدی سقوط کند
+    text: "Solh Residential Project is Baha Turk Construction Company's first and largest project in Afghanistan.\n Developed in cooperation with the Ministry of Urban Development and Housing, the project aims to create a modern, safe, and well-planned residential community for Afghan \nfamilies.\nPhase One is being developed across approximately 32 jeribs in Makroyan 5, Kabul.\nThe overall development is planned to include 118 residential blocks, with 20 blocks included in Phase One."
   },
-  floorConfiguration: { eyebrow: "Floor Configuration" },
-  gallery: { eyebrow: "Project Gallery" },
+
+  floorConfiguration: { 
+    eyebrow: "Floor Configuration" 
+  },
+  gallery: { 
+    eyebrow: "Project Gallery" 
+  },
+
   legal: {
     eyebrow: "Legal Assurance",
-    intro: "Transparency and legal assurance are essential to long-term property ownership.",
+    // intro: "Transparency and legal assurance are essential to long-term property ownership.",
     image: `${IMG}/legal-deeds.webp`,
     imageAlt: "Official property deed folders",
   },
+
   cta: {
     eyebrow: "Find Your Future Home",
     title: { plain: "Live Better.", accent: "Invest with Confidence." },
@@ -38,6 +48,7 @@ export const PROJECT_PAGE_CONTENT = {
     secondary: { label: "Request Information", to: "/contact" },
   },
 };
+
 export const CARD_STATS = [
   { icon: "status", label: "Status", getValue: (p) => p.status },
   { icon: "totalBlocks", label: "Total Planned blocks", getValue: (p) => p.specs?.total_planned_blocks },
@@ -45,29 +56,7 @@ export const CARD_STATS = [
   { icon: "phaseArea", label: "Phase One Area", getValue: (p) => p.specs?.area },
 ];
 
-export function buildOverviewParagraphs(project, company) {
-  const { country } = PROJECT_PAGE_CONTENT;
-  const specs = project.specs ?? {};
-  const owner = company?.name ? `${company.name}'s` : "the company's";
-
-  const paragraphs = [
-    `${project.title} is ${owner} first and largest project in ${country}.`,
-    "Developed in cooperation with the Ministry of Urban Development and Housing, the project aims to create a modern, safe, and well-planned residential community for Afghan families.",
-  ];
-
-  if (specs.area && specs.location) {
-    paragraphs.push(
-      `Phase One is being developed across approximately ${specs.area.toLowerCase()} in ${specs.location}.`
-    );
-  }
-  const phaseOneBlocks = parseInt(specs.blocks, 10);
-  if (specs.total_planned_blocks && phaseOneBlocks) {
-    paragraphs.push(
-      `The overall development is planned to include ${specs.total_planned_blocks} residential blocks, with ${phaseOneBlocks} blocks included in Phase One.`
-    );
-  }
-  return paragraphs;
-}
+/* 💡 توابع پیچیده buildOverviewParagraphs و شروط اضافه کاملاً از این بخش پاک‌سازی شدند */
 
 const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 const toWord = (n) => NUMBER_WORDS[n] ?? String(n);
