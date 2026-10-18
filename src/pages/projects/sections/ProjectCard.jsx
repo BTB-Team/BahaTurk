@@ -37,10 +37,10 @@ export default function ProjectCard({ project }) {
                 </span>
 
                 <div className="min-w-0">
-                  <p className="break-words text-xs font-extrabold leading-tight text-black sm:text-sm lg:text-[15px]">
+                  <p className="break-words text-xs font-serif font-extrabold leading-[100%] tracking-normal text-black sm:text-sm lg:text-[15px]">
                     {place.trim()},
                   </p>
-                  <p className="mt-1 break-words text-[10px] leading-tight text-black sm:text-[11px] lg:mt-[5px] lg:text-xs">
+                  <p className="mt-1 break-words text-[10px] leading-[100%] font-bahaturk-inter tracking-normal text-black sm:text-[11px] lg:mt-[5px] lg:text-xs">
                     {regionText}
                   </p>
                 </div>
@@ -80,28 +80,29 @@ export default function ProjectCard({ project }) {
                         strokeWidth={1.9}
                       />
                     </span>
-
-                    <div className="min-w-0 flex-1">
-                      <dt className="text-xs font-inter-medium leading-[40px] text-justify text-muted sm:text-sm lg:text-base">
+                                  
+                    <div className="min-w-0 flex-1 flex flex-col justify-center">
+                      <dt className="text-xs font-inter-medium leading-tight text-left text-muted sm:text-sm lg:text-[15px]">
                         {label}:
                       </dt>
-                      <dd className="break-words text-sm font-semibold leading-[40px] font-inter-medium py-0 text-black sm:text-sm lg:text-base">
+                      <dd className="break-words mt-0.5 text-sm font-semibold leading-tight font-inter-medium text-black sm:text-sm lg:text-[16px] lg:font-bold">
                         {value}
                       </dd>
                     </div>
                   </div>
+
                 );
               })}
             </dl>
 
 
-{/* Interactive button rewritten with React Router Link */}
-{/* <Link
-  to="/" // 👈 Swapped from href="#overview" to a clean destination route path string
-  className="btn mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover sm:mt-4 sm:w-fit sm:min-w-[185px] sm:text-lg lg:h-[55px] lg:min-w-[185px] lg:px-6 lg:py-0 lg:text-xl"
->
-  {card.ctaLabel}
-</Link> */}
+            {/* Interactive button rewritten with React Router Link */}
+            {/* <Link
+              to="/" // 👈 Swapped from href="#overview" to a clean destination route path string
+              className="btn mt-5 inline-flex min-h-[48px] w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover sm:mt-4 sm:w-fit sm:min-w-[185px] sm:text-lg lg:h-[55px] lg:min-w-[185px] lg:px-6 lg:py-0 lg:text-xl"
+            >
+              {card.ctaLabel}
+            </Link> */}
 
           </div>
         </div>

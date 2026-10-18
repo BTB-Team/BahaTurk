@@ -25,10 +25,11 @@ export default function LegalAssurance({ legal }) {
               </h2>
             )}
 
-            <div className="mt-6 space-y-4 text-[16px] leading-[1.7] text-text sm:text-[18px] xl:text-[20px] xl:leading-[34px] xl:text-justify">
-              <p>{intro}</p>
+            <div className="mt-6 flex flex-col gap-5 text-[16px] md:text-[18px] xl:text-[20px] font-medium leading-[26px] md:leading-[30px] xl:leading-[34px] font-sans text-black text-left xl:text-justify whitespace-pre-line select-text">
+              {/* <p>{intro}</p> */}
               <p>{legal.description}</p>
             </div>
+
           </div>
 
           <div className="w-full min-w-0 overflow-hidden rounded-[32px] border border-accent sm:rounded-[40px] xl:h-[427px] xl:w-full xl:max-w-[570px] xl:justify-self-end xl:rounded-[53px]">
