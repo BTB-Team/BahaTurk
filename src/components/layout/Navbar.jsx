@@ -13,11 +13,7 @@ const getLinkClass = (isActive) =>
 
   return (
 <header className="bg-header relative">
-  {/* 
-    باکس والد ناوبری (تراز شده با گرید ۱۲۰۰ پیکسلی فیگما):
-    👈 کلاس max-w-7xl به max-w-[1200px] تبدیل شد تا کادر هدر با بقیه بخش‌های سایت گونیا شود.
-    👈 پدینگ‌های افقی دسکتاپ تصحیح شدند (px-5 sm:px-8 md:px-0) تا لوگو و منوی دسکتاپ دقیقاً در لبه‌های گرید اصلی قرار بگیرند و داخل فرار نکنند.
-  */}
+
   <div className="mx-auto h-[40px] md:h-[90px] lg:h-[80px] xl:h-[130px] flex w-full max-w-[1200px] items-center justify-between px-5 sm:px-8 md:px-0 mt-5">        
     {/* Logo - Untouched */}
     <Logo />
