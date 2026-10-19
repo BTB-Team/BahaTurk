@@ -1,3 +1,4 @@
+
 import Container from "../../../components/ui/project-ui/Container";
 import { PinIcon, STAT_ICONS } from "../../../components/ui/project-ui/icons";
 import { CARD_STATS, PROJECT_PAGE_CONTENT } from "../content";
@@ -6,59 +7,86 @@ export default function ProjectCard({ project }) {
   const { card, country } = PROJECT_PAGE_CONTENT;
   const [firstWord, ...restOfTitle] = project.title.split(" ");
   const [place, ...region] = (project.specs?.location ?? "").split(",");
-  const regionText = [region.join(",").trim(), country].filter(Boolean).join(", ");
+  const regionText = [region.join(",").trim(), country]
+    .filter(Boolean)
+    .join(", ");
 
   return (
-    <section aria-labelledby="project-card-title" className="py-8 md:py-12">
+    <section
+      aria-labelledby="project-card-title"
+      className="py-6 sm:py-8 lg:pb-[33px] lg:pt-9"
+    >
       <Container>
-        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,590px)] lg:gap-[34px]">
-          <div className="relative">
+        <div className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-5">
+    
+          <div className="relative min-w-0 w-full">
             <img
               src={project.cover_image}
               alt={project.title}
-              className="aspect-[6/5] w-full rounded-2xl object-cover"
+              className="block aspect-[590/506] w-full rounded-2xl object-cover sm:rounded-[24px] lg:rounded-[28px]"
             />
+
             {place && (
-              <div className="absolute left-3 top-3 flex items-center gap-2 rounded-lg bg-white px-2.5 py-2 shadow-sm">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-icon-bg text-accent">
-                  <PinIcon className="h-4 w-4" />
+              <div className="absolute left-2 top-2 flex max-w-[calc(100%-1rem)] items-center gap-2 rounded-xl bg-white p-2 shadow-md sm:left-3 sm:top-3 sm:gap-2.5 sm:rounded-[14px] lg:left-[13px] lg:top-[15px] lg:gap-[7px] lg:py-[10px] lg:pl-[11px] lg:pr-[15px]">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/17 text-accent sm:h-10 sm:w-10 lg:h-[46px] lg:w-[46px]">
+                  <PinIcon
+                    className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
+                    strokeWidth={1.9}
+                  />
                 </span>
-                <div className="leading-tight">
-                  <p className="text-xs font-semibold text-text">{place},</p>
-                  <p className="text-[11px] text-muted">{regionText}</p>
+
+                <div className="min-w-0">
+                  <p className="break-words text-xs font-extrabold leading-tight text-black sm:text-sm lg:text-[15px]">
+                    {place.trim()},
+                  </p>
+                  <p className="mt-1 break-words text-[10px] leading-tight text-black sm:text-[11px] lg:mt-[5px] lg:text-xs">
+                    {regionText}
+                  </p>
                 </div>
               </div>
             )}
           </div>
 
-          <div>
+          <div className="min-w-0 w-full">
             <h2
               id="project-card-title"
-              className="heading md:text-[40px]"
+              className="break-words text-[26px] font-extrabold leading-tight text-black sm:text-[32px] sm:leading-[1.35] md:text-[40px] lg:text-[44px] lg:leading-[60px]"
             >
-              <span className="text-accent">{firstWord}</span> {restOfTitle.join(" ")}
+              <span className="text-accent">{firstWord}</span>{" "}
+              {restOfTitle.join(" ")}
             </h2>
 
-            <p className="mt-4 max-w-[590px] text-justify text-[20px] font-medium leading-[40px] tracking-normal text-text">
+            <p className="mt-3 max-w-[590px] text-sm font-medium leading-6 text-black sm:text-base sm:leading-7 md:text-lg lg:mt-[10px] lg:text-justify lg:text-[20px] lg:leading-[40px]">
               {card.description}
             </p>
 
-            <dl className="mt-6 grid max-w-[536px] grid-cols-[258px_258px] justify-between gap-y-4">
+            <dl className="mt-5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:gap-4 lg:mt-[18px] lg:grid-cols-2 lg:gap-x-[15px] lg:gap-y-[10px]">
               {CARD_STATS.map(({ icon, label, getValue }) => {
                 const value = getValue(project);
+
                 if (value == null) return null;
+
                 const StatIcon = STAT_ICONS[icon];
+
                 return (
                   <div
                     key={label}
-                    className="flex items-center gap-3 rounded-xl border border-accent bg-white px-3.5 py-5"
+                    className="flex min-w-0 items-center gap-3 rounded-[13px] border border-accent bg-white px-3 py-3 sm:gap-3 sm:px-4 sm:py-4 lg:h-[89px] lg:gap-[18px] lg:px-3 lg:py-0 lg:pl-[19px]"
                   >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-icon-bg text-accent">
-                      <StatIcon className="h-6 w-6" />
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/17 text-accent sm:h-11 sm:w-11 lg:h-[50px] lg:w-[50px]">
+                      <StatIcon
+                        className="h-6 w-6 sm:h-7 sm:w-7 lg:h-[37.5px] lg:w-[37.5px]"
+                        strokeWidth={1.9}
+                      />
                     </span>
-                    <div className="leading-snug">
-                      <dt className="text-xs text-muted">{label}:</dt>
-                      <dd className="text-[15px] font-semibold text-text">{value}</dd>
+
+                    <div className="min-w-0 flex-1">
+                      <dt className="text-xs leading-snug text-muted sm:text-sm lg:text-base">
+                        {label}:
+                      </dt>
+                      <dd className="break-words text-sm font-semibold leading-snug text-black sm:text-sm lg:text-base">
+                        {value}
+                      </dd>
                     </div>
                   </div>
                 );
@@ -67,7 +95,7 @@ export default function ProjectCard({ project }) {
 
             <a
               href="#overview"
-              className="btn mt-5 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-hover"
+              className="btn mt-5 flex min-h-[48px] w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-hover sm:mt-4 sm:w-fit sm:min-w-[185px] sm:text-lg lg:h-[55px] lg:min-w-[185px] lg:px-6 lg:py-0 lg:text-xl"
             >
               {card.ctaLabel}
             </a>
