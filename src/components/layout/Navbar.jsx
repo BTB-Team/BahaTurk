@@ -7,19 +7,18 @@ export default function Navbar() {
   const [activeHref, setActiveHref] = useState("/");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 const getLinkClass = (isActive) =>
-  `font-inter-medium text-[14px] md:text-[15px] lg:text-[16px] font-medium transition-colors duration-150 border-b-2 focus:outline-none ${
+  `font-inter-medium text-[14px] md:text-[12px] lg:text-[16px] font-medium transition-colors duration-150 border-b-2 focus:outline-none ${
     isActive ? "text-black border-accent" : "text-black border-transparent"
   }`;
 
   return (
 <header className="bg-header relative">
-
   <div className="mx-auto h-[40px] md:h-[90px] lg:h-[80px] xl:h-[130px] flex w-full max-w-[1200px] items-center justify-between px-5 sm:px-8 md:px-0 mt-5">        
     {/* Logo - Untouched */}
     <Logo />
 
     {/* Desktop nav - Untouched */}
-    <nav className="hidden md:flex items-center gap-x-[65px]">
+    <nav className="hidden md:flex items-center gap-x-[65px] md:mr-16 lg:mr-10 xl:mr-0">
       {NAV_LINKS.map((link) => (
         <NavLink
           key={link.href}

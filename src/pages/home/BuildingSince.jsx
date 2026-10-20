@@ -34,8 +34,8 @@ function ArrowIcon({ className = "" }) {
 
 const IMAGE_BASE = `${import.meta.env.BASE_URL}images/`;
 
-const LEFT_IMAGE = `${IMAGE_BASE}building-left-2.webp`;
-const RIGHT_IMAGE = `${IMAGE_BASE}building-right.webp`;
+const LEFT_IMAGE = `${IMAGE_BASE}left.webp`;
+const RIGHT_IMAGE = `${IMAGE_BASE}right.webp`;
 const BUILDING_IMAGE = `${IMAGE_BASE}about.webp`;
 
 /* ==================== STATISTICS DATA ==================== */
@@ -83,28 +83,25 @@ function CtaBlock() {
       
       {/* 
         تصویر سمت چپ:
-        👈 کلاس‌ها به 2xl:block و 2xl:left-... تغییر یافتند تا در اسکرین‌های زیر ۱۲۸۰ و خود ۱۲۸۰ کاملاً مخفی بماند و تداخل ایجاد نکند
       */}
       <img
         src={LEFT_IMAGE}
         alt="Baha Turk residential towers"
         loading="lazy"
-        className="absolute top-[71px] z-0 hidden h-[383px] w-[490px] max-w-none rounded-r-[36px] bg-slate-200 object-cover 2xl:block 2xl:left-[calc(50%-800px)]"
+        className="absolute top-[71px]  z-0 hidden h-[383px] w-[490px] max-w-none rounded-[36px] bg-slate-200 object-cover lg:mr-4 2xl:block 2xl:left-[calc(50%-800px)]"
       />
 
       {/* 
         تصویر سمت راست:
-        👈 کلاس‌ها به 2xl:block و 2xl:left-... تغییر یافتند تا در اسکرین‌های زیر ۱۲۸۰ و خود ۱۲۸۰ کاملاً مخفی بماند و تداخل ایجاد نکند
       */}
       <img  
         src={RIGHT_IMAGE}  
         alt="Baha Turk residential tower"  
         loading="lazy"  
-        className="absolute top-[231px] z-0 hidden h-[389px] w-[490px] max-w-none rounded-l-[36px] bg-slate-200 object-cover 2xl:block 2xl:left-[calc(50%+286px)]"
+        className="absolute top-[231px] z-0 hidden h-[389px] w-[490px] max-w-none rounded-[36px] bg-slate-200 object-cover lg:ml-4 2xl:block 2xl:left-[calc(50%+286px)]"
       />
 
       {/* باکس محتوای وسط که همیشه در مرکز هندسی مانیتور قفل است */}
-      {/* تمام بریک‌پوینت‌های موقعیت‌دهی مطلق وسط به 2xl: تبدیل شدند تا در اسکرین‌های متوسط فضای متن کاملاً باز بماند */}
       <div className="relative z-10 2xl:ml-[-10px] flex flex-col items-center px-10 py-20 text-center sm:px-8 2xl:absolute 2xl:bottom-3 2xl:left-1/2 2xl:-translate-x-1/2 2xl:h-full 2xl:w-[590px] 2xl:justify-center 2xl:px-0 2xl:py-0">
         <Sparkle className="h-14 w-14 2xl:h-[88px] 2xl:w-[88px] 2xl:mb-10" />
 
@@ -120,16 +117,15 @@ function CtaBlock() {
 
         {/* Contact button converted to React Router Link */}
         <Link
-          to="/contact" // 👈 Changed from href="#contact" to a clean SPA route path string
+          to="/contact" 
           style={{ backgroundColor: BLUE }}
-          className="font-inter-medium mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 2xl:mt-[22px]"
+          className="font-inter-medium tracking-[1px] leading-[100%] mt-6 inline-flex h-[54px] w-[226px] shrink-0 items-center justify-center rounded-[12px] text-[18px] font-semibold text-white transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 2xl:mt-[22px]"
         >
           Get in touch
         </Link>
       </div>
 
       {/* نمایش تصاویر در حالت موبایل، تبلت و دسکتاپ‌های تا مرز ۱۲۸۰ پیکسل */}
-      {/* 👈 کلاس به 2xl:hidden تغییر یافت تا در اسکرین‌های ۱۰۲۴px و ۱۲۸۰px این گریدِ دو ستونه‌ی زیبا و امن نمایش داده شود */}
       <div className="relative z-10 grid grid-cols-2 gap-3 px-5 pb-10 sm:px-8 2xl:hidden">
         <img
           src={LEFT_IMAGE}
@@ -158,7 +154,6 @@ function AboutBlock() {
     <div className="bahaturk-inter px-5 py-12 sm:px-8 lg:pb-[60px] lg:pt-[102px]">
       <div
         id="about"
-        // {/* 👈 رنگ بک‌گراند ثابت حذف شد تا عکس و گرادینت با هم ترکیب شوند */}
         className="relative isolate mx-auto w-full max-w-[1200px] overflow-hidden rounded-[36px] bg-[#0F99CC] lg:h-[539px]"
       >
         {/* Background image */}
@@ -167,15 +162,10 @@ function AboutBlock() {
           alt=""
           aria-hidden="true"
           loading="lazy"
-          // {/* 👈 کدهای مسدودکننده ماسک حذف شدند. عرض عکس w-full شد تا ساختمان‌ها تا زیر متن‌های سمت چپ کشیده شوند */}
           className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-right opacity-40 lg:opacity-90"
         />
 
-{/*         
-          Soft overlay:
-          گرادینت کاملاً مایل (۱۵۵ درجه) که از گوشه بالا چپ غلیظ شروع می‌شود 
-          و به صورت کاملاً کج به پایین سمت راست محو می‌شود تا ساختمان‌ها نمایان شوند
-        */}
+        {/*Soft overlay:*/}
         <div  
           aria-hidden="true"  
           className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(103.86deg,#0F99CC_0%,#0F99CC_30.77%,rgba(15,153,204,0.5)_71.63%,rgba(15,153,204,0)_100%)]"
@@ -217,60 +207,53 @@ function AboutBlock() {
 /* ==================== STATISTICS BLOCK ==================== */
 
 function Stats() {
-  return (
-    <section className="px-4 py-14 -mt-10 sm:py-16 md:py-20">
-      
-      {/* باکس والد اصلی برای تراز مرکز */}
-      <div className="w-full flex flex-col items-center justify-center">
-        
-        {/* 
-          🔄 سوییچ کامل به سیستم فلکس‌باکس هوشمند:
-          - flex-wrap: به کارت‌ها اجازه می‌دهد با کوچک شدن صفحه، به ردیف بعدی هدایت شوند.
-          - justify-center: 👈 شاه‌کلید طلایی؛ تضمین می‌کند کارت‌های ردیف دوم همیشه در وسط ردیف قرار بگیرند.
-          - gap-6: ایجاد فاصله مساوی و استاندارد بین تک‌تک کارت‌ها در تمام جهات.
-        */}
-        <ul className="mt-10 flex flex-wrap justify-center gap-6 w-full max-w-[1240px] mx-auto sm:mt-12 lg:mt-14">
-          {STATS.map((stat, index) => (
-            <li
-              key={`${stat.label}-${index}`}
-              // {/* عرض ثابت کارت بر اساس ابعاد فیکس فیگما (w-[228px]) حفظ شد تا ساختار داخلی آن در لپ‌تاپ و تبلت هرگز مچاله نشود */}
-              className="group flex min-h-[275px] w-[228px] shrink-0 flex-col items-center rounded-[24px] border bg-white px-5 pb-7 pt-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[290px] sm:rounded-[28px] lg:min-h-[315px] lg:rounded-[20px] lg:px-5 lg:pb-8 lg:pt-8"
-              style={{ border: "2px solid #0F99CC" }}
+return (
+  <section className="px-4 py-14 -mt-10 sm:py-16 md:py-20">
+    
+    {/* باکس والد اصلی برای تراز مرکز */}
+    <div className="w-full flex flex-col items-center justify-center">
+
+      <ul className="mt-10 flex flex-wrap justify-center gap-4 w-full max-w-[1200px] mx-auto sm:mt-12 sm:gap-6 lg:mt-14">
+        {STATS.map((stat, index) => (
+          <li
+            key={`${stat.label}-${index}`}
+
+            className="group flex min-h-[260px] w-[165px] sm:w-[220px] shrink-0 flex-col items-center rounded-[24px] border bg-white px-3 pb-5 pt-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:min-h-[290px] sm:rounded-[28px] sm:px-5 sm:pb-7 sm:pt-7 lg:min-h-[315px] lg:rounded-[20px] lg:px-5 lg:pb-8 lg:pt-8"
+            style={{ border: "2px solid #0F99CC" }}
+          >
+            {/* Statistic image - ابعاد دایره در موبایل متناسب با عرض ۱۶۵ پیکسلی به هشتاد پیکسل بهینه‌سازی شد */}
+            <div className="flex h-[80px] w-[80px] sm:h-[105px] sm:w-[105px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#E5F5FC] transition-transform duration-300 group-hover:scale-105 lg:h-[118px] lg:w-[118px]">
+              <img 
+                src={stat.image} 
+                alt={stat.imageAlt} 
+                loading="lazy" 
+                className="h-full w-full object-cover" 
+              />
+            </div>
+
+            {/* Gradient statistic value */}
+            <p
+              className="mt-4 bg-clip-text text-center text-[24px] sm:text-[32px] lg:text-[36px] font-serif font-extrabold leading-[100%] tracking-normal text-transparent lg:py-2"
+              style={{
+                backgroundImage: STAT_GRADIENT,
+                lineHeight: "100%",
+              }}
             >
-              {/* Statistic image */}
-              <div className="flex h-[95px] w-[95px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#E5F5FC] transition-transform duration-300 group-hover:scale-105 sm:h-[105px] sm:w-[105px] lg:h-[118px] lg:w-[118px]">
-                <img 
-                  src={stat.image} 
-                  alt={stat.imageAlt} 
-                  loading="lazy" 
-                  className="h-full w-full object-cover" 
-                />
-              </div>
+              {stat.value}
+            </p>
 
-              {/* Gradient statistic value */}
-              <p
-                className="mt-4 bg-clip-text text-center text-[28px] font-serif font-extrabold leading-[100%] tracking-normal text-transparent sm:mt-5 sm:text-[32px] lg:text-[36px]"
-                style={{
-                  backgroundImage: STAT_GRADIENT,
-                  lineHeight: "100%",
-                }}
-              >
-                {stat.value}
-              </p>
+            {/* Statistic description */}
+            <p className="mt-3 w-full max-w-[150px] sm:max-w-[203px] h-[44px] flex items-start justify-center text-center text-[12px] sm:text-[17px] lg:text-[18px] font-bahaturk-inter font-normal leading-[120%] sm:leading-[100%] tracking-normal text-black">
+              {stat.label}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+);
 
-              {/* 
-                Statistic description:
-                👈 بازگشت به فونت اصلی پروژه شما با اصلاح پیکسلی ارتفاع خط (leading-[100%]) برای تطابق مو به مو با فیگما
-              */}
-              <p className="mt-3 w-[203px] h-[44px] flex items-center justify-center text-center text-[15px] sm:text-[17px] lg:text-[18px] font-bahaturk-inter font-normal leading-[100%] tracking-normal text-black">
-                {stat.label}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
+
 }
 
 

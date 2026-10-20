@@ -23,7 +23,7 @@ const OurJourney = () => {
   ];
 
   return (
-    <section className="bahaturk-inter mx-auto w-full max-w-[1440px] bg-[#edfaff] px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:py-16">
+    <section className="bahaturk-inter mx-auto w-full bg-[#edfaff] px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:py-16">
       <div className="mx-auto w-full max-w-[1124px] lg:tracking-[0.7px]">
         <h2 className="mb-6 text-center text-[27px] font-[700] leading-tight text-black sm:mb-8 sm:text-[34px] md:text-[40px] lg:mb-5 lg:text-[48px]">
           OUR <span className="text-[#159dcc]">JOURNEY.</span>
