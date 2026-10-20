@@ -4,7 +4,7 @@ import projectImage from "../../assets/images/featured_project.webp";
 
 export default function FeaturedProject() {
   return (
-    <section className="bahaturk-inter mx-auto w-full max-w-[1440px] bg-[#0F99CC2B] px-4 pb-14 py-12 sm:px-6 md:py-16 xl:h-[693px] xl:px-0 xl:pb-[39px] xl:pt-[39px]">
+    <section className="bahaturk-inter mx-auto w-full bg-[#0F99CC2B] px-4 pb-14 py-12 sm:px-6 md:py-16 xl:h-[693px] xl:px-0 xl:pb-[39px] xl:pt-[39px]">
       <div className="max-w-[1200px] mx-auto">
         {/* Section Heading */}
         <h2 className="mx-auto mb-8 h-6 w-[259px] max-w-full text-center text-[28px] font-bold leading-6 tracking-[0] text-black sm:text-[32px] md:mb-10 xl:mb-[33px] xl:h-[24px] xl:w-[259px] xl:text-[32px] xl:font-[700] xl:leading-[24px] xl:tracking-[0] xl:text-[#000000]">
@@ -56,7 +56,7 @@ export default function FeaturedProject() {
           <div className="featured-project-content flex w-full flex-1 flex-col space-y-6 xl:mt-[18px] xl:h-[467px] xl:w-[631px] xl:flex-none xl:justify-start xl:space-y-0">
             <div>
               {/* Title */}
-              <h3 className="featured-project-title mb-2 text-[28px] font-extrabold leading-tight tracking-[-0.01em] text-black sm:text-[34px] md:text-[48px] xl:mb-[-15px] xl:ml-px xl:h-[65px] xl:w-[552px] xl:whitespace-nowrap xl:text-[48px] xl:font-[800] xl:leading-[65px] xl:tracking-[-0.01em] xl:text-center">
+              <h3 className="px-0 featured-project-title mb-2 text-[28px] font-extrabold leading-tight tracking-[-0.01em] text-black sm:text-[34px] md:text-[48px] xl:mb-[-15px] xl:ml-[-10px] xl:h-[65px] xl:w-[552px] xl:whitespace-nowrap xl:text-[48px] xl:font-[800] xl:leading-[65px] xl:tracking-[-0.01em] xl:text-center">
                 <span className="text-[#00A3E0]">Solh </span>
                 Residential Project
               </h3>

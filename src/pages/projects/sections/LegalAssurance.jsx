@@ -32,7 +32,7 @@ export default function LegalAssurance({ legal }) {
 
           </div>
 
-          <div className="w-full min-w-0 overflow-hidden rounded-[32px] border border-accent sm:rounded-[40px] xl:h-[427px] xl:w-full xl:max-w-[570px] xl:justify-self-end xl:rounded-[53px]">
+          <div className="w-full min-w-0 overflow-hidden rounded-[32px]  sm:rounded-[40px] xl:h-[427px] xl:w-full xl:max-w-[570px] xl:justify-self-end xl:rounded-[53px]">
             <img
               src={image}
               alt={imageAlt}
