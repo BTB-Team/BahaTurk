@@ -6,9 +6,9 @@ const VisionAndMission = () => {
   return (
     <div className="relative mt-9 bahaturk-inter">
       {/* BLUE BACKGROUND STRIP */}
-      <div className="pointer-events-none absolute left-1/2 top-[105px] z-0 h-[180px] w-full max-w-[1440px] -translate-x-1/2 bg-[#149dcc] sm:top-[115px] sm:h-[200px] md:top-[145px] md:h-[220px] lg:top-[165px] lg:h-[182px]" />
+      <div className="pointer-events-none absolute left-1/2 top-[105px] z-0 h-[180px] w-full  -translate-x-1/2 bg-[#149dcc] sm:top-[115px] sm:h-[200px] md:top-[145px] md:h-[220px] lg:top-[165px] lg:h-[182px]" />
       {/* BLUE BACKGROUND STRIP when the screen size become smaller than 1024px */}
-      <div className="pointer-events-none absolute left-1/2 top-[525px] z-0 h-[180px] w-full max-w-[1440px] -translate-x-1/2 bg-[#149dcc] sm:top-[560px] sm:h-[200px] md:top-[615px] md:h-[220px] lg:hidden" />
+      <div className="pointer-events-none absolute left-1/2 top-[525px] z-0 h-[180px] w-full  -translate-x-1/2 bg-[#149dcc] sm:top-[560px] sm:h-[200px] md:top-[615px] md:h-[220px] lg:hidden" />
 
       {/* VISION & MISSION */}
       <div className="relative z-10 mx-auto grid w-full max-w-[1180px] grid-cols-1 gap-5 px-4 sm:gap-6 sm:px-6 md:px-8 lg:grid-cols-2 lg:gap-7 lg:px-8">
